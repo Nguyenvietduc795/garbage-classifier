@@ -1,0 +1,84 @@
+"""
+API PHÂN LOẠI RÁC - dùng model đã train từ Teachable Machine
+----------------------------------------------------------------
+Cài thư viện trước khi chạy:
+    pip install tensorflow flask pillow numpy
+
+Chạy server:
+    python app.py
+
+Server sẽ chạy tại: http://127.0.0.1:5000
+Endpoint dự đoán:   POST http://127.0.0.1:5000/predict  (gửi kèm 1 ảnh)
+"""
+
+import numpy as np
+import tensorflow as tf
+from flask import Flask, request, jsonify
+from PIL import Image, ImageOps
+import io
+
+MODEL_PATH = "keras_model.h5"
+LABELS_PATH = "labels.txt"
+IMG_SIZE = (224, 224)  # kích thước ảnh mà Teachable Machine dùng
+
+
+# Vá lỗi tương thích DepthwiseConv2D (tham số 'groups' cũ)
+class PatchedDepthwiseConv2D(tf.keras.layers.DepthwiseConv2D):
+    def __init__(self, **kwargs):
+        kwargs.pop("groups", None)
+        super().__init__(**kwargs)
+
+
+app = Flask(__name__)
+
+# Load model 1 lần khi server khởi động (không load lại mỗi request)
+model = tf.keras.models.load_model(
+    MODEL_PATH,
+    custom_objects={"DepthwiseConv2D": PatchedDepthwiseConv2D},
+    compile=False,
+)
+
+with open(LABELS_PATH, "r", encoding="utf-8") as f:
+    # labels.txt có dạng: "0 Nhựa", "1 Giấy", ...
+    class_names = [line.strip().split(" ", 1)[1] for line in f if line.strip()]
+
+
+def preprocess_image(image_bytes):
+    """Chuyển ảnh upload thành mảng số mà model hiểu được."""
+    image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+    image = ImageOps.fit(image, IMG_SIZE, Image.Resampling.LANCZOS)
+    arr = np.asarray(image).astype(np.float32)
+    # Teachable Machine chuẩn hoá ảnh về khoảng [-1, 1]
+    normalized = (arr / 127.5) - 1
+    return np.expand_dims(normalized, axis=0)
+
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    if "image" not in request.files:
+        return jsonify({"error": "Vui lòng gửi file ảnh với key 'image'"}), 400
+
+    image_bytes = request.files["image"].read()
+    input_arr = preprocess_image(image_bytes)
+
+    predictions = model.predict(input_arr)[0]  # mảng xác suất, VD [0.92, 0.05, 0.03]
+    top_index = int(np.argmax(predictions))
+
+    result = {
+        "class": class_names[top_index],
+        "confidence": round(float(predictions[top_index]) * 100, 2),
+        "all_scores": {
+            class_names[i]: round(float(p) * 100, 2)
+            for i, p in enumerate(predictions)
+        },
+    }
+    return jsonify(result)
+
+
+@app.route("/", methods=["GET"])
+def home():
+    return "API phân loại rác đang chạy. Gửi POST ảnh tới /predict"
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)

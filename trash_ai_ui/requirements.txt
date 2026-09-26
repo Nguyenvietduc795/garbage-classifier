@@ -1,0 +1,16 @@
+# Toan bo project dung chung model ResNet-18 / PyTorch (garbage_resnet18.pt).
+# Khong con can TensorFlow, nen chay duoc tren Python 3.9 - 3.14.
+
+# --- Dung chung ---
+torch
+torchvision
+opencv-python
+pillow
+numpy
+
+# --- A. Giao dien desktop (giao_dien_pyqt.py) ---
+PyQt5
+
+# --- C. API (app.py + test_client.py) ---
+flask
+requests

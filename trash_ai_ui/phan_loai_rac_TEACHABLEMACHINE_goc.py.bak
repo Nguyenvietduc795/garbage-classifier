@@ -1,0 +1,203 @@
+import cv2
+import numpy as np
+import tensorflow as tf
+
+# ======================================================================
+# CẤU HÌNH
+# ======================================================================
+
+# Đường dẫn tệp model và nhãn (xuất từ Teachable Machine - định dạng Keras)
+MODEL_PATH = "keras_model.h5"
+LABELS_PATH = "labels.txt"
+
+# Kích thước ảnh đầu vào mà Teachable Machine dùng để train
+IMAGE_SIZE = (224, 224)
+
+# Gợi ý xử lý cho từng loại rác - chỉnh sửa nội dung theo ý nhóm bạn
+GOI_Y_XU_LY = {
+    "clothes": "Quan ao cu: quyen gop neu con dung duoc, hoac bo vao thung tai che vai.",
+    "Glass": "Thuy tinh: rua sach, bo vao thung tai che mau xanh.",
+    "Metal": "Kim loai: rua sach, co the ban ve chai hoac bo vao thung tai che.",
+    "Paper": "Giay: giu kho rao, khong dinh dau mo, bo vao thung tai che giay.",
+    "Plastic": "Nhua: rua sach truoc khi bo vao thung tai che.",
+    "Cardboard": "Bia carton: gap phang, bo vao thung tai che giay/carton.",
+    "Battery": "CANH BAO: khong bo vao rac thuong. Mang den diem thu gom pin cu chuyen dung.",
+}
+
+
+# ======================================================================
+# LỚP DepthwiseConv2D VÁ LỖI TƯƠNG THÍCH
+# (một số bản TensorFlow mới không nhận tham số 'groups' cũ của Teachable Machine)
+# ======================================================================
+class PatchedDepthwiseConv2D(tf.keras.layers.DepthwiseConv2D):
+    def __init__(self, **kwargs):
+        kwargs.pop("groups", None)
+        super().__init__(**kwargs)
+
+
+# ======================================================================
+# NẠP MODEL VÀ NHÃN
+# ======================================================================
+def load_model_and_labels(model_path=MODEL_PATH, labels_path=LABELS_PATH):
+    """
+    Nạp model phân loại rác (Keras/TensorFlow) và danh sách nhãn.
+    Trả về: (model, class_names)
+    """
+    model = tf.keras.models.load_model(
+        model_path,
+        custom_objects={"DepthwiseConv2D": PatchedDepthwiseConv2D},
+        compile=False,
+    )
+
+    with open(labels_path, "r", encoding="utf-8") as f:
+        # labels.txt có dạng: "0 clothes", "1 Glass", ...
+        class_names = [line.strip().split(" ", 1)[1] for line in f if line.strip()]
+
+    print(f"Da nap model thanh cong! Cac loai rac: {class_names}")
+    return model, class_names
+
+
+# ======================================================================
+# TIỀN XỬ LÝ ẢNH
+# ======================================================================
+def preprocess_frame(frame):
+    """
+    Chuyển 1 khung hình BGR (OpenCV) thành mảng số phù hợp với đầu vào model.
+    Model Teachable Machine yêu cầu: ảnh RGB, kích thước 224x224,
+    giá trị pixel chuẩn hóa về khoảng [-1, 1].
+    """
+    img_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    img_resized = cv2.resize(img_rgb, IMAGE_SIZE)
+
+    arr = img_resized.astype(np.float32)
+    normalized = (arr / 127.5) - 1
+    input_arr = np.expand_dims(normalized, axis=0)
+
+    return input_arr
+
+
+# ======================================================================
+# DỰ ĐOÁN LOẠI RÁC
+# ======================================================================
+def predict_trash(frame, model, class_names):
+    """
+    Dự đoán loại rác từ 1 khung hình.
+    Trả về: (nhan_du_doan, do_tin_cay, mang_xac_suat_tat_ca_class)
+    """
+    input_arr = preprocess_frame(frame)
+    predictions = model.predict(input_arr, verbose=0)[0]
+
+    max_idx = int(np.argmax(predictions))
+    predicted_label = class_names[max_idx]
+    confidence = float(predictions[max_idx])
+
+    return predicted_label, confidence, predictions
+
+
+# ======================================================================
+# VẼ KẾT QUẢ LÊN ẢNH
+# ======================================================================
+def draw_result(frame, label, confidence, threshold=0.6):
+    """
+    Vẽ nhãn dự đoán + % tin cậy lên khung hình để hiển thị.
+    """
+    if confidence >= threshold:
+        text = f"{label}: {confidence * 100:.1f}%"
+        color = (0, 255, 0)  # xanh la - tu tin
+    else:
+        text = f"Khong chac chan ({label}: {confidence * 100:.1f}%)"
+        color = (0, 165, 255)  # cam - chua chac
+
+    cv2.putText(frame, text, (15, 35), cv2.FONT_HERSHEY_SIMPLEX,
+                0.85, color, 2, cv2.LINE_AA)
+    return frame
+
+
+# ======================================================================
+# XỬ LÝ 1 ẢNH TĨNH
+# ======================================================================
+def process_image(image_path, model, class_names, threshold=0.6):
+    """
+    Đọc 1 file ảnh, dự đoán loại rác, hiển thị kết quả + gợi ý xử lý.
+    """
+    frame = cv2.imread(image_path)
+    if frame is None:
+        print(f"Loi: Khong tim thay anh tai '{image_path}'")
+        return
+
+    label, confidence, all_preds = predict_trash(frame, model, class_names)
+
+    print(f"\nKet qua du doan: {label} ({confidence * 100:.1f}%)")
+    print("Chi tiet tung loai:")
+    for name, score in zip(class_names, all_preds):
+        print(f"  - {name}: {score * 100:.1f}%")
+
+    if confidence >= threshold:
+        goi_y = GOI_Y_XU_LY.get(label, "Chua co goi y cho loai nay.")
+        print(f"\nGoi y xu ly: {goi_y}")
+
+    frame_display = draw_result(frame.copy(), label, confidence, threshold)
+
+    cv2.imshow("Phan loai rac - Teachable Machine", frame_display)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    # Neu chay tren Google Colab, thay 3 dong tren bang:
+    # from google.colab.patches import cv2_imshow
+    # cv2_imshow(frame_display)
+
+
+# ======================================================================
+# XỬ LÝ TRỰC TIẾP QUA WEBCAM
+# ======================================================================
+def process_webcam(model, class_names, threshold=0.6, camera_index=0):
+    """
+    Mở webcam, phân loại rác theo thời gian thực.
+    Nhan phim 'q' de thoat.
+    """
+    cap = cv2.VideoCapture(camera_index)
+    if not cap.isOpened():
+        print("Loi: Khong mo duoc webcam.")
+        return
+
+    print("Dang chay webcam... Nhan 'q' de thoat.")
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            print("Loi: Khong doc duoc khung hinh tu webcam.")
+            break
+
+        label, confidence, _ = predict_trash(frame, model, class_names)
+        frame_display = draw_result(frame.copy(), label, confidence, threshold)
+
+        if confidence >= threshold:
+            goi_y = GOI_Y_XU_LY.get(label, "")
+            cv2.putText(frame_display, goi_y[:60], (15, 65),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 1, cv2.LINE_AA)
+
+        cv2.imshow("Phan loai rac - Webcam", frame_display)
+
+        if cv2.waitKey(1) & 0xFF == ord("q"):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+# ======================================================================
+# HÀM CHÍNH
+# ======================================================================
+def main():
+    model, class_names = load_model_and_labels()
+
+    # Chon 1 trong 2 cach chay ben duoi:
+
+    # Cach 1: Phan loai tren 1 anh co san
+    # process_image("test.jpg", model, class_names)
+
+    # Cach 2: Phan loai truc tiep qua webcam
+    process_webcam(model, class_names)
+
+
+if __name__ == "__main__":
+    main()

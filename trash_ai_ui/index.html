@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bỏ vào thùng nào?</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/4.10.0/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+<style>
+  :root {
+    --primary: #2e7d32;
+    --primary-dark: #1b5e20;
+    --bg: #f4f7f4;
+    --card-bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b7280;
+    --warn: #b45309;
+    --warn-bg: #fffbeb;
+    --danger: #b91c1c;
+    --danger-bg: #fef2f2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 16px 60px;
+    min-height: 100vh;
+  }
+
+  header { text-align: center; margin-bottom: 22px; }
+  header h1 { color: var(--primary-dark); margin: 0 0 4px; font-size: 1.6rem; }
+  header p { color: var(--muted); margin: 0; font-size: 0.95rem; }
+
+  main { width: 100%; max-width: 760px; }
+
+  /* ---------- Trang thai rong: vung tha anh CHINH LA giao dien ---------- */
+  #khung-tha {
+    background: var(--card-bg);
+    border: 2px dashed #c8d6c8;
+    border-radius: 20px;
+    padding: 48px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  #khung-tha:hover { border-color: var(--primary); background: #fafdfa; }
+  #khung-tha.dragover { border-color: var(--primary); background: #e8f5e9; }
+  #khung-tha .icon { font-size: 3rem; line-height: 1; }
+  #khung-tha .chinh { font-size: 1.25rem; font-weight: 600; margin: 14px 0 6px; }
+  #khung-tha .phu { color: var(--muted); font-size: 0.92rem; }
+
+  #hang-nut { display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+  .btn {
+    border: none; border-radius: 999px; cursor: pointer;
+    font-size: 1rem; padding: 13px 26px;
+    transition: background .15s ease, transform .1s ease;
+  }
+  .btn:active { transform: scale(.98); }
+  .btn-chinh { background: var(--primary); color: #fff; font-weight: 600; box-shadow: 0 3px 10px rgba(46,125,50,.28); }
+  .btn-chinh:hover { background: var(--primary-dark); }
+  /* Nut phu: vien mong, khong canh tranh voi nut chinh */
+  .btn-phu { background: transparent; color: var(--muted); border: 1px solid #d3dbd3; }
+  .btn-phu:hover { color: var(--text); border-color: #aab5aa; }
+  .btn-tat { background: var(--danger); color: #fff; font-weight: 600; }
+  .btn-tat:hover { background: #8e1515; }
+
+  /* ---------- Trang thai co ket qua ---------- */
+  #khu-ket-qua { display: none; }
+  #khu-ket-qua.hien { display: block; }
+
+  #the-dap-an {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,.07);
+  }
+  #anh-xem {
+    width: 100%; max-height: 300px; object-fit: contain;
+    background: #eef2ee; display: block;
+  }
+  #anh-xem.la-camera { max-height: none; }
+  #webcam-holder { display: flex; justify-content: center; background: #eef2ee; }
+  #webcam-holder canvas { width: 100%; height: auto; display: block; }
+
+  #phan-dap-an { padding: 26px 24px; border-left: 6px solid var(--primary); }
+  #phan-dap-an.canh-bao { border-left-color: var(--warn); background: var(--warn-bg); }
+  #phan-dap-an.nguy-hiem { border-left-color: var(--danger); background: var(--danger-bg); }
+
+  #nhan-vat-lieu {
+    font-size: 2rem; font-weight: 700; line-height: 1.15;
+    margin: 0 0 10px; color: var(--primary-dark);
+  }
+  #phan-dap-an.canh-bao #nhan-vat-lieu { color: var(--warn); }
+  #phan-dap-an.nguy-hiem #nhan-vat-lieu { color: var(--danger); }
+  #huong-dan { font-size: 1.05rem; line-height: 1.55; margin: 0; }
+  #do-chac { color: var(--muted); font-size: .85rem; margin-top: 12px; }
+
+  /* ---------- Chi tiet: gap lai, chi mo khi muon xem ---------- */
+  details#chi-tiet { margin-top: 14px; }
+  details#chi-tiet summary {
+    cursor: pointer; color: var(--muted); font-size: .9rem;
+    padding: 10px 4px; list-style: none; user-select: none;
+  }
+  details#chi-tiet summary::-webkit-details-marker { display: none; }
+  details#chi-tiet summary::before { content: "▸ "; }
+  details#chi-tiet[open] summary::before { content: "▾ "; }
+  details#chi-tiet summary:hover { color: var(--text); }
+  .dong-nhan {
+    display: flex; align-items: center; gap: 10px;
+    padding: 7px 10px; font-size: .88rem; color: var(--muted);
+  }
+  .dong-nhan .ten { width: 96px; flex-shrink: 0; }
+  .dong-nhan .thanh-nen { flex: 1; height: 6px; background: #e3e8e3; border-radius: 3px; overflow: hidden; }
+  .dong-nhan .thanh-day { height: 100%; background: #9bb89b; border-radius: 3px; transition: width .3s ease; }
+  .dong-nhan .so { width: 48px; text-align: right; font-variant-numeric: tabular-nums; }
+  .dong-nhan.cao-nhat { color: var(--text); font-weight: 600; }
+  .dong-nhan.cao-nhat .thanh-day { background: var(--primary); }
+
+  #nut-lam-lai { margin-top: 18px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+
+  footer { margin-top: 34px; font-size: .78rem; color: #9aa39a; text-align: center; max-width: 560px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>♻️ Bỏ vào thùng nào?</h1>
+  <p>Chọn một tấm ảnh, biết ngay cách vứt cho đúng</p>
+</header>
+
+<main>
+  <!-- TRANG THAI 1: chua co gi -->
+  <div id="khung-tha" onclick="document.getElementById('file-input').click()">
+    <div class="icon">📷</div>
+    <div class="chinh">Kéo ảnh vào đây</div>
+    <div class="phu">hoặc bấm để chọn ảnh từ máy</div>
+  </div>
+  <div id="hang-nut">
+    <button class="btn btn-chinh" onclick="document.getElementById('file-input').click()">Chọn ảnh</button>
+    <button class="btn btn-phu" id="nut-camera" onclick="gatCamera()">Dùng camera</button>
+  </div>
+  <input type="file" id="file-input" accept="image/*" hidden onchange="chonAnh(this.files[0]); this.value='';">
+
+  <!-- TRANG THAI 2: co ket qua -->
+  <div id="khu-ket-qua">
+    <div id="the-dap-an">
+      <div id="khung-anh"></div>
+      <div id="phan-dap-an">
+        <p id="nhan-vat-lieu">—</p>
+        <p id="huong-dan"></p>
+        <div id="do-chac"></div>
+      </div>
+    </div>
+
+    <details id="chi-tiet">
+      <summary>Xem chi tiết từng loại</summary>
+      <div id="khung-nhan"></div>
+    </details>
+
+    <div id="nut-lam-lai">
+      <button class="btn btn-chinh" onclick="document.getElementById('file-input').click()">Thử ảnh khác</button>
+      <button class="btn btn-phu" id="nut-camera-2" onclick="gatCamera()">Dùng camera</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Model: Teachable Machine (MobileNet + Transfer Learning) — Đồ án phân loại rác.<br>
+  Trang này dùng model Teachable Machine, khác model ResNet-18 của giao diện desktop và API,
+  nên kết quả có thể lệch nhau.
+</footer>
+
+<script>
+  const MODEL_URL = "./tfjs_model/model.json";
+  const METADATA_URL = "./tfjs_model/metadata.json";
+  const NGUONG_TIN_CAY = 0.6;
+
+  // Ten tieng Viet + huong dan vut. Muc do: "thuong" | "canh-bao" | "nguy-hiem"
+  const VAT_LIEU = {
+    "clothes":   { ten: "Quần áo, vải", muc: "thuong",
+                   viec: "Còn dùng được thì quyên góp. Nếu không, bỏ vào thùng thu gom vải — đừng bỏ chung rác hữu cơ." },
+    "Glass":     { ten: "Thủy tinh", muc: "thuong",
+                   viec: "Rửa sạch, bỏ vào thùng tái chế màu xanh. Nếu vỡ thì bọc giấy lại trước khi bỏ." },
+    "Metal":     { ten: "Kim loại", muc: "thuong",
+                   viec: "Rửa sạch rồi bỏ vào thùng tái chế. Lon nhôm và vỏ hộp bán ve chai được." },
+    "Paper":     { ten: "Giấy", muc: "thuong",
+                   viec: "Giữ khô ráo, không dính dầu mỡ. Gấp gọn rồi bỏ vào thùng tái chế giấy." },
+    "Plastic":   { ten: "Nhựa", muc: "thuong",
+                   viec: "Rửa sạch rồi bỏ vào thùng tái chế màu xanh." },
+    "Cardboard": { ten: "Bìa carton", muc: "thuong",
+                   viec: "Gấp phẳng cho gọn, bỏ vào thùng tái chế giấy hoặc carton." },
+    "Battery":   { ten: "Pin", muc: "nguy-hiem",
+                   viec: "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. Mang tới điểm thu gom pin cũ." },
+  };
+
+  let model, webcam, maxPredictions;
+  let dangChayWebcam = false;
+
+  const $ = id => document.getElementById(id);
+
+  async function napModel() {
+    if (model) return;
+    model = await tmImage.load(MODEL_URL, METADATA_URL);
+    maxPredictions = model.getTotalClasses();
+    taoHangNhan();
+  }
+
+  function taoHangNhan() {
+    const khung = $("khung-nhan");
+    if (khung.childNodes.length) return;
+    for (let i = 0; i < maxPredictions; i++) {
+      const d = document.createElement("div");
+      d.className = "dong-nhan";
+      d.innerHTML = `<span class="ten"></span>
+                     <div class="thanh-nen"><div class="thanh-day" style="width:0%"></div></div>
+                     <span class="so"></span>`;
+      khung.appendChild(d);
+    }
+  }
+
+  function hienKetQua() {
+    $("khung-tha").style.display = "none";
+    $("hang-nut").style.display = "none";
+    $("khu-ket-qua").classList.add("hien");
+  }
+
+  function veTrangThaiRong() {
+    $("khung-tha").style.display = "";
+    $("hang-nut").style.display = "";
+    $("khu-ket-qua").classList.remove("hien");
+  }
+
+  // ---------- Camera: nut gat bat / tat ----------
+  function gatCamera() { dangChayWebcam ? tatCamera() : batCamera(); }
+
+  function capNhatNutCamera(dangBat) {
+    [$("nut-camera"), $("nut-camera-2")].forEach(n => {
+      if (!n) return;
+      n.textContent = dangBat ? "Tắt camera" : "Dùng camera";
+      n.classList.toggle("btn-tat", dangBat);
+      n.classList.toggle("btn-phu", !dangBat);
+    });
+  }
+
+  async function batCamera() {
+    try {
+      await napModel();
+      webcam = new tmImage.Webcam(400, 400, true);
+      await webcam.setup();
+      await webcam.play();
+      hienKetQua();
+      const k = $("khung-anh");
+      k.innerHTML = '<div id="webcam-holder"></div>';
+      k.querySelector("#webcam-holder").appendChild(webcam.canvas);
+      dangChayWebcam = true;
+      capNhatNutCamera(true);
+      window.requestAnimationFrame(loop);
+    } catch (e) {
+      dangChayWebcam = false;
+      capNhatNutCamera(false);
+      bao("Không bật được camera", "Trang phải chạy qua local server và bạn cần cho phép quyền camera.", "canh-bao");
+    }
+  }
+
+  function tatCamera() {
+    dangChayWebcam = false;
+    if (webcam) { webcam.stop(); webcam = null; }
+    capNhatNutCamera(false);
+    veTrangThaiRong();
+  }
+
+  async function loop() {
+    if (!dangChayWebcam || !webcam) return;
+    webcam.update();
+    await duDoan(webcam.canvas);
+    window.requestAnimationFrame(loop);
+  }
+
+  // ---------- Chon anh tu may ----------
+  async function chonAnh(file) {
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      hienKetQua();
+      bao("Không phải file ảnh", "Hãy chọn một file ảnh (.jpg, .png…).", "canh-bao");
+      return;
+    }
+    if (dangChayWebcam) { dangChayWebcam = false; if (webcam) { webcam.stop(); webcam = null; } capNhatNutCamera(false); }
+
+    hienKetQua();
+    bao("Đang xem…", "", "thuong");
+    await napModel();
+
+    const img = new Image();
+    img.id = "anh-xem";
+    img.onload = async () => {
+      $("khung-anh").innerHTML = "";
+      $("khung-anh").appendChild(img);
+      await duDoan(img);
+    };
+    img.onerror = () => bao("Không đọc được ảnh", "File có thể bị hỏng. Thử ảnh khác nhé.", "canh-bao");
+    img.src = URL.createObjectURL(file);
+  }
+
+  // ---------- Keo tha ----------
+  (function keoTha() {
+    const vung = $("khung-tha");
+    ["dragenter", "dragover"].forEach(ev =>
+      vung.addEventListener(ev, e => { e.preventDefault(); vung.classList.add("dragover"); }));
+    ["dragleave", "drop"].forEach(ev =>
+      vung.addEventListener(ev, e => { e.preventDefault(); vung.classList.remove("dragover"); }));
+    vung.addEventListener("drop", e => {
+      const f = e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f) chonAnh(f);
+    });
+    // Tha ra ngoai khung thi khong de trinh duyet mo file
+    ["dragover", "drop"].forEach(ev =>
+      document.body.addEventListener(ev, e => { if (!vung.contains(e.target)) e.preventDefault(); }));
+  })();
+
+  function bao(tieuDe, noiDung, muc) {
+    $("phan-dap-an").className = muc === "thuong" ? "" : muc;
+    $("nhan-vat-lieu").textContent = tieuDe;
+    $("huong-dan").textContent = noiDung;
+    $("do-chac").textContent = "";
+  }
+
+  // ---------- Du doan (dung chung ca 2 che do) ----------
+  async function duDoan(nguon) {
+    const du = await model.predict(nguon);
+
+    let top = du[0];
+    for (const p of du) if (p.probability > top.probability) top = p;
+
+    // Chi tiet: gap san, chi ai muon moi mo
+    const khung = $("khung-nhan");
+    du.forEach((p, i) => {
+      const row = khung.childNodes[i];
+      const pct = (p.probability * 100).toFixed(1);
+      const vl = VAT_LIEU[p.className];
+      row.querySelector(".ten").textContent = vl ? vl.ten : p.className;
+      row.querySelector(".so").textContent = pct + "%";
+      row.querySelector(".thanh-day").style.width = pct + "%";
+      row.classList.toggle("cao-nhat", p.className === top.className);
+    });
+
+    const vl = VAT_LIEU[top.className];
+    const pct = (top.probability * 100).toFixed(0);
+
+    if (top.probability >= NGUONG_TIN_CAY && vl) {
+      $("phan-dap-an").className = vl.muc === "nguy-hiem" ? "nguy-hiem" : "";
+      $("nhan-vat-lieu").textContent = vl.ten;
+      $("huong-dan").textContent = vl.viec;
+      $("do-chac").textContent = `Độ chắc chắn ${pct}%`;
+    } else {
+      // Khong du tu tin thi noi that, khong doan bua
+      $("phan-dap-an").className = "canh-bao";
+      $("nhan-vat-lieu").textContent = "Chưa chắc";
+      $("huong-dan").textContent = vl
+        ? `Có vẻ là ${vl.ten.toLowerCase()}, nhưng máy không đủ chắc để khuyên bạn. Thử chụp gần hơn, đủ sáng, mỗi lần một vật.`
+        : "Máy không nhận ra vật này.";
+      $("do-chac").textContent = `Cao nhất chỉ ${pct}%`;
+    }
+  }
+</script>
+
+</body>
+</html>

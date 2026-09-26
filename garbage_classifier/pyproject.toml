@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "garbage-classifier"
+version = "0.1.0"
+description = "Seven-class garbage image classifier using PyTorch transfer learning"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+  "pillow==12.3.0",
+  "torch==2.14.0",
+  "torchvision==0.29.0",
+]
+
+[project.scripts]
+garbage-data = "garbage_classifier.data:main"
+garbage-train = "garbage_classifier.train:main"
+garbage-evaluate = "garbage_classifier.evaluate:main"
+garbage-predict = "garbage_classifier.predict:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# PyPI chi co ban torch CPU-only cho Windows. Lay tu index rieng cua PyTorch
+# de duoc ban CUDA 13.0, neu khong `uv sync` se cai lai ban CPU va GPU nam khong.
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }

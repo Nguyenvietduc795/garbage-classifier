@@ -1,0 +1,27 @@
+# --- Moi truong Python ---
+.venv/
+.venv311/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# --- Dataset (qua lon cho git, xem README de biet lay o dau) ---
+archive/
+dataset_sach_zip/
+dataset_merged/
+trashnet/
+realworld_test/
+realworld_test2/
+realworld_curated/*/
+!realworld_curated/manifest.json
+
+# --- Ket qua train (moi checkpoint ~45 MB) ---
+garbage_classifier/artifacts/
+*.log
+
+# --- IDE / he dieu hanh ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
