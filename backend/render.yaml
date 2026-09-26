@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: garbage-classifier-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    # 1 worker: goi free chi co 512 MB RAM, moi worker nap 1 ban PyTorch rieng.
+    # timeout 120s: lan dau sau khi ngu day co the cham.
+    startCommand: gunicorn app:app --workers 1 --threads 2 --timeout 120 --bind 0.0.0.0:$PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"
+      - key: ALLOWED_ORIGINS
+        sync: false

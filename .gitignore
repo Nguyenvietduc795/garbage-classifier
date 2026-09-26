@@ -25,3 +25,6 @@ garbage_classifier/artifacts/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Model cho HF Space (trung voi backend/model.pt, khong can 2 ban trong git)
+hf_space/model.pt

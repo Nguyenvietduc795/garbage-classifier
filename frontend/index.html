@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bỏ vào thùng nào?</title>
+<style>
+  :root {
+    --primary: #2e7d32; --primary-dark: #1b5e20;
+    --bg: #f4f7f4; --card: #fff; --text: #1a1a1a; --muted: #6b7280;
+    --warn: #b45309; --warn-bg: #fffbeb;
+    --danger: #b91c1c; --danger-bg: #fef2f2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+    display: flex; flex-direction: column; align-items: center;
+    padding: 28px 16px 60px; min-height: 100vh;
+  }
+  header { text-align: center; margin-bottom: 20px; }
+  header h1 { color: var(--primary-dark); margin: 0 0 4px; font-size: 1.6rem; }
+  header p { color: var(--muted); margin: 0; font-size: .95rem; }
+  main { width: 100%; max-width: 720px; }
+
+  #khung-tha {
+    background: var(--card); border: 2px dashed #c8d6c8; border-radius: 20px;
+    padding: 46px 24px; text-align: center; cursor: pointer;
+    transition: border-color .15s, background .15s;
+  }
+  #khung-tha:hover { border-color: var(--primary); background: #fafdfa; }
+  #khung-tha.dragover { border-color: var(--primary); background: #e8f5e9; }
+  #khung-tha .icon { font-size: 3rem; }
+  #khung-tha .chinh { font-size: 1.2rem; font-weight: 600; margin: 14px 0 6px; }
+  #khung-tha .phu { color: var(--muted); font-size: .9rem; }
+
+  #hang-nut { display: flex; gap: 10px; justify-content: center; margin-top: 18px; flex-wrap: wrap; }
+  .btn { border: none; border-radius: 999px; cursor: pointer; font-size: 1rem; padding: 13px 26px; transition: background .15s, transform .1s; }
+  .btn:active { transform: scale(.98); }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+  .btn-chinh { background: var(--primary); color: #fff; font-weight: 600; }
+  .btn-chinh:hover:not(:disabled) { background: var(--primary-dark); }
+  .btn-phu { background: transparent; color: var(--muted); border: 1px solid #d3dbd3; }
+  .btn-phu:hover:not(:disabled) { color: var(--text); border-color: #aab5aa; }
+  .btn-tat { background: var(--danger); color: #fff; font-weight: 600; }
+
+  #khu-ket-qua { display: none; }
+  #khu-ket-qua.hien { display: block; }
+  #the { background: var(--card); border-radius: 20px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,.07); }
+  #khung-anh { background: #eef2ee; display: flex; justify-content: center; }
+  #khung-anh img, #khung-anh video { width: 100%; max-height: 300px; object-fit: contain; display: block; }
+  #phan-dap-an { padding: 24px; border-left: 6px solid var(--primary); }
+  #phan-dap-an.canh-bao { border-left-color: var(--warn); background: var(--warn-bg); }
+  #phan-dap-an.nguy-hiem { border-left-color: var(--danger); background: var(--danger-bg); }
+  #nhan { font-size: 2rem; font-weight: 700; margin: 0 0 10px; color: var(--primary-dark); line-height: 1.15; }
+  #phan-dap-an.canh-bao #nhan { color: var(--warn); }
+  #phan-dap-an.nguy-hiem #nhan { color: var(--danger); }
+  #huong-dan { font-size: 1.05rem; line-height: 1.55; margin: 0; }
+  #do-chac { color: var(--muted); font-size: .85rem; margin-top: 12px; }
+
+  details { margin-top: 14px; }
+  summary { cursor: pointer; color: var(--muted); font-size: .9rem; padding: 10px 4px; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▸ "; }
+  details[open] summary::before { content: "▾ "; }
+  .dong { display: flex; align-items: center; gap: 10px; padding: 7px 10px; font-size: .88rem; color: var(--muted); }
+  .dong .ten { width: 110px; flex-shrink: 0; }
+  .dong .nen { flex: 1; height: 6px; background: #e3e8e3; border-radius: 3px; overflow: hidden; }
+  .dong .day { height: 100%; background: #9bb89b; border-radius: 3px; transition: width .3s; }
+  .dong .so { width: 52px; text-align: right; }
+  .dong.top { color: var(--text); font-weight: 600; }
+  .dong.top .day { background: var(--primary); }
+
+  #nut-lai { margin-top: 18px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  footer { margin-top: 30px; font-size: .78rem; color: #9aa39a; text-align: center; max-width: 560px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>♻️ Bỏ vào thùng nào?</h1>
+  <p>Chọn một tấm ảnh, biết ngay cách vứt cho đúng</p>
+</header>
+
+<main>
+  <div id="khung-tha" onclick="document.getElementById('file-input').click()">
+    <div class="icon">📷</div>
+    <div class="chinh">Kéo ảnh vào đây</div>
+    <div class="phu">hoặc bấm để chọn ảnh từ máy</div>
+  </div>
+  <div id="hang-nut">
+    <button class="btn btn-chinh" onclick="document.getElementById('file-input').click()">Chọn ảnh</button>
+    <button class="btn btn-phu" id="nut-cam" onclick="gatCamera()">Dùng camera</button>
+  </div>
+  <input type="file" id="file-input" accept="image/*" hidden onchange="chonAnh(this.files[0]); this.value='';">
+
+  <div id="khu-ket-qua">
+    <div id="the">
+      <div id="khung-anh"></div>
+      <div id="phan-dap-an">
+        <p id="nhan">—</p>
+        <p id="huong-dan"></p>
+        <div id="do-chac"></div>
+      </div>
+    </div>
+    <details id="chi-tiet"><summary>Xem chi tiết từng loại</summary><div id="khung-nhan"></div></details>
+    <div id="nut-lai">
+      <button class="btn btn-chinh" id="nut-chup" onclick="chupHinh()" style="display:none">Chụp</button>
+      <button class="btn btn-chinh" onclick="document.getElementById('file-input').click()">Thử ảnh khác</button>
+      <button class="btn btn-phu" id="nut-cam-2" onclick="gatCamera()">Dùng camera</button>
+    </div>
+  </div>
+</main>
+
+<footer id="chan">
+  ResNet-18 · 94,4% trên ảnh dataset · <strong>57,1% trên ảnh đời thực</strong><br>
+  Con số thứ hai mới đúng với ảnh bạn tự chụp. Khi hiện "Chưa chắc" thì đừng tin kết quả.
+</footer>
+
+<script>
+  // Doi thanh URL service Render cua ban. Co the ghi de bang ?api=... de test.
+  const API_MAC_DINH = "https://garbage-classifier-api.onrender.com";
+  const API = new URLSearchParams(location.search).get("api") || API_MAC_DINH;
+
+  const $ = id => document.getElementById(id);
+  let stream = null, dangBatCam = false;
+
+  function moKetQua() { $("khung-tha").style.display = "none"; $("hang-nut").style.display = "none"; $("khu-ket-qua").classList.add("hien"); }
+  function veRong() { $("khung-tha").style.display = ""; $("hang-nut").style.display = ""; $("khu-ket-qua").classList.remove("hien"); }
+
+  function bao(tieuDe, noiDung, muc = "") {
+    $("phan-dap-an").className = muc;
+    $("nhan").textContent = tieuDe;
+    $("huong-dan").textContent = noiDung;
+    $("do-chac").textContent = "";
+  }
+
+  // ---------- Camera: chup 1 tam roi gui, khong gui lien tuc de do tai API ----------
+  function gatCamera() { dangBatCam ? tatCamera() : batCamera(); }
+
+  function capNhatNutCam(bat) {
+    [$("nut-cam"), $("nut-cam-2")].forEach(n => {
+      n.textContent = bat ? "Tắt camera" : "Dùng camera";
+      n.classList.toggle("btn-tat", bat);
+      n.classList.toggle("btn-phu", !bat);
+    });
+    $("nut-chup").style.display = bat ? "" : "none";
+  }
+
+  async function batCamera() {
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+    } catch (e) {
+      moKetQua(); bao("Không bật được camera", "Bạn cần cho phép quyền camera, và trang phải chạy qua HTTPS hoặc localhost.", "canh-bao");
+      return;
+    }
+    moKetQua();
+    const v = document.createElement("video");
+    v.autoplay = true; v.playsInline = true; v.srcObject = stream;
+    $("khung-anh").innerHTML = ""; $("khung-anh").appendChild(v);
+    dangBatCam = true; capNhatNutCam(true);
+    bao("Camera đang bật", "Đưa vật thể vào khung rồi bấm Chụp.");
+  }
+
+  function tatCamera() {
+    if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
+    dangBatCam = false; capNhatNutCam(false); veRong();
+  }
+
+  function chupHinh() {
+    const v = $("khung-anh").querySelector("video");
+    if (!v) return;
+    const c = document.createElement("canvas");
+    c.width = v.videoWidth; c.height = v.videoHeight;
+    c.getContext("2d").drawImage(v, 0, 0);
+    c.toBlob(b => { tatCamera(); chonAnh(new File([b], "camera.jpg", { type: "image/jpeg" })); }, "image/jpeg", 0.9);
+  }
+
+  // ---------- Chon anh + gui len API ----------
+  async function chonAnh(file) {
+    if (!file) return;
+    if (!file.type.startsWith("image/")) { moKetQua(); bao("Không phải file ảnh", "Hãy chọn một file ảnh (.jpg, .png…).", "canh-bao"); return; }
+    if (dangBatCam) tatCamera();
+
+    moKetQua();
+    const img = new Image();
+    img.onload = () => URL.revokeObjectURL(img.src);
+    img.src = URL.createObjectURL(file);
+    $("khung-anh").innerHTML = ""; $("khung-anh").appendChild(img);
+    bao("Đang nhận diện…", "Lần đầu có thể chờ tới một phút vì server miễn phí phải khởi động lại.");
+
+    const form = new FormData();
+    form.append("image", file);
+    try {
+      const res = await fetch(`${API}/predict`, { method: "POST", body: form });
+      const data = await res.json();
+      if (!res.ok) { bao("Lỗi", data.error || `Máy chủ trả về ${res.status}`, "canh-bao"); return; }
+      hienKetQua(data);
+    } catch (e) {
+      bao("Không gọi được máy chủ", `Kiểm tra lại đường dẫn API (${API}) hoặc thử lại sau ít phút.`, "canh-bao");
+    }
+  }
+
+  function hienKetQua(d) {
+    $("phan-dap-an").className = d.muc === "thuong" ? "" : d.muc;
+    $("nhan").textContent = d.chac_chan ? d.ten : "Chưa chắc";
+    $("huong-dan").textContent = d.chac_chan
+      ? d.goi_y_xu_ly
+      : `Máy nghiêng về ${d.ten.toLowerCase()} nhưng không đủ chắc để khuyên bạn. Thử ảnh rõ hơn, đủ sáng, mỗi lần một vật.`;
+    $("do-chac").textContent = d.chac_chan ? `Độ chắc chắn ${d.confidence}%` : `Cao nhất chỉ ${d.confidence}%`;
+
+    const khung = $("khung-nhan");
+    khung.innerHTML = "";
+    const capSapXep = Object.entries(d.all_scores).sort((a, b) => b[1] - a[1]);
+    for (const [ten, pct] of capSapXep) {
+      const row = document.createElement("div");
+      row.className = "dong" + (ten === d.ten ? " top" : "");
+      row.innerHTML = `<span class="ten"></span><div class="nen"><div class="day" style="width:${pct}%"></div></div><span class="so">${pct.toFixed(1)}%</span>`;
+      row.querySelector(".ten").textContent = ten;
+      khung.appendChild(row);
+    }
+  }
+
+  // ---------- Keo tha ----------
+  (function () {
+    const v = $("khung-tha");
+    ["dragenter", "dragover"].forEach(e => v.addEventListener(e, ev => { ev.preventDefault(); v.classList.add("dragover"); }));
+    ["dragleave", "drop"].forEach(e => v.addEventListener(e, ev => { ev.preventDefault(); v.classList.remove("dragover"); }));
+    v.addEventListener("drop", ev => { const f = ev.dataTransfer.files?.[0]; if (f) chonAnh(f); });
+    ["dragover", "drop"].forEach(e => document.body.addEventListener(e, ev => { if (!v.contains(ev.target)) ev.preventDefault(); }));
+  })();
+
+  // Danh thuc server som de bot canh nguoi dung cho 50 giay o lan upload dau.
+  fetch(`${API}/health`).catch(() => {});
+</script>
+
+</body>
+</html>
