@@ -105,7 +105,6 @@
     </div>
     <details id="chi-tiet"><summary>Xem chi tiết từng loại</summary><div id="khung-nhan"></div></details>
     <div id="nut-lai">
-      <button class="btn btn-chinh" id="nut-chup" onclick="chupHinh()" style="display:none">Chụp</button>
       <button class="btn btn-chinh" onclick="document.getElementById('file-input').click()">Thử ảnh khác</button>
       <button class="btn btn-phu" id="nut-cam-2" onclick="gatCamera()">Dùng camera</button>
     </div>
@@ -122,8 +121,16 @@
   const API_MAC_DINH = "https://garbage-classifier-0dbq.onrender.com";
   const API = new URLSearchParams(location.search).get("api") || API_MAC_DINH;
 
+  // Khoang cach giua 2 lan nhan dien khi bat camera. Model chay tren server
+  // nen moi khung hinh la 1 request HTTP ~2 giay - khong the gui 30 khung/giay
+  // nhu ban chay model trong trinh duyet. 1,5 giay la du muot ma khong dim API.
+  const CHU_KY_MS = 1500;
+  // Thu nho khung hinh truoc khi gui: server dang nao cung resize ve 224px,
+  // gui anh 1920px chi ton bang thong. 320px -> moi lan ~15 KB thay vi ~200 KB.
+  const CANH_NGAN_GUI = 320;
+
   const $ = id => document.getElementById(id);
-  let stream = null, dangBatCam = false;
+  let stream = null, dangBatCam = false, dangGui = false;
 
   function moKetQua() { $("khung-tha").style.display = "none"; $("hang-nut").style.display = "none"; $("khu-ket-qua").classList.add("hien"); }
   function veRong() { $("khung-tha").style.display = ""; $("hang-nut").style.display = ""; $("khu-ket-qua").classList.remove("hien"); }
@@ -144,7 +151,6 @@
       n.classList.toggle("btn-tat", bat);
       n.classList.toggle("btn-phu", !bat);
     });
-    $("nut-chup").style.display = bat ? "" : "none";
   }
 
   async function batCamera() {
@@ -159,7 +165,8 @@
     v.autoplay = true; v.playsInline = true; v.srcObject = stream;
     $("khung-anh").innerHTML = ""; $("khung-anh").appendChild(v);
     dangBatCam = true; capNhatNutCam(true);
-    bao("Camera đang bật", "Đưa vật thể vào khung rồi bấm Chụp.");
+    bao("Đưa vật thể vào khung", "Đang nhận diện liên tục, không cần bấm gì.");
+    v.addEventListener("loadedmetadata", () => vongNhanDien(v), { once: true });
   }
 
   function tatCamera() {
@@ -167,13 +174,36 @@
     dangBatCam = false; capNhatNutCam(false); veRong();
   }
 
-  function chupHinh() {
-    const v = $("khung-anh").querySelector("video");
-    if (!v) return;
+  /** Lay 1 khung hinh, thu nho lai cho nhe roi tra ve dang Blob JPEG. */
+  function layKhungHinh(v) {
+    const ti = Math.min(CANH_NGAN_GUI / Math.min(v.videoWidth, v.videoHeight), 1);
     const c = document.createElement("canvas");
-    c.width = v.videoWidth; c.height = v.videoHeight;
-    c.getContext("2d").drawImage(v, 0, 0);
-    c.toBlob(b => { tatCamera(); chonAnh(new File([b], "camera.jpg", { type: "image/jpeg" })); }, "image/jpeg", 0.9);
+    c.width = Math.round(v.videoWidth * ti);
+    c.height = Math.round(v.videoHeight * ti);
+    c.getContext("2d").drawImage(v, 0, 0, c.width, c.height);
+    return new Promise(res => c.toBlob(res, "image/jpeg", 0.85));
+  }
+
+  /** Nhan dien lien tuc: gui 1 khung moi CHU_KY_MS, va chi gui khi lan truoc
+   *  da xong - khong de request don cuc lai khi mang cham. */
+  async function vongNhanDien(v) {
+    while (dangBatCam && stream) {
+      if (!dangGui) {
+        dangGui = true;
+        try {
+          const blob = await layKhungHinh(v);
+          const form = new FormData();
+          form.append("image", blob, "camera.jpg");
+          const res = await fetch(`${API}/predict`, { method: "POST", body: form });
+          if (res.ok && dangBatCam) hienKetQua(await res.json());
+        } catch (e) {
+          /* mang chap chon thi bo qua lan nay, vong sau thu lai */
+        } finally {
+          dangGui = false;
+        }
+      }
+      await new Promise(r => setTimeout(r, CHU_KY_MS));
+    }
   }
 
   // ---------- Chon anh + gui len API ----------
