@@ -3,7 +3,7 @@
 Pipeline huấn luyện ResNet-18 (PyTorch) phân loại ảnh rác thành 7 nhóm:
 `battery`, `cardboard`, `clothes`, `glass`, `metal`, `paper`, `plastic`.
 
-Kèm ba giao diện sử dụng: desktop (PyQt5), web (Gradio + TensorFlow.js), và API (Flask).
+Kèm ba giao diện sử dụng: desktop (PyQt5), web (TensorFlow.js), và API (Flask).
 
 ---
 
@@ -67,7 +67,6 @@ garbage_classifier/        Pipeline train + đánh giá (phần chính)
     train.py               Lệnh train
     evaluate.py            Lệnh đánh giá
     predict.py             Dự đoán 1 ảnh
-  app.py                   Web demo Gradio
   artifacts/               Checkpoint + số liệu (không đẩy lên git)
 
 trash_ai_ui/               Giao diện sử dụng
@@ -126,14 +125,6 @@ uv run garbage-predict "anh.jpg" --checkpoint "artifacts/lan1/best_model.pt"
 ```
 
 ## Ba giao diện
-
-**Web (Gradio)** — từ `garbage_classifier`:
-
-```bash
-uv run python app.py
-```
-
-Mở `http://127.0.0.1:7860`.
 
 **Desktop (PyQt5)** — từ `trash_ai_ui`, cần `pip install -r requirements.txt`:
 
