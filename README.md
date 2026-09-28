@@ -124,7 +124,7 @@ Dự đoán một ảnh:
 uv run garbage-predict "anh.jpg" --checkpoint "artifacts/lan1/best_model.pt"
 ```
 
-## Ba giao diện
+## Giao diện desktop và API
 
 **Desktop (PyQt5)** — từ `trash_ai_ui`, cần `pip install -r requirements.txt`:
 
