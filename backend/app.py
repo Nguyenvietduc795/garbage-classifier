@@ -1,7 +1,7 @@
-"""API phan loai rac - model Teachable Machine 4 nhom (Keras), trien khai tren Render.
+"""API phan loai rac - ResNet-18 8 loai (PyTorch), gop thanh 4 nhom, trien khai tren Render.
 
-4 nhom: rac huu co, rac nguy hai, rac tai che, rac khong the tai che.
-Model va labels.txt xuat tu Teachable Machine (converted_keras.zip).
+Cung model va cung cach gop nhom voi trang web (frontend/) va giao dien desktop.
+Trang web hien tu chay model trong trinh duyet; API nay danh cho ai can goi qua HTTP.
 
 Chay local:
     python app.py
@@ -10,89 +10,89 @@ Chay production (Render dung lenh nay):
 """
 from __future__ import annotations
 
+import gc
 import io
 import os
 from pathlib import Path
 
-# Tat log INFO cua TensorFlow. TF 2.15 di kem Keras 2 nen doc duoc file .h5 cua
-# Teachable Machine - dung nang len TF 2.16+ (Keras 3 khong doc duoc).
-os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
-
-import numpy as np
-import tensorflow as tf
+import torch
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from PIL import Image, ImageOps, UnidentifiedImageError
+from PIL import Image, UnidentifiedImageError
+from torch import nn
+from torchvision import transforms
+from torchvision.models import resnet18
 
-# Render goi mien phi chi co 512 MB RAM. Moi request chi chay 1 anh nen
-# gioi han 1 thread khong mat gi ve toc do ma bot ton bo nho.
-tf.config.threading.set_inter_op_parallelism_threads(1)
-tf.config.threading.set_intra_op_parallelism_threads(1)
+# Render goi mien phi chi co 512 MB RAM. Gioi han torch o 1 thread giup giam
+# dang ke bo nho va so thread nen sinh ra - dang nao moi request cung chi
+# chay 1 anh nen khong mat gi ve toc do.
+torch.set_num_threads(1)
 
-THU_MUC = Path(__file__).parent
-MODEL_PATH = THU_MUC / "keras_model.h5"
-LABELS_PATH = THU_MUC / "labels.txt"
+MODEL_PATH = Path(__file__).parent / "model.pt"
 IMAGE_SIZE = 224
-NGUONG_TIN_CAY = 0.60
+# Giong trang web: model train co label smoothing nen xac suat hiem khi vuot 90%.
+NGUONG_TIN_CAY = 0.50
 MAX_UPLOAD_BYTES = 10 * 1024 * 1024  # 10 MB
+IMAGENET_MEAN = (0.485, 0.456, 0.406)
+IMAGENET_STD = (0.229, 0.224, 0.225)
 
-# Nhan trong labels.txt -> (ten nhom, vi du vat the, huong dan xu ly, muc hien thi)
-NHOM_RAC = {
-    "organic waste": (
-        "Rác hữu cơ", "Thức ăn thừa, rau củ quả, vỏ trái cây",
-        "Bỏ vào thùng rác hữu cơ hoặc ủ làm phân compost.", "huu-co"),
-    "hazardous waste": (
-        "Rác nguy hại", "Pin, ắc quy",
-        "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. "
-        "Mang tới điểm thu gom pin cũ, rác nguy hại.", "nguy-hiem"),
-    "recyclable waste": (
-        "Rác tái chế", "Carton, thủy tinh, chai nhựa, giấy, kim loại",
-        "Rửa sạch, để khô, gấp gọn rồi bỏ vào thùng tái chế. Lon, giấy, carton bán ve chai được.",
-        "tai-che"),
-    "non-recyclable waste": (
-        "Rác không thể tái chế", "Quần áo, dép, khẩu trang",
-        "Bỏ vào thùng rác còn lại. Quần áo còn mặc được thì nên quyên góp.", "khong-tai-che"),
+# Loai vat lieu (lop cua model) -> nhom rac
+LOAI_VAO_NHOM = {
+    "organic": "huu-co",
+    "battery": "nguy-hiem",
+    "cardboard": "tai-che", "glass": "tai-che", "metal": "tai-che",
+    "paper": "tai-che", "plastic": "tai-che",
+    "clothes": "khong-tai-che",
 }
 
-
-class PatchedDepthwiseConv2D(tf.keras.layers.DepthwiseConv2D):
-    """Teachable Machine luu them tham so `groups` ma DepthwiseConv2D khong nhan."""
-
-    def __init__(self, **kwargs):
-        kwargs.pop("groups", None)
-        super().__init__(**kwargs)
-
+# Nhom -> (ten, vi du vat the, huong dan xu ly). Khoa nhom cung la "muc" de to mau.
+NHOM_RAC = {
+    "huu-co": ("Rác hữu cơ", "Thức ăn thừa, rau củ quả, vỏ trái cây",
+               "Bỏ vào thùng rác hữu cơ hoặc ủ làm phân compost."),
+    "nguy-hiem": ("Rác nguy hại", "Pin, ắc quy",
+                  "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. "
+                  "Mang tới điểm thu gom pin cũ, rác nguy hại."),
+    "tai-che": ("Rác tái chế", "Carton, thủy tinh, chai nhựa, giấy, kim loại",
+                "Rửa sạch, để khô, gấp gọn rồi bỏ vào thùng tái chế. Lon, giấy, carton bán ve chai được."),
+    "khong-tai-che": ("Rác không thể tái chế", "Quần áo, dép, khẩu trang",
+                      "Bỏ vào thùng rác còn lại. Quần áo còn mặc được thì nên quyên góp."),
+}
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = MAX_UPLOAD_BYTES
 
-# Frontend nam tren domain khac (Vercel) nen trinh duyet bat buoc phai co CORS.
+# Goi tu domain khac (vd. trang Vercel) thi trinh duyet bat buoc phai co CORS.
 # Dat ALLOWED_ORIGINS tren Render de gioi han lai dung domain cua ban.
 CORS(app, resources={r"/predict": {"origins": os.environ.get("ALLOWED_ORIGINS", "*")}})
 
-model = tf.keras.models.load_model(
-    MODEL_PATH, custom_objects={"DepthwiseConv2D": PatchedDepthwiseConv2D}, compile=False)
+checkpoint = torch.load(MODEL_PATH, map_location="cpu", weights_only=False)
+classes: list[str] = checkpoint["classes"]
 
-# labels.txt co dang "0 organic waste", "1 hazardous waste", ...
-classes: list[str] = [
-    line.strip().split(" ", 1)[1]
-    for line in LABELS_PATH.read_text(encoding="utf-8").splitlines() if line.strip()
-]
+model = resnet18(weights=None)
+model.fc = nn.Linear(model.fc.in_features, len(classes))
+model.load_state_dict(checkpoint["model_state_dict"])
+model.eval()
 
-print(f"Da nap model: {len(classes)} nhom - {', '.join(classes)}")
+# Checkpoint giu them 1 ban sao day du cua trong so cong voi lich su train.
+# Khong giai phong thi no nam lai suot doi tien trinh - dang ke khi chi co
+# 512 MB RAM. Danh sach lop da copy ra bien `classes` o tren roi.
+del checkpoint
+gc.collect()
 
+transform = transforms.Compose([
+    transforms.Resize(int(IMAGE_SIZE / 0.875)),
+    transforms.CenterCrop(IMAGE_SIZE),
+    transforms.ToTensor(),
+    transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD),
+])
 
-def tien_xu_ly(image: Image.Image) -> np.ndarray:
-    """Giong Teachable Machine: cat vuong o giua, resize 224, chuan hoa ve [-1, 1]."""
-    image = ImageOps.fit(image.convert("RGB"), (IMAGE_SIZE, IMAGE_SIZE), Image.Resampling.LANCZOS)
-    arr = np.asarray(image, dtype=np.float32) / 127.5 - 1
-    return arr[np.newaxis]
+print(f"Da nap model: {len(classes)} loai - {', '.join(classes)}")
 
 
 @app.route("/health", methods=["GET"])
 def health():
     """Render dung endpoint nay de kiem tra service con song."""
-    return jsonify({"status": "ok", "classes": classes})
+    return jsonify({"status": "ok", "classes": classes, "groups": list(NHOM_RAC)})
 
 
 @app.route("/predict", methods=["POST"])
@@ -101,35 +101,42 @@ def predict():
         return jsonify({"error": "Vui lòng gửi file ảnh với key 'image'"}), 400
 
     try:
-        batch = tien_xu_ly(Image.open(io.BytesIO(request.files["image"].read())))
+        image = Image.open(io.BytesIO(request.files["image"].read()))
+        tensor = transform(image.convert("RGB")).unsqueeze(0)
     except (UnidentifiedImageError, OSError):
         return jsonify({"error": "Không đọc được file ảnh"}), 400
 
-    probabilities = model(batch, training=False).numpy()[0]
+    with torch.inference_mode():
+        probabilities = torch.softmax(model(tensor), dim=1)[0].tolist()
 
-    top_index = int(probabilities.argmax())
-    confidence = float(probabilities[top_index])
-    ten, vi_du, huong_dan, muc = NHOM_RAC.get(classes[top_index], (classes[top_index], "", "", "tai-che"))
+    theo_nhom = dict.fromkeys(NHOM_RAC, 0.0)
+    for loai, p in zip(classes, probabilities):
+        theo_nhom[LOAI_VAO_NHOM[loai]] += p
+
+    # Chon nhom theo LOAI co xac suat cao nhat, khong theo tong xac suat nhom:
+    # nhom tai che gom 5 loai, cong lai de lan at pin (44 dung so voi 42 / 49 anh that).
+    top_index = max(range(len(classes)), key=probabilities.__getitem__)
+    nhom = LOAI_VAO_NHOM[classes[top_index]]
+    confidence = theo_nhom[nhom]
+    ten, vi_du, huong_dan = NHOM_RAC[nhom]
     chac_chan = confidence >= NGUONG_TIN_CAY
 
     return jsonify({
-        "class": classes[top_index],
+        "class": nhom,
+        "loai": classes[top_index],
         "ten": ten,
         "vi_du": vi_du,
         "confidence": round(confidence * 100, 2),
         "chac_chan": chac_chan,
-        "muc": muc if chac_chan else "canh-bao",
+        "muc": nhom if chac_chan else "canh-bao",
         "goi_y_xu_ly": huong_dan if chac_chan else "Độ tin cậy thấp — chưa đưa gợi ý.",
-        "all_scores": {
-            NHOM_RAC.get(name, (name,))[0]: round(float(score) * 100, 2)
-            for name, score in zip(classes, probabilities)
-        },
+        "all_scores": {NHOM_RAC[k][0]: round(v * 100, 2) for k, v in theo_nhom.items()},
     })
 
 
 @app.route("/", methods=["GET"])
 def home():
-    return jsonify({"service": "API phân loại rác", "endpoint": "POST /predict", "classes": classes})
+    return jsonify({"service": "API phân loại rác", "endpoint": "POST /predict", "groups": list(NHOM_RAC)})
 
 
 if __name__ == "__main__":

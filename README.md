@@ -190,9 +190,9 @@ python app.py
 Gửi `POST /predict` kèm file ảnh, trả về JSON có `class`, `ten`, `confidence`, `chac_chan`,
 `goi_y_xu_ly`, `all_scores`.
 
-**Web `frontend/` dùng ResNet-18 8 loại** (xem đầu file). Desktop, API, `backend/` và
-`trash_ai_ui/index.html` vẫn dùng model Teachable Machine 4 nhóm của nhóm — chính xác kém
-hơn (37/49). Desktop và API cần Python 3.11 (TensorFlow 2.15).
+**Web `frontend/`, desktop, API và `backend/` cùng dùng ResNet-18 8 loại** (xem đầu file),
+gộp thành 4 nhóm theo cùng một cách, nên cho cùng kết quả. Riêng `trash_ai_ui/index.html`
+còn dùng model Teachable Machine cũ (37/49).
 
 ---
 

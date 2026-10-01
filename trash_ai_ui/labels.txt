@@ -1,4 +1,0 @@
-0 organic waste
-1 hazardous waste
-2 recyclable waste
-3 non-recyclable waste

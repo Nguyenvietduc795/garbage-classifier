@@ -5,7 +5,7 @@ File nay dung lai cac ham trong phan_loai_rac.py (phai de 2 file
 CUNG THU MUC), chi them phan giao dien - khong doi logic AI.
 
 Cai thu vien truoc khi chay:
-    pip install -r requirements.txt   (Python 3.11, vi TensorFlow 2.15)
+    pip install -r requirements.txt
 
 Chay:
     python giao_dien_pyqt.py
@@ -13,9 +13,11 @@ Chay:
 
 import sys
 
-# Import phan_loai_rac (keo theo TensorFlow) TRUOC PyQt5. Tren Windows, PyQt5
-# va thu vien AI cung dong goi DLL OpenMP/MKL - nap PyQt5 truoc co the lam thu
-# vien AI bao loi khoi tao DLL. Dung chuyen dong import nay xuong duoi.
+# QUAN TRONG - PHAI import phan_loai_rac (keo theo torch) TRUOC PyQt5.
+# Tren Windows, PyQt5 va torch cung dong goi thu vien Intel MKL/OpenMP.
+# Neu PyQt5 nap truoc thi torch khong khoi tao duoc DLL va bao loi:
+#   OSError: [WinError 1114] ... Error loading "...\torch\lib\c10.dll"
+# Dung chuyen dong import nay xuong duoi.
 from phan_loai_rac import (
     load_model_and_labels,
     predict_trash,
@@ -34,7 +36,9 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QColor
 
-NGUONG_TIN_CAY = 0.6
+# Giong trang web: model train co label smoothing nen xac suat hiem khi vuot 90%;
+# 0,5 cho nhieu cau tra loi dung hon 0,6 ma chi them 1 cau sai tren 49 anh that.
+NGUONG_TIN_CAY = 0.5
 
 # ======================================================================
 # BANG MAU & STYLESHEET (QSS) - noi tap trung toan bo phong cach giao dien

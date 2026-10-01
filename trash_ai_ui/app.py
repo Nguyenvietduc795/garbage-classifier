@@ -1,5 +1,5 @@
 """
-API PHAN LOAI RAC - model Teachable Machine 4 nhom (Keras)
+API PHAN LOAI RAC - model ResNet-18 8 loai (PyTorch), gop thanh 4 nhom
 ----------------------------------------------------------------
 Dung chung model va tien xu ly voi giao dien PyQt (phan_loai_rac.py),
 nen API va desktop luon tra ve cung mot ket qua cho cung mot anh.
@@ -22,8 +22,8 @@ from PIL import Image, UnidentifiedImageError
 from phan_loai_rac import load_model_and_labels, preprocess_pil, thong_tin_nhom
 
 # Nguong tin cay: duoi muc nay thi khong dua ra goi y xu ly,
-# giong het cach giao dien PyQt lam.
-NGUONG_TIN_CAY = 0.6
+# giong het giao dien PyQt va trang web.
+NGUONG_TIN_CAY = 0.5
 
 app = Flask(__name__)
 
@@ -38,13 +38,12 @@ def predict():
 
     try:
         image = Image.open(io.BytesIO(request.files["image"].read()))
+        tensor = preprocess_pil(image)
     except (UnidentifiedImageError, OSError):
         return jsonify({"error": "Khong doc duoc file anh"}), 400
 
-    predictions = model(preprocess_pil(image), training=False).numpy()[0]
-    top_index = int(predictions.argmax())
-    confidence = float(predictions[top_index])
-    label = class_names[top_index]
+    label, theo_nhom = model.du_doan(tensor)
+    confidence = float(theo_nhom[class_names.index(label)])
     nhom = thong_tin_nhom(label)
     chac_chan = confidence >= NGUONG_TIN_CAY
 
@@ -57,7 +56,7 @@ def predict():
         "goi_y_xu_ly": nhom["huong_dan"] if chac_chan else "Do tin cay thap - khong dua ra goi y.",
         "all_scores": {
             thong_tin_nhom(name)["ten"]: round(float(score) * 100, 2)
-            for name, score in zip(class_names, predictions)
+            for name, score in zip(class_names, theo_nhom)
         },
     })
 

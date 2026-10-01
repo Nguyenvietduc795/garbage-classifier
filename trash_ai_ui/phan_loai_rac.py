@@ -1,16 +1,18 @@
 """
-PHAN LOAI RAC - model Teachable Machine 4 nhom (Keras).
+PHAN LOAI RAC - model ResNet-18 8 loai (PyTorch), gop thanh 4 nhom.
 
-4 nhom: rac huu co, rac nguy hai, rac tai che, rac khong the tai che.
-Model (keras_model.h5) va labels.txt xuat tu Teachable Machine.
+Model phan 8 loai vat lieu (battery, cardboard, clothes, glass, metal, organic,
+paper, plastic); giao dien chi hien 4 nhom: rac huu co, rac tai che, rac khong
+the tai che, rac nguy hai. Cung model va cung cach gop nhom voi trang web
+(frontend/), nen desktop, API va web luon cho cung ket qua.
 
-Ban ResNet-18 7 loai truoc do van con trong lich su git neu can quay lai.
+Giao dien `giao_dien_pyqt.py` dung 3 thu: `load_model_and_labels`,
+`predict_trash`, `thong_tin_nhom`.
 
-Cai thu vien (TensorFlow 2.15 chi chay tren Python 3.9 - 3.11):
+Cai thu vien:
     pip install -r requirements.txt
 """
 
-import os
 import sys
 
 # Ten nhom co dau (Rác hữu cơ...): console Windows mac dinh cp1252 se bao
@@ -18,116 +20,142 @@ import sys
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-# Tat log INFO cua TensorFlow. TF 2.15 di kem Keras 2 nen doc duoc file .h5 cua
-# Teachable Machine - dung nang len TF 2.16+ (Keras 3 khong doc duoc).
-os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
-
 import cv2
 import numpy as np
-import tensorflow as tf
-from PIL import Image, ImageOps
+import torch
+from PIL import Image
+from torch import nn
+from torchvision import transforms
+from torchvision.models import resnet18
 
 # ======================================================================
 # CAU HINH
 # ======================================================================
 
-# Tep model va nhan (xuat tu Teachable Machine - dinh dang Keras)
-MODEL_PATH = "keras_model.h5"
-LABELS_PATH = "labels.txt"
+# Checkpoint ResNet-18 8 loai (garbage_classifier/artifacts/v2_r18/best_model.pt)
+MODEL_PATH = "garbage_resnet18.pt"
 
-# Kich thuoc anh dau vao ma Teachable Machine dung de train
+# Kich thuoc anh dau vao
 IMAGE_SIZE = 224
 
-# Nhan trong labels.txt -> thong tin nhom hien cho nguoi dung.
-#   ten:          ten co dau, dung cho giao dien PyQt / API
+# Chuan hoa theo ImageNet - PHAI khop voi luc train.
+IMAGENET_MEAN = (0.485, 0.456, 0.406)
+IMAGENET_STD = (0.229, 0.224, 0.225)
+
+# Loai vat lieu (lop cua model) -> nhom rac hien cho nguoi dung
+LOAI_VAO_NHOM = {
+    "organic": "huu-co",
+    "battery": "nguy-hiem",
+    "cardboard": "tai-che", "glass": "tai-che", "metal": "tai-che",
+    "paper": "tai-che", "plastic": "tai-che",
+    "clothes": "khong-tai-che",
+}
+
+# Thong tin tung nhom. Khoa nhom cung la "muc" dung de to mau.
+#   ten:           ten co dau, dung cho giao dien PyQt / API
 #   ten_khong_dau: cv2.putText khong ve duoc chu co dau
-#   muc:          dung de to mau theo nhom
 NHOM_RAC = {
-    "organic waste": {
+    "huu-co": {
         "ten": "Rác hữu cơ", "ten_khong_dau": "Rac huu co", "muc": "huu-co",
         "vi_du": "Thức ăn thừa, rau củ quả, vỏ trái cây",
         "huong_dan": "Bỏ vào thùng rác hữu cơ hoặc ủ làm phân compost.",
     },
-    "hazardous waste": {
+    "nguy-hiem": {
         "ten": "Rác nguy hại", "ten_khong_dau": "Rac nguy hai", "muc": "nguy-hiem",
         "vi_du": "Pin, ắc quy",
         "huong_dan": "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. "
                      "Mang tới điểm thu gom pin cũ, rác nguy hại.",
     },
-    "recyclable waste": {
+    "tai-che": {
         "ten": "Rác tái chế", "ten_khong_dau": "Rac tai che", "muc": "tai-che",
         "vi_du": "Carton, thủy tinh, chai nhựa, giấy, kim loại",
         "huong_dan": "Rửa sạch, để khô, gấp gọn rồi bỏ vào thùng tái chế. "
                      "Lon, giấy, carton bán ve chai được.",
     },
-    "non-recyclable waste": {
+    "khong-tai-che": {
         "ten": "Rác không thể tái chế", "ten_khong_dau": "Rac khong the tai che",
         "muc": "khong-tai-che",
         "vi_du": "Quần áo, dép, khẩu trang",
         "huong_dan": "Bỏ vào thùng rác còn lại. Quần áo còn mặc được thì nên quyên góp.",
     },
 }
+DANH_SACH_NHOM = list(NHOM_RAC)
 
-# Giu ten cu cho code nao con dung: nhan -> huong dan xu ly
-GOI_Y_XU_LY = {nhan: nhom["huong_dan"] for nhan, nhom in NHOM_RAC.items()}
-
-
-def thong_tin_nhom(label):
-    """Tra ve dict thong tin nhom cho 1 nhan; nhan la thi tra ve ban toi thieu."""
-    return NHOM_RAC.get(label, {
-        "ten": label, "ten_khong_dau": label, "muc": "tai-che", "vi_du": "", "huong_dan": "",
-    })
+# Giu ten cu cho code nao con dung: nhom -> huong dan xu ly
+GOI_Y_XU_LY = {nhom: info["huong_dan"] for nhom, info in NHOM_RAC.items()}
 
 
-# ======================================================================
-# LOP DepthwiseConv2D VA LOI TUONG THICH
-# (Teachable Machine luu them tham so 'groups' ma DepthwiseConv2D khong nhan)
-# ======================================================================
-class PatchedDepthwiseConv2D(tf.keras.layers.DepthwiseConv2D):
-    def __init__(self, **kwargs):
-        kwargs.pop("groups", None)
-        super().__init__(**kwargs)
+def thong_tin_nhom(nhom):
+    """Tra ve dict thong tin cua 1 nhom rac."""
+    return NHOM_RAC[nhom]
 
 
 # ======================================================================
-# NAP MODEL VA NHAN
+# NAP MODEL
 # ======================================================================
-def load_model_and_labels(model_path=MODEL_PATH, labels_path=LABELS_PATH):
+class ModelGopNhom:
+    """Boc model 8 loai, dung chung cho desktop va API."""
+
+    def __init__(self, net, classes):
+        self.net = net
+        self.classes = classes
+
+    def du_doan(self, tensor):
+        """
+        Tra ve (nhom_duoc_chon, mang xac suat 4 nhom theo DANH_SACH_NHOM).
+        Chon nhom theo LOAI co xac suat cao nhat, khong theo tong xac suat nhom:
+        nhom tai che gom 5 loai, cong 5 xac suat nho lai de lan at pin
+        (do tren 49 anh that: 44 dung so voi 42). Xac suat nhom = tong cac loai.
+        """
+        with torch.inference_mode():
+            xac_suat = torch.softmax(self.net(tensor), dim=1)[0].numpy()
+        theo_nhom = np.zeros(len(DANH_SACH_NHOM), dtype=np.float32)
+        for loai, p in zip(self.classes, xac_suat):
+            theo_nhom[DANH_SACH_NHOM.index(LOAI_VAO_NHOM[loai])] += p
+        return LOAI_VAO_NHOM[self.classes[int(xac_suat.argmax())]], theo_nhom
+
+
+def load_model_and_labels(model_path=MODEL_PATH, labels_path=None):
     """
-    Nap model phan loai rac (Keras/TensorFlow) va danh sach nhan.
-    Tra ve: (model, class_names)
+    Nap model ResNet-18 8 loai.
+    Tra ve: (model, danh_sach_nhom) - danh sach 4 nhom, cung thu tu voi mang
+    xac suat ma predict_trash tra ve. `labels_path` giu lai cho tuong thich
+    nguoc, khong dung toi (danh sach lop nam san trong checkpoint).
     """
-    model = tf.keras.models.load_model(
-        model_path,
-        custom_objects={"DepthwiseConv2D": PatchedDepthwiseConv2D},
-        compile=False,
-    )
+    checkpoint = torch.load(model_path, map_location="cpu", weights_only=False)
+    classes = checkpoint["classes"]
+    net = resnet18(weights=None)
+    net.fc = nn.Linear(net.fc.in_features, len(classes))
+    net.load_state_dict(checkpoint["model_state_dict"])
+    net.eval()
 
-    with open(labels_path, "r", encoding="utf-8") as f:
-        # labels.txt co dang: "0 organic waste", "1 hazardous waste", ...
-        class_names = [line.strip().split(" ", 1)[1] for line in f if line.strip()]
-
-    print(f"Da nap model thanh cong! Cac nhom rac: {class_names}")
-    return model, class_names
+    print(f"Da nap model ResNet-18 - {len(classes)} loai: {classes}")
+    return ModelGopNhom(net, classes), DANH_SACH_NHOM
 
 
 # ======================================================================
 # TIEN XU LY ANH
 # ======================================================================
+_TRANSFORM = transforms.Compose([
+    transforms.Resize(int(IMAGE_SIZE / 0.875)),
+    transforms.CenterCrop(IMAGE_SIZE),
+    transforms.ToTensor(),
+    transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD),
+])
+
+
 def preprocess_pil(image):
     """
-    Chuyen 1 anh PIL thanh mang dau vao cho model, giong het Teachable Machine:
-    cat vuong o giua -> resize 224x224 -> chuan hoa pixel ve [-1, 1].
-    Dung chung cho giao dien PyQt lan API Flask, de hai ben khong lech ket qua.
+    Chuyen 1 anh PIL thanh tensor cho model, giong luc train:
+    canh ngan ve 256 -> cat giua 224 -> chuan hoa ImageNet.
+    Dung chung cho giao dien PyQt lan API Flask.
     """
-    image = ImageOps.fit(image.convert("RGB"), (IMAGE_SIZE, IMAGE_SIZE), Image.Resampling.LANCZOS)
-    arr = np.asarray(image, dtype=np.float32) / 127.5 - 1
-    return arr[np.newaxis]
+    return _TRANSFORM(image.convert("RGB")).unsqueeze(0)
 
 
 def preprocess_frame(frame):
     """
-    Chuyen 1 khung hinh BGR (OpenCV) thanh mang dau vao cho model.
+    Chuyen 1 khung hinh BGR (OpenCV) thanh tensor cho model.
     """
     img_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     return preprocess_pil(Image.fromarray(img_rgb))
@@ -136,24 +164,20 @@ def preprocess_frame(frame):
 # ======================================================================
 # DU DOAN NHOM RAC
 # ======================================================================
-def predict_trash(frame, model, class_names):
+def predict_trash(frame, model, class_names=None):
     """
     Du doan nhom rac tu 1 khung hinh.
-    Tra ve: (nhan_du_doan, do_tin_cay, mang_xac_suat_tat_ca_class)
-    Mang xac suat cung thu tu voi `class_names` de giao dien zip duoc.
+    Tra ve: (nhom_du_doan, do_tin_cay, mang_xac_suat_4_nhom)
+    Mang xac suat cung thu tu voi danh sach nhom ma load_model_and_labels tra ve.
     """
-    # Goi model truc tiep thay vi model.predict(): nhanh hon nhieu khi chi co
-    # 1 anh, quan trong voi webcam chay ~30 khung/giay.
-    predictions = model(preprocess_frame(frame), training=False).numpy()[0]
-
-    max_idx = int(predictions.argmax())
-    return class_names[max_idx], float(predictions[max_idx]), predictions
+    nhom, theo_nhom = model.du_doan(preprocess_frame(frame))
+    return nhom, float(theo_nhom[DANH_SACH_NHOM.index(nhom)]), theo_nhom
 
 
 # ======================================================================
 # VE KET QUA LEN ANH
 # ======================================================================
-def draw_result(frame, label, confidence, threshold=0.6):
+def draw_result(frame, label, confidence, threshold=0.5):
     """
     Ve ten nhom + % tin cay len khung hinh de hien thi.
     """
@@ -173,7 +197,7 @@ def draw_result(frame, label, confidence, threshold=0.6):
 # ======================================================================
 # XU LY 1 ANH TINH
 # ======================================================================
-def process_image(image_path, model, class_names, threshold=0.6):
+def process_image(image_path, model, class_names, threshold=0.5):
     """
     Doc 1 file anh, du doan nhom rac, hien thi ket qua + goi y xu ly.
     """
@@ -204,7 +228,7 @@ def process_image(image_path, model, class_names, threshold=0.6):
 # ======================================================================
 # XU LY TRUC TIEP QUA WEBCAM
 # ======================================================================
-def process_webcam(model, class_names, threshold=0.6, camera_index=0):
+def process_webcam(model, class_names, threshold=0.5, camera_index=0):
     """
     Mo webcam, phan loai rac theo thoi gian thuc.
     Nhan phim 'q' de thoat.
