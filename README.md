@@ -138,11 +138,12 @@ python giao_dien_pyqt.py
 python app.py
 ```
 
-Gửi `POST /predict` kèm file ảnh, trả về JSON có `class`, `confidence`, `chac_chan`,
+Gửi `POST /predict` kèm file ảnh, trả về JSON có `class`, `ten`, `confidence`, `chac_chan`,
 `goi_y_xu_ly`, `all_scores`.
 
-Desktop và API dùng chung `phan_loai_rac.py` nên **luôn cho cùng kết quả**.
-Riêng `index.html` vẫn chạy model Teachable Machine cũ nên kết quả lệch.
+**Các giao diện (desktop, API, web `trash_ai_ui/index.html`, web `frontend/` + `backend/`)
+hiện dùng model Teachable Machine 4 nhóm** — hữu cơ, tái chế, không thể tái chế, nguy hại —
+chứ không dùng ResNet-18 7 lớp ở trên. Desktop và API cần Python 3.11 (TensorFlow 2.15).
 
 ---
 

@@ -4,12 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bỏ vào thùng nào?</title>
+<!-- TensorFlow.js tu phuc vu tu Vercel, khong phu thuoc CDN ben ngoai -->
+<script src="lib/tf.min.js"></script>
 <style>
   :root {
     --primary: #2e7d32; --primary-dark: #1b5e20;
     --bg: #f4f7f4; --card: #fff; --text: #1a1a1a; --muted: #6b7280;
     --warn: #b45309; --warn-bg: #fffbeb;
     --danger: #b91c1c; --danger-bg: #fef2f2;
+    /* Mau rieng cho tung nhom rac - giong mau thung rac phan loai */
+    --huu-co: #2e7d32; --huu-co-bg: #f0f8f0;
+    --tai-che: #1d4ed8; --tai-che-bg: #eff4ff;
+    --khong-tai-che: #4b5563; --khong-tai-che-bg: #f3f4f6;
   }
   * { box-sizing: border-box; }
   body {
@@ -50,11 +56,19 @@
   #khung-anh { background: #eef2ee; display: flex; justify-content: center; }
   #khung-anh img, #khung-anh video { width: 100%; max-height: 300px; object-fit: contain; display: block; }
   #phan-dap-an { padding: 24px; border-left: 6px solid var(--primary); }
+  #phan-dap-an.huu-co { border-left-color: var(--huu-co); background: var(--huu-co-bg); }
+  #phan-dap-an.tai-che { border-left-color: var(--tai-che); background: var(--tai-che-bg); }
+  #phan-dap-an.khong-tai-che { border-left-color: var(--khong-tai-che); background: var(--khong-tai-che-bg); }
   #phan-dap-an.canh-bao { border-left-color: var(--warn); background: var(--warn-bg); }
   #phan-dap-an.nguy-hiem { border-left-color: var(--danger); background: var(--danger-bg); }
-  #nhan { font-size: 2rem; font-weight: 700; margin: 0 0 10px; color: var(--primary-dark); line-height: 1.15; }
+  #nhan { font-size: 2rem; font-weight: 700; margin: 0 0 6px; color: var(--primary-dark); line-height: 1.15; }
+  #phan-dap-an.huu-co #nhan { color: var(--huu-co); }
+  #phan-dap-an.tai-che #nhan { color: var(--tai-che); }
+  #phan-dap-an.khong-tai-che #nhan { color: var(--khong-tai-che); }
   #phan-dap-an.canh-bao #nhan { color: var(--warn); }
   #phan-dap-an.nguy-hiem #nhan { color: var(--danger); }
+  #vi-du { color: var(--muted); font-size: .95rem; margin: 0 0 12px; }
+  #vi-du:empty { display: none; }
   #huong-dan { font-size: 1.05rem; line-height: 1.55; margin: 0; }
   #do-chac { color: var(--muted); font-size: .85rem; margin-top: 12px; }
 
@@ -64,7 +78,7 @@
   summary::before { content: "▸ "; }
   details[open] summary::before { content: "▾ "; }
   .dong { display: flex; align-items: center; gap: 10px; padding: 7px 10px; font-size: .88rem; color: var(--muted); }
-  .dong .ten { width: 110px; flex-shrink: 0; }
+  .dong .ten { width: 160px; flex-shrink: 0; }
   .dong .nen { flex: 1; height: 6px; background: #e3e8e3; border-radius: 3px; overflow: hidden; }
   .dong .day { height: 100%; background: #9bb89b; border-radius: 3px; transition: width .3s; }
   .dong .so { width: 52px; text-align: right; }
@@ -99,11 +113,12 @@
       <div id="khung-anh"></div>
       <div id="phan-dap-an">
         <p id="nhan">—</p>
+        <p id="vi-du"></p>
         <p id="huong-dan"></p>
         <div id="do-chac"></div>
       </div>
     </div>
-    <details id="chi-tiet"><summary>Xem chi tiết từng loại</summary><div id="khung-nhan"></div></details>
+    <details id="chi-tiet"><summary>Xem chi tiết 4 nhóm</summary><div id="khung-nhan"></div></details>
     <div id="nut-lai">
       <button class="btn btn-chinh" onclick="document.getElementById('file-input').click()">Thử ảnh khác</button>
       <button class="btn btn-phu" id="nut-cam-2" onclick="gatCamera()">Dùng camera</button>
@@ -112,25 +127,78 @@
 </main>
 
 <footer id="chan">
-  ResNet-18 · 94,4% trên ảnh dataset · <strong>57,1% trên ảnh đời thực</strong><br>
-  Con số thứ hai mới đúng với ảnh bạn tự chụp. Khi hiện "Chưa chắc" thì đừng tin kết quả.
+  Phân 4 nhóm: hữu cơ · tái chế · không thể tái chế · nguy hại<br>
+  AI chạy ngay trên máy bạn — ảnh không được gửi đi đâu. Khi hiện "Chưa chắc" thì đừng tin kết quả.
 </footer>
 
 <script>
-  // Doi thanh URL service Render cua ban. Co the ghi de bang ?api=... de test.
-  const API_MAC_DINH = "https://garbage-classifier-0dbq.onrender.com";
-  const API = new URLSearchParams(location.search).get("api") || API_MAC_DINH;
+  // Model Teachable Machine 4 nhom chay ngay trong trinh duyet bang TensorFlow.js
+  // (WebGL/GPU) - khong gui anh len server nao. Tang PHIEN_BAN_MODEL khi doi
+  // model de trinh duyet khong dung lai ban cu trong cache.
+  const PHIEN_BAN_MODEL = "1";
+  const MODEL_URL = `tfjs_model/model.json?v=${PHIEN_BAN_MODEL}`;
+  const METADATA_URL = `tfjs_model/metadata.json?v=${PHIEN_BAN_MODEL}`;
+  const IMAGE_SIZE = 224;
+  const NGUONG_TIN_CAY = 0.60;
+  // Camera: nhan dien ~4 lan/giay la du muot, ma nhe may va do ton pin hon
+  // nhieu so voi chay het 30 khung/giay.
+  const CHU_KY_MS = 250;
 
-  // Khoang cach giua 2 lan nhan dien khi bat camera. Model chay tren server
-  // nen moi khung hinh la 1 request HTTP ~2 giay - khong the gui 30 khung/giay
-  // nhu ban chay model trong trinh duyet. 1,5 giay la du muot ma khong dim API.
-  const CHU_KY_MS = 1500;
-  // Thu nho khung hinh truoc khi gui: server dang nao cung resize ve 224px,
-  // gui anh 1920px chi ton bang thong. 320px -> moi lan ~15 KB thay vi ~200 KB.
-  const CANH_NGAN_GUI = 320;
+  // Nhan cua model (labels trong metadata.json) -> nhom rac hien cho nguoi dung.
+  // muc: ten class CSS de to mau the ket qua theo nhom.
+  const NHOM_RAC = {
+    "organic waste":        { ten: "Rác hữu cơ", muc: "huu-co",
+                              viDu: "Thức ăn thừa, rau củ quả, vỏ trái cây",
+                              viec: "Bỏ vào thùng rác hữu cơ hoặc ủ làm phân compost." },
+    "hazardous waste":      { ten: "Rác nguy hại", muc: "nguy-hiem",
+                              viDu: "Pin, ắc quy",
+                              viec: "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. Mang tới điểm thu gom pin cũ, rác nguy hại." },
+    "recyclable waste":     { ten: "Rác tái chế", muc: "tai-che",
+                              viDu: "Carton, thủy tinh, chai nhựa, giấy, kim loại",
+                              viec: "Rửa sạch, để khô, gấp gọn rồi bỏ vào thùng tái chế. Lon, giấy, carton bán ve chai được." },
+    "non-recyclable waste": { ten: "Rác không thể tái chế", muc: "khong-tai-che",
+                              viDu: "Quần áo, dép, khẩu trang",
+                              viec: "Bỏ vào thùng rác còn lại. Quần áo còn mặc được thì nên quyên góp." },
+  };
 
   const $ = id => document.getElementById(id);
-  let stream = null, dangBatCam = false, dangGui = false;
+  let model = null, nhan = [], dangNap = null;
+  let stream = null, dangBatCam = false;
+
+  // Canvas dung chung de cat anh ve 224x224 truoc khi dua vao model.
+  const canvasCat = document.createElement("canvas");
+  canvasCat.width = canvasCat.height = IMAGE_SIZE;
+  const ctxCat = canvasCat.getContext("2d", { willReadFrequently: true });
+
+  /** Nap model 1 lan duy nhat; goi nhieu lan cung chi tai 1 lan. */
+  function napModel() {
+    if (!dangNap) {
+      dangNap = (async () => {
+        const [m, meta] = await Promise.all([
+          tf.loadLayersModel(MODEL_URL),
+          fetch(METADATA_URL).then(r => r.json()),
+        ]);
+        nhan = meta.labels;
+        // Chay thu 1 lan cho GPU bien dich san - lan nhan dien that dau tien
+        // se khong bi khung lai.
+        tf.tidy(() => m.predict(tf.zeros([1, IMAGE_SIZE, IMAGE_SIZE, 3])));
+        model = m;
+      })();
+      dangNap.catch(() => { dangNap = null; });
+    }
+    return dangNap;
+  }
+
+  /** Giong Teachable Machine: cat vuong o giua, thu ve 224x224, chuan hoa ve [-1, 1].
+   *  Tra ve mang xac suat cung thu tu voi `nhan`. */
+  function duDoan(nguon, rong, cao) {
+    const canh = Math.min(rong, cao);
+    ctxCat.drawImage(nguon, (rong - canh) / 2, (cao - canh) / 2, canh, canh, 0, 0, IMAGE_SIZE, IMAGE_SIZE);
+    return tf.tidy(() => {
+      const anh = tf.browser.fromPixels(canvasCat).toFloat().div(127.5).sub(1).expandDims(0);
+      return model.predict(anh).dataSync();
+    });
+  }
 
   function moKetQua() { $("khung-tha").style.display = "none"; $("hang-nut").style.display = "none"; $("khu-ket-qua").classList.add("hien"); }
   function veRong() { $("khung-tha").style.display = ""; $("hang-nut").style.display = ""; $("khu-ket-qua").classList.remove("hien"); }
@@ -138,11 +206,12 @@
   function bao(tieuDe, noiDung, muc = "") {
     $("phan-dap-an").className = muc;
     $("nhan").textContent = tieuDe;
+    $("vi-du").textContent = "";
     $("huong-dan").textContent = noiDung;
     $("do-chac").textContent = "";
   }
 
-  // ---------- Camera: chup 1 tam roi gui, khong gui lien tuc de do tai API ----------
+  // ---------- Camera: nhan dien lien tuc ngay tren may ----------
   function gatCamera() { dangBatCam ? tatCamera() : batCamera(); }
 
   function capNhatNutCam(bat) {
@@ -162,10 +231,10 @@
     }
     moKetQua();
     const v = document.createElement("video");
-    v.autoplay = true; v.playsInline = true; v.srcObject = stream;
+    v.autoplay = true; v.playsInline = true; v.muted = true; v.srcObject = stream;
     $("khung-anh").innerHTML = ""; $("khung-anh").appendChild(v);
     dangBatCam = true; capNhatNutCam(true);
-    bao("Đưa vật thể vào khung", "Đang nhận diện liên tục, không cần bấm gì.");
+    bao("Đưa vật thể vào khung", model ? "Đang nhận diện liên tục, không cần bấm gì." : "Đang tải model (~2 MB), chỉ lần đầu…");
     v.addEventListener("loadedmetadata", () => vongNhanDien(v), { once: true });
   }
 
@@ -174,39 +243,20 @@
     dangBatCam = false; capNhatNutCam(false); veRong();
   }
 
-  /** Lay 1 khung hinh, thu nho lai cho nhe roi tra ve dang Blob JPEG. */
-  function layKhungHinh(v) {
-    const ti = Math.min(CANH_NGAN_GUI / Math.min(v.videoWidth, v.videoHeight), 1);
-    const c = document.createElement("canvas");
-    c.width = Math.round(v.videoWidth * ti);
-    c.height = Math.round(v.videoHeight * ti);
-    c.getContext("2d").drawImage(v, 0, 0, c.width, c.height);
-    return new Promise(res => c.toBlob(res, "image/jpeg", 0.85));
-  }
-
-  /** Nhan dien lien tuc: gui 1 khung moi CHU_KY_MS, va chi gui khi lan truoc
-   *  da xong - khong de request don cuc lai khi mang cham. */
   async function vongNhanDien(v) {
+    try {
+      await napModel();
+    } catch (e) {
+      if (dangBatCam) bao("Không tải được model", "Kiểm tra kết nối mạng rồi tải lại trang.", "canh-bao");
+      return;
+    }
     while (dangBatCam && stream) {
-      if (!dangGui) {
-        dangGui = true;
-        try {
-          const blob = await layKhungHinh(v);
-          const form = new FormData();
-          form.append("image", blob, "camera.jpg");
-          const res = await fetch(`${API}/predict`, { method: "POST", body: form });
-          if (res.ok && dangBatCam) hienKetQua(await res.json());
-        } catch (e) {
-          /* mang chap chon thi bo qua lan nay, vong sau thu lai */
-        } finally {
-          dangGui = false;
-        }
-      }
+      if (v.readyState >= 2) hienKetQua(duDoan(v, v.videoWidth, v.videoHeight));
       await new Promise(r => setTimeout(r, CHU_KY_MS));
     }
   }
 
-  // ---------- Chon anh + gui len API ----------
+  // ---------- Chon anh tu may: doc ngay tren may, khong tai len dau ca ----------
   async function chonAnh(file) {
     if (!file) return;
     if (!file.type.startsWith("image/")) { moKetQua(); bao("Không phải file ảnh", "Hãy chọn một file ảnh (.jpg, .png…).", "canh-bao"); return; }
@@ -214,41 +264,57 @@
 
     moKetQua();
     const img = new Image();
-    img.onload = () => URL.revokeObjectURL(img.src);
     img.src = URL.createObjectURL(file);
     $("khung-anh").innerHTML = ""; $("khung-anh").appendChild(img);
-    bao("Đang nhận diện…", "Lần đầu có thể chờ tới một phút vì server miễn phí phải khởi động lại.");
+    bao("Đang nhận diện…", model ? "" : "Đang tải model (~2 MB), chỉ lần đầu…");
 
-    const form = new FormData();
-    form.append("image", file);
     try {
-      const res = await fetch(`${API}/predict`, { method: "POST", body: form });
-      const data = await res.json();
-      if (!res.ok) { bao("Lỗi", data.error || `Máy chủ trả về ${res.status}`, "canh-bao"); return; }
-      hienKetQua(data);
+      await img.decode();
     } catch (e) {
-      bao("Không gọi được máy chủ", `Kiểm tra lại đường dẫn API (${API}) hoặc thử lại sau ít phút.`, "canh-bao");
+      bao("Không đọc được ảnh", "File có thể bị hỏng. Thử ảnh khác nhé.", "canh-bao");
+      return;
     }
+    try {
+      await napModel();
+    } catch (e) {
+      bao("Không tải được model", "Kiểm tra kết nối mạng rồi tải lại trang.", "canh-bao");
+      return;
+    }
+    hienKetQua(duDoan(img, img.naturalWidth, img.naturalHeight));
   }
 
-  function hienKetQua(d) {
-    $("phan-dap-an").className = d.muc === "thuong" ? "" : d.muc;
-    $("nhan").textContent = d.chac_chan ? d.ten : "Chưa chắc";
-    $("huong-dan").textContent = d.chac_chan
-      ? d.goi_y_xu_ly
-      : `Máy nghiêng về ${d.ten.toLowerCase()} nhưng không đủ chắc để khuyên bạn. Thử ảnh rõ hơn, đủ sáng, mỗi lần một vật.`;
-    $("do-chac").textContent = d.chac_chan ? `Độ chắc chắn ${d.confidence}%` : `Cao nhất chỉ ${d.confidence}%`;
+  function hienKetQua(xacSuat) {
+    let top = 0;
+    xacSuat.forEach((p, i) => { if (p > xacSuat[top]) top = i; });
+    const nhom = NHOM_RAC[nhan[top]] || { ten: nhan[top], muc: "tai-che", viDu: "", viec: "" };
+    const pct = (xacSuat[top] * 100).toFixed(0);
+
+    if (xacSuat[top] >= NGUONG_TIN_CAY) {
+      $("phan-dap-an").className = nhom.muc;
+      $("nhan").textContent = nhom.ten;
+      $("vi-du").textContent = `Gồm: ${nhom.viDu}`;
+      $("huong-dan").textContent = nhom.viec;
+      $("do-chac").textContent = `Độ chắc chắn ${pct}%`;
+    } else {
+      // Khong du tu tin thi noi that, khong doan bua
+      $("phan-dap-an").className = "canh-bao";
+      $("nhan").textContent = "Chưa chắc";
+      $("vi-du").textContent = "";
+      $("huong-dan").textContent = `Máy nghiêng về ${nhom.ten.toLowerCase()} nhưng không đủ chắc để khuyên bạn. Đưa vật lại gần, đủ sáng, mỗi lần một vật.`;
+      $("do-chac").textContent = `Cao nhất chỉ ${pct}%`;
+    }
 
     const khung = $("khung-nhan");
     khung.innerHTML = "";
-    const capSapXep = Object.entries(d.all_scores).sort((a, b) => b[1] - a[1]);
-    for (const [ten, pct] of capSapXep) {
-      const row = document.createElement("div");
-      row.className = "dong" + (ten === d.ten ? " top" : "");
-      row.innerHTML = `<span class="ten"></span><div class="nen"><div class="day" style="width:${pct}%"></div></div><span class="so">${pct.toFixed(1)}%</span>`;
-      row.querySelector(".ten").textContent = ten;
-      khung.appendChild(row);
-    }
+    nhan.map((ten, i) => [ten, xacSuat[i] * 100])
+      .sort((a, b) => b[1] - a[1])
+      .forEach(([ten, p]) => {
+        const row = document.createElement("div");
+        row.className = "dong" + (ten === nhan[top] ? " top" : "");
+        row.innerHTML = `<span class="ten"></span><div class="nen"><div class="day" style="width:${p}%"></div></div><span class="so">${p.toFixed(1)}%</span>`;
+        row.querySelector(".ten").textContent = (NHOM_RAC[ten] || { ten }).ten;
+        khung.appendChild(row);
+      });
   }
 
   // ---------- Keo tha ----------
@@ -260,8 +326,8 @@
     ["dragover", "drop"].forEach(e => document.body.addEventListener(e, ev => { if (!v.contains(ev.target)) ev.preventDefault(); }));
   })();
 
-  // Danh thuc server som de bot canh nguoi dung cho 50 giay o lan upload dau.
-  fetch(`${API}/health`).catch(() => {});
+  // Tai model ngay khi mo trang, de luc nguoi dung bam thi da san sang.
+  napModel().catch(() => {});
 </script>
 
 </body>

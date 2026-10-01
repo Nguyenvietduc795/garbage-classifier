@@ -1,7 +1,7 @@
-# Ban CPU-only: nho hon nhieu ban CUDA, vua RAM 512 MB cua Render.
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.14.0
-torchvision==0.29.0
+# Model Teachable Machine (Keras 2). TF 2.15 la ban cuoi con tf.keras = Keras 2,
+# doc duoc file .h5 cua Teachable Machine. Ban cpu nho hon, vua RAM 512 MB cua Render.
+tensorflow-cpu==2.15.1
+numpy<2
 pillow
 flask
 flask-cors

@@ -1,12 +1,11 @@
-# Toan bo project dung chung model ResNet-18 / PyTorch (garbage_resnet18.pt).
-# Khong con can TensorFlow, nen chay duoc tren Python 3.9 - 3.14.
+# Toan bo trash_ai_ui dung chung model Teachable Machine 4 nhom (keras_model.h5).
+# TensorFlow 2.15 chi co ban cho Python 3.9 - 3.11 -> tao venv bang Python 3.11.
 
 # --- Dung chung ---
-torch
-torchvision
+tensorflow==2.15.1
+numpy<2
 opencv-python
 pillow
-numpy
 
 # --- A. Giao dien desktop (giao_dien_pyqt.py) ---
 PyQt5

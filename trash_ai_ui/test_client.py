@@ -41,7 +41,7 @@ if response.status_code != 200:
     sys.exit(1)
 
 result = response.json()
-print(f"Kết quả: {result['class']} ({result['confidence']}%)")
+print(f"Kết quả: {result['ten']} ({result['confidence']}%)")
 print(f"Chắc chắn: {'có' if result['chac_chan'] else 'không'}")
 print(f"Gợi ý xử lý: {result['goi_y_xu_ly']}")
 print("Chi tiết:", json.dumps(result["all_scores"], ensure_ascii=False))

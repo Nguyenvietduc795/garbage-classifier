@@ -1,127 +1,145 @@
 """
-PHAN LOAI RAC - dung model ResNet-18 (PyTorch) thay cho Teachable Machine.
+PHAN LOAI RAC - model Teachable Machine 4 nhom (Keras).
 
-Ban goc dung Teachable Machine (keras_model.h5) van duoc giu nguyen o file
-`phan_loai_rac_TEACHABLEMACHINE_goc.py.bak` neu can quay lai.
+4 nhom: rac huu co, rac nguy hai, rac tai che, rac khong the tai che.
+Model (keras_model.h5) va labels.txt xuat tu Teachable Machine.
 
-Giao dien `giao_dien_pyqt.py` KHONG can sua gi: ba thu no dung
-(`load_model_and_labels`, `predict_trash`, `GOI_Y_XU_LY`) van y nguyen.
+Ban ResNet-18 7 loai truoc do van con trong lich su git neu can quay lai.
 
-Cai thu vien:
-    pip install torch torchvision opencv-python numpy pillow
+Cai thu vien (TensorFlow 2.15 chi chay tren Python 3.9 - 3.11):
+    pip install -r requirements.txt
 """
 
+import os
+
+# Giu tf.keras o ban Keras 2 - Keras 3 khong doc duoc file .h5 cua Teachable Machine.
+os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
+os.environ.setdefault("TF_USE_LEGACY_KERAS", "1")
+
 import cv2
-import torch
-from PIL import Image
-from torch import nn
-from torchvision import transforms
-from torchvision.models import resnet18
+import numpy as np
+import tensorflow as tf
+from PIL import Image, ImageOps
 
 # ======================================================================
 # CAU HINH
 # ======================================================================
 
-# Checkpoint ResNet-18 (sinh ra tu pipeline garbage_classifier)
-MODEL_PATH = "garbage_resnet18.pt"
+# Tep model va nhan (xuat tu Teachable Machine - dinh dang Keras)
+MODEL_PATH = "keras_model.h5"
+LABELS_PATH = "labels.txt"
 
-# Kich thuoc anh dau vao
+# Kich thuoc anh dau vao ma Teachable Machine dung de train
 IMAGE_SIZE = 224
 
-# Chuan hoa theo ImageNet - PHAI khop voi luc train. Khac han Teachable
-# Machine: TM dung khoang [-1, 1], model nay dung mean/std cua ImageNet.
-IMAGENET_MEAN = (0.485, 0.456, 0.406)
-IMAGENET_STD = (0.229, 0.224, 0.225)
-
-# Goi y xu ly cho tung loai rac - chinh sua noi dung theo y nhom ban.
-GOI_Y_XU_LY = {
-    "Clothes": "Quan ao cu: quyen gop neu con dung duoc, hoac bo vao thung tai che vai.",
-    "Glass": "Thuy tinh: rua sach, bo vao thung tai che mau xanh.",
-    "Metal": "Kim loai: rua sach, co the ban ve chai hoac bo vao thung tai che.",
-    "Paper": "Giay: giu kho rao, khong dinh dau mo, bo vao thung tai che giay.",
-    "Plastic": "Nhua: rua sach truoc khi bo vao thung tai che.",
-    "Cardboard": "Bia carton: gap phang, bo vao thung tai che giay/carton.",
-    "Battery": "CANH BAO: khong bo vao rac thuong. Mang den diem thu gom pin cu chuyen dung.",
+# Nhan trong labels.txt -> thong tin nhom hien cho nguoi dung.
+#   ten:          ten co dau, dung cho giao dien PyQt / API
+#   ten_khong_dau: cv2.putText khong ve duoc chu co dau
+#   muc:          dung de to mau theo nhom
+NHOM_RAC = {
+    "organic waste": {
+        "ten": "Rác hữu cơ", "ten_khong_dau": "Rac huu co", "muc": "huu-co",
+        "vi_du": "Thức ăn thừa, rau củ quả, vỏ trái cây",
+        "huong_dan": "Bỏ vào thùng rác hữu cơ hoặc ủ làm phân compost.",
+    },
+    "hazardous waste": {
+        "ten": "Rác nguy hại", "ten_khong_dau": "Rac nguy hai", "muc": "nguy-hiem",
+        "vi_du": "Pin, ắc quy",
+        "huong_dan": "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. "
+                     "Mang tới điểm thu gom pin cũ, rác nguy hại.",
+    },
+    "recyclable waste": {
+        "ten": "Rác tái chế", "ten_khong_dau": "Rac tai che", "muc": "tai-che",
+        "vi_du": "Carton, thủy tinh, chai nhựa, giấy, kim loại",
+        "huong_dan": "Rửa sạch, để khô, gấp gọn rồi bỏ vào thùng tái chế. "
+                     "Lon, giấy, carton bán ve chai được.",
+    },
+    "non-recyclable waste": {
+        "ten": "Rác không thể tái chế", "ten_khong_dau": "Rac khong the tai che",
+        "muc": "khong-tai-che",
+        "vi_du": "Quần áo, dép, khẩu trang",
+        "huong_dan": "Bỏ vào thùng rác còn lại. Quần áo còn mặc được thì nên quyên góp.",
+    },
 }
-# Them ban viet thuong de tra cuu khong bi truot neu doi nhan sau nay.
-GOI_Y_XU_LY.update({key.lower(): value for key, value in list(GOI_Y_XU_LY.items())})
+
+# Giu ten cu cho code nao con dung: nhan -> huong dan xu ly
+GOI_Y_XU_LY = {nhan: nhom["huong_dan"] for nhan, nhom in NHOM_RAC.items()}
+
+
+def thong_tin_nhom(label):
+    """Tra ve dict thong tin nhom cho 1 nhan; nhan la thi tra ve ban toi thieu."""
+    return NHOM_RAC.get(label, {
+        "ten": label, "ten_khong_dau": label, "muc": "tai-che", "vi_du": "", "huong_dan": "",
+    })
+
+
+# ======================================================================
+# LOP DepthwiseConv2D VA LOI TUONG THICH
+# (Teachable Machine luu them tham so 'groups' ma DepthwiseConv2D khong nhan)
+# ======================================================================
+class PatchedDepthwiseConv2D(tf.keras.layers.DepthwiseConv2D):
+    def __init__(self, **kwargs):
+        kwargs.pop("groups", None)
+        super().__init__(**kwargs)
 
 
 # ======================================================================
 # NAP MODEL VA NHAN
 # ======================================================================
-def load_model_and_labels(model_path=MODEL_PATH, labels_path=None):
+def load_model_and_labels(model_path=MODEL_PATH, labels_path=LABELS_PATH):
     """
-    Nap model phan loai rac (ResNet-18 / PyTorch) va danh sach nhan.
-
-    Khac ban Teachable Machine: danh sach nhan nam san trong checkpoint nen
-    khong can doc `labels.txt`. Tham so `labels_path` giu lai cho tuong thich
-    nguoc voi code cu, khong dung toi.
-
+    Nap model phan loai rac (Keras/TensorFlow) va danh sach nhan.
     Tra ve: (model, class_names)
     """
-    checkpoint = torch.load(model_path, map_location="cpu", weights_only=False)
+    model = tf.keras.models.load_model(
+        model_path,
+        custom_objects={"DepthwiseConv2D": PatchedDepthwiseConv2D},
+        compile=False,
+    )
 
-    class_names = checkpoint["classes"]
-    model = resnet18(weights=None)
-    model.fc = nn.Linear(model.fc.in_features, len(class_names))
-    model.load_state_dict(checkpoint["model_state_dict"])
-    model.eval()
+    with open(labels_path, "r", encoding="utf-8") as f:
+        # labels.txt co dang: "0 organic waste", "1 hazardous waste", ...
+        class_names = [line.strip().split(" ", 1)[1] for line in f if line.strip()]
 
-    accuracy = checkpoint.get("best_val_accuracy")
-    ghi_chu = f" (val accuracy {accuracy:.1%})" if accuracy else ""
-    print(f"Da nap model ResNet-18{ghi_chu}! Cac loai rac: {class_names}")
+    print(f"Da nap model thanh cong! Cac nhom rac: {class_names}")
     return model, class_names
 
 
 # ======================================================================
 # TIEN XU LY ANH
 # ======================================================================
-def _build_transform(image_size=IMAGE_SIZE):
-    resize_size = int(image_size / 0.875)
-    return transforms.Compose([
-        transforms.Resize(resize_size),
-        transforms.CenterCrop(image_size),
-        transforms.ToTensor(),
-        transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD),
-    ])
-
-
-_TRANSFORM = _build_transform()
-
-
 def preprocess_pil(image):
     """
-    Chuyen 1 anh PIL thanh tensor cho model.
-    Resize canh ngan ve 256 -> cat giua 224 -> chuan hoa ImageNet.
-    Dung chung cho ca giao dien PyQt lan API Flask, de hai ben khong bao gio
-    lech ket qua vi tien xu ly khac nhau.
+    Chuyen 1 anh PIL thanh mang dau vao cho model, giong het Teachable Machine:
+    cat vuong o giua -> resize 224x224 -> chuan hoa pixel ve [-1, 1].
+    Dung chung cho giao dien PyQt lan API Flask, de hai ben khong lech ket qua.
     """
-    return _TRANSFORM(image.convert("RGB")).unsqueeze(0)
+    image = ImageOps.fit(image.convert("RGB"), (IMAGE_SIZE, IMAGE_SIZE), Image.Resampling.LANCZOS)
+    arr = np.asarray(image, dtype=np.float32) / 127.5 - 1
+    return arr[np.newaxis]
 
 
 def preprocess_frame(frame):
     """
-    Chuyen 1 khung hinh BGR (OpenCV) thanh tensor cho model.
+    Chuyen 1 khung hinh BGR (OpenCV) thanh mang dau vao cho model.
     """
     img_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     return preprocess_pil(Image.fromarray(img_rgb))
 
 
 # ======================================================================
-# DU DOAN LOAI RAC
+# DU DOAN NHOM RAC
 # ======================================================================
 def predict_trash(frame, model, class_names):
     """
-    Du doan loai rac tu 1 khung hinh.
+    Du doan nhom rac tu 1 khung hinh.
     Tra ve: (nhan_du_doan, do_tin_cay, mang_xac_suat_tat_ca_class)
     Mang xac suat cung thu tu voi `class_names` de giao dien zip duoc.
     """
-    input_tensor = preprocess_frame(frame)
-    with torch.inference_mode():
-        probabilities = torch.softmax(model(input_tensor), dim=1)[0]
+    # Goi model truc tiep thay vi model.predict(): nhanh hon nhieu khi chi co
+    # 1 anh, quan trong voi webcam chay ~30 khung/giay.
+    predictions = model(preprocess_frame(frame), training=False).numpy()[0]
 
-    predictions = probabilities.numpy()
     max_idx = int(predictions.argmax())
     return class_names[max_idx], float(predictions[max_idx]), predictions
 
@@ -131,13 +149,14 @@ def predict_trash(frame, model, class_names):
 # ======================================================================
 def draw_result(frame, label, confidence, threshold=0.6):
     """
-    Ve nhan du doan + % tin cay len khung hinh de hien thi.
+    Ve ten nhom + % tin cay len khung hinh de hien thi.
     """
+    ten = thong_tin_nhom(label)["ten_khong_dau"]
     if confidence >= threshold:
-        text = f"{label}: {confidence * 100:.1f}%"
+        text = f"{ten}: {confidence * 100:.1f}%"
         color = (0, 255, 0)  # xanh la - tu tin
     else:
-        text = f"Khong chac chan ({label}: {confidence * 100:.1f}%)"
+        text = f"Khong chac chan ({ten}: {confidence * 100:.1f}%)"
         color = (0, 165, 255)  # cam - chua chac
 
     cv2.putText(frame, text, (15, 35), cv2.FONT_HERSHEY_SIMPLEX,
@@ -150,7 +169,7 @@ def draw_result(frame, label, confidence, threshold=0.6):
 # ======================================================================
 def process_image(image_path, model, class_names, threshold=0.6):
     """
-    Doc 1 file anh, du doan loai rac, hien thi ket qua + goi y xu ly.
+    Doc 1 file anh, du doan nhom rac, hien thi ket qua + goi y xu ly.
     """
     frame = cv2.imread(image_path)
     if frame is None:
@@ -159,20 +178,19 @@ def process_image(image_path, model, class_names, threshold=0.6):
 
     label, confidence, all_preds = predict_trash(frame, model, class_names)
 
-    print(f"\nKet qua du doan: {label} ({confidence * 100:.1f}%)")
-    print("Chi tiet tung loai:")
+    print(f"\nKet qua du doan: {thong_tin_nhom(label)['ten']} ({confidence * 100:.1f}%)")
+    print("Chi tiet tung nhom:")
     for name, score in zip(class_names, all_preds):
-        print(f"  - {name}: {score * 100:.1f}%")
+        print(f"  - {thong_tin_nhom(name)['ten']}: {score * 100:.1f}%")
 
     if confidence >= threshold:
-        goi_y = GOI_Y_XU_LY.get(label, "Chua co goi y cho loai nay.")
-        print(f"\nGoi y xu ly: {goi_y}")
+        print(f"\nGoi y xu ly: {thong_tin_nhom(label)['huong_dan']}")
     else:
         print("\nDo tin cay thap - khong dua ra goi y.")
 
     frame_display = draw_result(frame.copy(), label, confidence, threshold)
 
-    cv2.imshow("Phan loai rac - ResNet-18", frame_display)
+    cv2.imshow("Phan loai rac - 4 nhom", frame_display)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
@@ -200,11 +218,6 @@ def process_webcam(model, class_names, threshold=0.6, camera_index=0):
 
         label, confidence, _ = predict_trash(frame, model, class_names)
         frame_display = draw_result(frame.copy(), label, confidence, threshold)
-
-        if confidence >= threshold:
-            goi_y = GOI_Y_XU_LY.get(label, "")
-            cv2.putText(frame_display, goi_y[:60], (15, 65),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 1, cv2.LINE_AA)
 
         cv2.imshow("Phan loai rac - Webcam", frame_display)
 

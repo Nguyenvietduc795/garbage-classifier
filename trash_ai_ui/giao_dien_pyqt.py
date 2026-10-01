@@ -5,7 +5,7 @@ File nay dung lai cac ham trong phan_loai_rac.py (phai de 2 file
 CUNG THU MUC), chi them phan giao dien - khong doi logic AI.
 
 Cai thu vien truoc khi chay:
-    pip install torch torchvision opencv-python pillow numpy PyQt5
+    pip install -r requirements.txt   (Python 3.11, vi TensorFlow 2.15)
 
 Chay:
     python giao_dien_pyqt.py
@@ -13,15 +13,13 @@ Chay:
 
 import sys
 
-# QUAN TRONG - PHAI import phan_loai_rac (keo theo torch) TRUOC PyQt5.
-# Tren Windows, PyQt5 va torch cung dong goi thu vien Intel MKL/OpenMP.
-# Neu PyQt5 nap truoc thi torch khong khoi tao duoc DLL va bao loi:
-#   OSError: [WinError 1114] ... Error loading "...\torch\lib\c10.dll"
-# Dao thu tu la het. Dung chuyen dong import nay xuong duoi.
+# Import phan_loai_rac (keo theo TensorFlow) TRUOC PyQt5. Tren Windows, PyQt5
+# va thu vien AI cung dong goi DLL OpenMP/MKL - nap PyQt5 truoc co the lam thu
+# vien AI bao loi khoi tao DLL. Dung chuyen dong import nay xuong duoi.
 from phan_loai_rac import (
     load_model_and_labels,
     predict_trash,
-    GOI_Y_XU_LY,
+    thong_tin_nhom,
 )
 
 import cv2
@@ -120,6 +118,38 @@ QLabel#hopGoiY {{
     font-size: 13px;
     color: #222;
 }}
+QLabel#hopGoiY_huu_co {{
+    background-color: #e8f5e9;
+    border-left: 5px solid #2e7d32;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 13px;
+    color: #222;
+}}
+QLabel#hopGoiY_tai_che {{
+    background-color: #e8effd;
+    border-left: 5px solid #1d4ed8;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 13px;
+    color: #222;
+}}
+QLabel#hopGoiY_khong_tai_che {{
+    background-color: #f1f2f4;
+    border-left: 5px solid #4b5563;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 13px;
+    color: #222;
+}}
+QLabel#hopGoiY_nguy_hiem {{
+    background-color: #fdecec;
+    border-left: 5px solid #b91c1c;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 13px;
+    color: #222;
+}}
 QLabel#hopGoiYCanhBao {{
     background-color: #fff3e0;
     border-left: 5px solid {MAU_CANH_BAO};
@@ -190,7 +220,8 @@ class TrashClassifierApp(QMainWindow):
         nhan_tieu_de.setObjectName("tieuDe")
         layout_goc.addWidget(nhan_tieu_de)
 
-        nhan_phu_de = QLabel("Mo anh hoac bat webcam de nhan dien loai rac")
+        nhan_phu_de = QLabel("Mở ảnh hoặc bật webcam để biết rác thuộc nhóm nào: "
+                             "hữu cơ, tái chế, không thể tái chế, nguy hại")
         nhan_phu_de.setObjectName("phuDe")
         layout_goc.addWidget(nhan_phu_de)
         layout_goc.addSpacing(12)
@@ -287,9 +318,9 @@ class TrashClassifierApp(QMainWindow):
             hang = QHBoxLayout()
             hang.setSpacing(8)
 
-            nhan_ten = QLabel(ten)
+            nhan_ten = QLabel(thong_tin_nhom(ten)["ten"])
             nhan_ten.setObjectName("nhanClassTen")
-            nhan_ten.setFixedWidth(70)
+            nhan_ten.setFixedWidth(150)
             hang.addWidget(nhan_ten)
 
             thanh = QProgressBar()
@@ -313,7 +344,7 @@ class TrashClassifierApp(QMainWindow):
         try:
             self.model, self.class_names = load_model_and_labels()
             self._tao_thanh_do_cho_tung_class()
-            self.nhan_trang_thai.setText(f"Da nap model - {len(self.class_names)} loai rac")
+            self.nhan_trang_thai.setText(f"Đã nạp model - {len(self.class_names)} nhóm rác")
             self.nut_mo_anh.setEnabled(True)
             self.nut_webcam.setEnabled(True)
         except Exception as loi:
@@ -388,13 +419,18 @@ class TrashClassifierApp(QMainWindow):
             nhan_pct.setText(f"{score * 100:.0f}%")
 
         if confidence >= NGUONG_TIN_CAY:
-            goi_y = GOI_Y_XU_LY.get(label, "Chua co goi y cho loai nay.")
-            self.nhan_goi_y.setObjectName("hopGoiY")
-            self.nhan_goi_y.setText(f"<b>{label} ({confidence * 100:.1f}%)</b><br><br>{goi_y}")
+            nhom = thong_tin_nhom(label)
+            # Moi nhom 1 mau: objectName hopGoiY_huu_co, hopGoiY_tai_che, ...
+            self.nhan_goi_y.setObjectName("hopGoiY_" + nhom["muc"].replace("-", "_"))
+            self.nhan_goi_y.setText(
+                f"<b style='font-size:16px'>{nhom['ten']}</b> ({confidence * 100:.1f}%)"
+                f"<br><span style='color:#555'>Gồm: {nhom['vi_du']}</span>"
+                f"<br><br>{nhom['huong_dan']}"
+            )
         else:
             self.nhan_goi_y.setObjectName("hopGoiYCanhBao")
             self.nhan_goi_y.setText(
-                "Chua chac chan - dua vat gan camera hon hoac chinh anh sang."
+                "Chưa chắc chắn - đưa vật gần camera hơn hoặc chỉnh ánh sáng."
             )
         # Ap dung lai stylesheet vi objectName vua doi
         lam_moi_style(self.nhan_goi_y)

@@ -18,6 +18,10 @@
     --warn-bg: #fffbeb;
     --danger: #b91c1c;
     --danger-bg: #fef2f2;
+    /* Mau rieng cho tung nhom rac - giong mau thung rac phan loai */
+    --huu-co: #2e7d32; --huu-co-bg: #f0f8f0;
+    --tai-che: #1d4ed8; --tai-che-bg: #eff4ff;
+    --khong-tai-che: #4b5563; --khong-tai-che-bg: #f3f4f6;
   }
   * { box-sizing: border-box; }
   body {
@@ -88,15 +92,23 @@
   #webcam-holder canvas { width: 100%; height: auto; display: block; }
 
   #phan-dap-an { padding: 26px 24px; border-left: 6px solid var(--primary); }
+  #phan-dap-an.huu-co { border-left-color: var(--huu-co); background: var(--huu-co-bg); }
+  #phan-dap-an.tai-che { border-left-color: var(--tai-che); background: var(--tai-che-bg); }
+  #phan-dap-an.khong-tai-che { border-left-color: var(--khong-tai-che); background: var(--khong-tai-che-bg); }
   #phan-dap-an.canh-bao { border-left-color: var(--warn); background: var(--warn-bg); }
   #phan-dap-an.nguy-hiem { border-left-color: var(--danger); background: var(--danger-bg); }
 
   #nhan-vat-lieu {
     font-size: 2rem; font-weight: 700; line-height: 1.15;
-    margin: 0 0 10px; color: var(--primary-dark);
+    margin: 0 0 6px; color: var(--primary-dark);
   }
+  #phan-dap-an.huu-co #nhan-vat-lieu { color: var(--huu-co); }
+  #phan-dap-an.tai-che #nhan-vat-lieu { color: var(--tai-che); }
+  #phan-dap-an.khong-tai-che #nhan-vat-lieu { color: var(--khong-tai-che); }
   #phan-dap-an.canh-bao #nhan-vat-lieu { color: var(--warn); }
   #phan-dap-an.nguy-hiem #nhan-vat-lieu { color: var(--danger); }
+  #vi-du { color: var(--muted); font-size: .95rem; margin: 0 0 12px; }
+  #vi-du:empty { display: none; }
   #huong-dan { font-size: 1.05rem; line-height: 1.55; margin: 0; }
   #do-chac { color: var(--muted); font-size: .85rem; margin-top: 12px; }
 
@@ -114,7 +126,7 @@
     display: flex; align-items: center; gap: 10px;
     padding: 7px 10px; font-size: .88rem; color: var(--muted);
   }
-  .dong-nhan .ten { width: 96px; flex-shrink: 0; }
+  .dong-nhan .ten { width: 160px; flex-shrink: 0; }
   .dong-nhan .thanh-nen { flex: 1; height: 6px; background: #e3e8e3; border-radius: 3px; overflow: hidden; }
   .dong-nhan .thanh-day { height: 100%; background: #9bb89b; border-radius: 3px; transition: width .3s ease; }
   .dong-nhan .so { width: 48px; text-align: right; font-variant-numeric: tabular-nums; }
@@ -152,13 +164,14 @@
       <div id="khung-anh"></div>
       <div id="phan-dap-an">
         <p id="nhan-vat-lieu">—</p>
+        <p id="vi-du"></p>
         <p id="huong-dan"></p>
         <div id="do-chac"></div>
       </div>
     </div>
 
     <details id="chi-tiet">
-      <summary>Xem chi tiết từng loại</summary>
+      <summary>Xem chi tiết 4 nhóm</summary>
       <div id="khung-nhan"></div>
     </details>
 
@@ -170,9 +183,8 @@
 </main>
 
 <footer>
-  Model: Teachable Machine (MobileNet + Transfer Learning) — Đồ án phân loại rác.<br>
-  Trang này dùng model Teachable Machine, khác model ResNet-18 của giao diện desktop và API,
-  nên kết quả có thể lệch nhau.
+  Phân 4 nhóm: hữu cơ · tái chế · không thể tái chế · nguy hại<br>
+  Model: Teachable Machine (MobileNet + Transfer Learning) — Đồ án phân loại rác.
 </footer>
 
 <script>
@@ -180,22 +192,21 @@
   const METADATA_URL = "./tfjs_model/metadata.json";
   const NGUONG_TIN_CAY = 0.6;
 
-  // Ten tieng Viet + huong dan vut. Muc do: "thuong" | "canh-bao" | "nguy-hiem"
-  const VAT_LIEU = {
-    "clothes":   { ten: "Quần áo, vải", muc: "thuong",
-                   viec: "Còn dùng được thì quyên góp. Nếu không, bỏ vào thùng thu gom vải — đừng bỏ chung rác hữu cơ." },
-    "Glass":     { ten: "Thủy tinh", muc: "thuong",
-                   viec: "Rửa sạch, bỏ vào thùng tái chế màu xanh. Nếu vỡ thì bọc giấy lại trước khi bỏ." },
-    "Metal":     { ten: "Kim loại", muc: "thuong",
-                   viec: "Rửa sạch rồi bỏ vào thùng tái chế. Lon nhôm và vỏ hộp bán ve chai được." },
-    "Paper":     { ten: "Giấy", muc: "thuong",
-                   viec: "Giữ khô ráo, không dính dầu mỡ. Gấp gọn rồi bỏ vào thùng tái chế giấy." },
-    "Plastic":   { ten: "Nhựa", muc: "thuong",
-                   viec: "Rửa sạch rồi bỏ vào thùng tái chế màu xanh." },
-    "Cardboard": { ten: "Bìa carton", muc: "thuong",
-                   viec: "Gấp phẳng cho gọn, bỏ vào thùng tái chế giấy hoặc carton." },
-    "Battery":   { ten: "Pin", muc: "nguy-hiem",
-                   viec: "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. Mang tới điểm thu gom pin cũ." },
+  // Nhan cua model (labels trong metadata.json) -> nhom rac hien cho nguoi dung.
+  // muc: ten class CSS de to mau the ket qua theo nhom.
+  const NHOM_RAC = {
+    "organic waste":        { ten: "Rác hữu cơ", muc: "huu-co",
+                              viDu: "Thức ăn thừa, rau củ quả, vỏ trái cây",
+                              viec: "Bỏ vào thùng rác hữu cơ hoặc ủ làm phân compost." },
+    "hazardous waste":      { ten: "Rác nguy hại", muc: "nguy-hiem",
+                              viDu: "Pin, ắc quy",
+                              viec: "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. Mang tới điểm thu gom pin cũ, rác nguy hại." },
+    "recyclable waste":     { ten: "Rác tái chế", muc: "tai-che",
+                              viDu: "Carton, thủy tinh, chai nhựa, giấy, kim loại",
+                              viec: "Rửa sạch, để khô, gấp gọn rồi bỏ vào thùng tái chế. Lon, giấy, carton bán ve chai được." },
+    "non-recyclable waste": { ten: "Rác không thể tái chế", muc: "khong-tai-che",
+                              viDu: "Quần áo, dép, khẩu trang",
+                              viec: "Bỏ vào thùng rác còn lại. Quần áo còn mặc được thì nên quyên góp." },
   };
 
   let model, webcam, maxPredictions;
@@ -325,6 +336,7 @@
   function bao(tieuDe, noiDung, muc) {
     $("phan-dap-an").className = muc === "thuong" ? "" : muc;
     $("nhan-vat-lieu").textContent = tieuDe;
+    $("vi-du").textContent = "";
     $("huong-dan").textContent = noiDung;
     $("do-chac").textContent = "";
   }
@@ -341,25 +353,27 @@
     du.forEach((p, i) => {
       const row = khung.childNodes[i];
       const pct = (p.probability * 100).toFixed(1);
-      const vl = VAT_LIEU[p.className];
+      const vl = NHOM_RAC[p.className];
       row.querySelector(".ten").textContent = vl ? vl.ten : p.className;
       row.querySelector(".so").textContent = pct + "%";
       row.querySelector(".thanh-day").style.width = pct + "%";
       row.classList.toggle("cao-nhat", p.className === top.className);
     });
 
-    const vl = VAT_LIEU[top.className];
+    const vl = NHOM_RAC[top.className];
     const pct = (top.probability * 100).toFixed(0);
 
     if (top.probability >= NGUONG_TIN_CAY && vl) {
-      $("phan-dap-an").className = vl.muc === "nguy-hiem" ? "nguy-hiem" : "";
+      $("phan-dap-an").className = vl.muc;
       $("nhan-vat-lieu").textContent = vl.ten;
+      $("vi-du").textContent = `Gồm: ${vl.viDu}`;
       $("huong-dan").textContent = vl.viec;
       $("do-chac").textContent = `Độ chắc chắn ${pct}%`;
     } else {
       // Khong du tu tin thi noi that, khong doan bua
       $("phan-dap-an").className = "canh-bao";
       $("nhan-vat-lieu").textContent = "Chưa chắc";
+      $("vi-du").textContent = "";
       $("huong-dan").textContent = vl
         ? `Có vẻ là ${vl.ten.toLowerCase()}, nhưng máy không đủ chắc để khuyên bạn. Thử chụp gần hơn, đủ sáng, mỗi lần một vật.`
         : "Máy không nhận ra vật này.";

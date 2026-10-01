@@ -1,13 +1,11 @@
 """
-API PHAN LOAI RAC - dung model ResNet-18 (PyTorch)
+API PHAN LOAI RAC - model Teachable Machine 4 nhom (Keras)
 ----------------------------------------------------------------
 Dung chung model va tien xu ly voi giao dien PyQt (phan_loai_rac.py),
 nen API va desktop luon tra ve cung mot ket qua cho cung mot anh.
 
-Ban goc dung Teachable Machine giu o `app_TEACHABLEMACHINE_goc.py.bak`.
-
 Cai thu vien truoc khi chay:
-    pip install torch torchvision flask pillow numpy opencv-python
+    pip install -r requirements.txt
 
 Chay server:
     python app.py
@@ -18,11 +16,10 @@ Endpoint du doan:   POST http://127.0.0.1:5000/predict  (gui kem 1 anh)
 
 import io
 
-import torch
 from flask import Flask, jsonify, request
 from PIL import Image, UnidentifiedImageError
 
-from phan_loai_rac import GOI_Y_XU_LY, load_model_and_labels, preprocess_pil
+from phan_loai_rac import load_model_and_labels, preprocess_pil, thong_tin_nhom
 
 # Nguong tin cay: duoi muc nay thi khong dua ra goi y xu ly,
 # giong het cach giao dien PyQt lam.
@@ -44,25 +41,22 @@ def predict():
     except (UnidentifiedImageError, OSError):
         return jsonify({"error": "Khong doc duoc file anh"}), 400
 
-    with torch.inference_mode():
-        probabilities = torch.softmax(model(preprocess_pil(image)), dim=1)[0]
-
-    predictions = probabilities.numpy()
+    predictions = model(preprocess_pil(image), training=False).numpy()[0]
     top_index = int(predictions.argmax())
     confidence = float(predictions[top_index])
     label = class_names[top_index]
+    nhom = thong_tin_nhom(label)
+    chac_chan = confidence >= NGUONG_TIN_CAY
 
     return jsonify({
         "class": label,
+        "ten": nhom["ten"],
+        "vi_du": nhom["vi_du"],
         "confidence": round(confidence * 100, 2),
-        "chac_chan": confidence >= NGUONG_TIN_CAY,
-        "goi_y_xu_ly": (
-            GOI_Y_XU_LY.get(label, "Chua co goi y cho loai nay.")
-            if confidence >= NGUONG_TIN_CAY
-            else "Do tin cay thap - khong dua ra goi y."
-        ),
+        "chac_chan": chac_chan,
+        "goi_y_xu_ly": nhom["huong_dan"] if chac_chan else "Do tin cay thap - khong dua ra goi y.",
         "all_scores": {
-            name: round(float(score) * 100, 2)
+            thong_tin_nhom(name)["ten"]: round(float(score) * 100, 2)
             for name, score in zip(class_names, predictions)
         },
     })
@@ -70,7 +64,7 @@ def predict():
 
 @app.route("/", methods=["GET"])
 def home():
-    return f"API phan loai rac dang chay ({len(class_names)} loai). Gui POST anh toi /predict"
+    return f"API phan loai rac dang chay ({len(class_names)} nhom). Gui POST anh toi /predict"
 
 
 if __name__ == "__main__":
