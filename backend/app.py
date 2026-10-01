@@ -14,10 +14,9 @@ import io
 import os
 from pathlib import Path
 
-# Tat log INFO cua TensorFlow va giu tf.keras o ban Keras 2 - Keras 3 khong
-# doc duoc file .h5 cua Teachable Machine.
+# Tat log INFO cua TensorFlow. TF 2.15 di kem Keras 2 nen doc duoc file .h5 cua
+# Teachable Machine - dung nang len TF 2.16+ (Keras 3 khong doc duoc).
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
-os.environ.setdefault("TF_USE_LEGACY_KERAS", "1")
 
 import numpy as np
 import tensorflow as tf
