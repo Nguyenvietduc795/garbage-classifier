@@ -1,13 +1,62 @@
-# Phân loại rác — 7 lớp
+# Phân loại rác — 8 loại, 4 nhóm
 
-Pipeline huấn luyện ResNet-18 (PyTorch) phân loại ảnh rác thành 7 nhóm:
-`battery`, `cardboard`, `clothes`, `glass`, `metal`, `paper`, `plastic`.
+Pipeline huấn luyện ResNet-18 (PyTorch) phân loại ảnh rác thành 8 loại vật liệu:
+`battery`, `cardboard`, `clothes`, `glass`, `metal`, `organic`, `paper`, `plastic`.
+Giao diện gộp lại thành **4 nhóm**: hữu cơ, tái chế, không thể tái chế, nguy hại.
 
-Kèm ba giao diện sử dụng: desktop (PyQt5), web (TensorFlow.js), và API (Flask).
+Kèm các giao diện sử dụng: web (`frontend/`, Vercel), desktop (PyQt5) và API (Flask).
 
 ---
 
-## Kết quả — đọc kỹ cả hai cột
+## Model đang chạy trên web (01/10/2026)
+
+`frontend/` chạy **ResNet-18 8 loại ngay trong trình duyệt** (TensorFlow.js, nén uint8,
+11 MB) — không cần server, ảnh không rời máy người dùng.
+
+Đo trên 49 ảnh đời thực (`realworld_curated`), tính đúng **theo 4 nhóm**:
+
+| Model | Đúng | Pin (13 ảnh) |
+|---|---|---|
+| Teachable Machine 4 nhóm (MobileNet, chỉ train phần đầu) | 37/49 | 5 |
+| ResNet-18 7 lớp cũ (`new11k`, chưa có hữu cơ) | 43/49 | 9 |
+| **ResNet-18 8 lớp (`v2_r18`) ← đang dùng** | **44/49** | **11** |
+| MobileNetV3-Large 8 lớp | 40/49 | 5 |
+| ResNet-18 / MobileNetV3 + cân bằng lớp | 43/49 · 36/49 | — |
+| ResNet-18 trên `dataset_merged` + augmentation mạnh | 38/49 | 6 |
+
+- Dữ liệu: bộ 11.107 ảnh (bộ cho kết quả tốt nhất từ trước) + 1.451 ảnh hữu cơ.
+  Train như `new11k`: 15 epoch, batch 32, **không** augmentation mạnh, **không** cân bằng lớp
+  — hai thứ này đều làm kết quả trên ảnh thật kém đi.
+- Bộ 49 ảnh không có ảnh hữu cơ và quần áo chụp ngoài đời, nên hai nhóm đó **chưa đo được
+  trên ảnh thật** (trên ảnh test cùng nguồn: hữu cơ 96%). Chênh 44 với 43 là 1 ảnh — nằm
+  trong sai số; đúng hơn là "ngang model cũ, có thêm nhóm hữu cơ".
+- Web chọn nhóm theo **loại có xác suất cao nhất**, không cộng xác suất theo nhóm: nhóm tái
+  chế gồm 5 loại, cộng lại sẽ lấn át pin (44 đúng so với 42). Ngưỡng "chưa chắc" là 50%.
+
+### Đưa model mới lên web
+
+Cần một môi trường riêng Python 3.11 + `tensorflow-cpu==2.15.1`, `onnx==1.15.0`,
+`protobuf==4.25.3`, `onnx2tf==1.19.16` và `tensorflowjs==4.17.0` (hai gói cuối cài
+`--no-deps`; `tensorflowjs` cần thêm `tensorflow_hub==0.15.0` và `setuptools<70`, còn
+`tensorflow_decision_forests` / `jax` không có bản Windows — tạo module rỗng cùng tên là đủ,
+bộ chuyển CNN không dùng tới). Bản TF 2.16+ dùng Keras 3, các công cụ trên không chạy.
+
+```bash
+uv run --extra export garbage-export-onnx --checkpoint artifacts/v2_r18/best_model.pt --output r18.onnx
+onnx2tf -i r18.onnx -o r18_tf -osd -n
+python -m tensorflowjs.converters.converter --input_format=tf_saved_model --output_format=tfjs_graph_model --quantize_uint8="*" r18_tf r18_tfjs
+```
+
+`onnx2tf` đòi tải file ảnh mẫu `calibration_image_sample_data_20x128x128x3_float32.npy`
+từ một server đã hỏng — tự tạo file đó (20 ảnh 128×128×3, giá trị 0–1) trong thư mục chạy lệnh.
+
+Chép `r18_tfjs/*` vào **thư mục mới** `frontend/models/<tên>/`, thêm `meta.json` (danh sách
+lớp đúng thứ tự, mean/std ImageNet), rồi đổi `THU_MUC_MODEL` trong `frontend/index.html`.
+Đừng ghi đè thư mục cũ: Vercel cache `models/` 1 năm.
+
+---
+
+## Kết quả 7 lớp (trước khi thêm hữu cơ) — đọc kỹ cả hai cột
 
 | Model | Dữ liệu train | Ảnh cùng nguồn dataset | **Ảnh từ nguồn khác** |
 |---|---|---|---|
@@ -141,9 +190,9 @@ python app.py
 Gửi `POST /predict` kèm file ảnh, trả về JSON có `class`, `ten`, `confidence`, `chac_chan`,
 `goi_y_xu_ly`, `all_scores`.
 
-**Các giao diện (desktop, API, web `trash_ai_ui/index.html`, web `frontend/` + `backend/`)
-hiện dùng model Teachable Machine 4 nhóm** — hữu cơ, tái chế, không thể tái chế, nguy hại —
-chứ không dùng ResNet-18 7 lớp ở trên. Desktop và API cần Python 3.11 (TensorFlow 2.15).
+**Web `frontend/` dùng ResNet-18 8 loại** (xem đầu file). Desktop, API, `backend/` và
+`trash_ai_ui/index.html` vẫn dùng model Teachable Machine 4 nhóm của nhóm — chính xác kém
+hơn (37/49). Desktop và API cần Python 3.11 (TensorFlow 2.15).
 
 ---
 

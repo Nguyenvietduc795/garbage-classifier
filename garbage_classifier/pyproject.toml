@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "garbage-classifier"
 version = "0.1.0"
-description = "Seven-class garbage image classifier using PyTorch transfer learning"
+description = "Garbage image classifier using PyTorch transfer learning"
 readme = "README.md"
 requires-python = ">=3.11,<3.15"
 dependencies = [
@@ -14,11 +14,16 @@ dependencies = [
   "torchvision==0.29.0",
 ]
 
+[project.optional-dependencies]
+# Chi can khi xuat model sang ONNX (de chuyen tiep sang TF.js cho trang web)
+export = ["onnx>=1.17"]
+
 [project.scripts]
 garbage-data = "garbage_classifier.data:main"
 garbage-train = "garbage_classifier.train:main"
 garbage-evaluate = "garbage_classifier.evaluate:main"
 garbage-predict = "garbage_classifier.predict:main"
+garbage-export-onnx = "garbage_classifier.export_onnx:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

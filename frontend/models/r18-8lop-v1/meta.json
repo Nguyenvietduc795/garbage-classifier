@@ -1,0 +1,9 @@
+{
+  "arch": "resnet18",
+  "classes": ["battery", "cardboard", "clothes", "glass", "metal", "organic", "paper", "plastic"],
+  "imageSize": 224,
+  "mean": [0.485, 0.456, 0.406],
+  "std": [0.229, 0.224, 0.225],
+  "nguon": "garbage_classifier/artifacts/v2_r18/best_model.pt - 8 lop, bo 11k + 1.451 anh huu co; TF.js nen uint8",
+  "do_chinh_xac_anh_that": "44/49 theo 4 nhom (realworld_curated)"
+}

@@ -9,7 +9,7 @@ from typing import Sequence
 
 import torch
 from PIL import Image, UnidentifiedImageError
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader, Dataset, WeightedRandomSampler
 from torchvision import transforms
 
 SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
@@ -153,6 +153,7 @@ def build_dataloaders(
     image_size: int = 224,
     seed: int = 42,
     strong_augment: bool = False,
+    balance_classes: bool = False,
 ) -> dict[str, DataLoader]:
     datasets = {
         "train": GarbageDataset(splits.train, get_train_transform(image_size, strong_augment)),
@@ -166,8 +167,19 @@ def build_dataloaders(
         "pin_memory": device.type == "cuda",
         "persistent_workers": num_workers > 0,
     }
+    if balance_classes:
+        # Moi lop duoc lay mau ngang nhau: lop nho (pin) khong bi lop lon
+        # (quan ao, thuy tinh) lan at. Lay co hoan lai nen anh lop nho lap lai
+        # nhieu hon - augmentation lam moi ban lap trong khac nhau.
+        counts = [0] * len(splits.classes)
+        for sample in splits.train:
+            counts[sample.label] += 1
+        weights = [1.0 / counts[sample.label] for sample in splits.train]
+        train_order = {"sampler": WeightedRandomSampler(weights, len(weights), replacement=True, generator=generator)}
+    else:
+        train_order = {"shuffle": True, "generator": generator}
     return {
-        "train": DataLoader(datasets["train"], shuffle=True, generator=generator, **common),
+        "train": DataLoader(datasets["train"], **train_order, **common),
         "val": DataLoader(datasets["val"], shuffle=False, **common),
         "test": DataLoader(datasets["test"], shuffle=False, **common),
     }

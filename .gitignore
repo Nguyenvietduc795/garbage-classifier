@@ -10,6 +10,8 @@ __pycache__/
 archive/
 dataset_sach_zip/
 dataset_merged/
+dataset_8lop/
+dataset_8lop_v2/
 trashnet/
 realworld_test/
 realworld_test2/

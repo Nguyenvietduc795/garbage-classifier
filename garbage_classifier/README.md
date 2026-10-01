@@ -101,3 +101,11 @@ uv run garbage-predict "../dataset_sach_zip/Plastic/plastic1.jpg" --checkpoint "
 - [TorchVision documentation](https://pytorch.org/vision/stable/)
 
 Nội dung kỹ thuật từ tài liệu được diễn giải lại để tuân thủ yêu cầu cấp phép.
+
+## Tuỳ chọn thêm (01/10/2026)
+
+- `--arch resnet18 | mobilenet_v3_large` — chọn kiến trúc. MobileNetV3 nhẹ hơn (~4 MB khi nén)
+  nhưng trên ảnh đời thực kém hơn ResNet-18 rõ rệt (40/49 so với 44/49).
+- `--balance-classes` — lấy mẫu mỗi lớp ngang nhau khi train. Đã thử: không giúp, còn làm kém đi.
+- `garbage-export-onnx` (cần `uv sync --extra export`) — xuất checkpoint sang ONNX để chuyển
+  tiếp sang TF.js. Các bước còn lại xem README ở thư mục gốc.

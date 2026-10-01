@@ -10,12 +10,21 @@ from torch import nn
 
 from .data import build_dataloaders, discover_and_split
 from .engine import evaluate_model, train_one_epoch
-from .model import create_model, load_checkpoint, save_checkpoint, set_backbone_trainable
+from .model import (
+    ARCHITECTURES,
+    DEFAULT_ARCH,
+    create_model,
+    load_checkpoint,
+    save_checkpoint,
+    set_backbone_trainable,
+    split_parameters,
+)
 from .utils import resolve_device, seed_everything, write_json
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Train a seven-class garbage classifier")
+    parser = argparse.ArgumentParser(description="Train a garbage classifier")
+    parser.add_argument("--arch", choices=ARCHITECTURES, default=DEFAULT_ARCH)
     parser.add_argument("--data-dir", type=Path, default=Path("../dataset_sach_zip"))
     parser.add_argument("--output-dir", type=Path, default=Path("artifacts"))
     parser.add_argument("--epochs", type=int, default=20)
@@ -35,6 +44,11 @@ def parse_args() -> argparse.Namespace:
         "--strong-augment",
         action="store_true",
         help="Heavier augmentation; helps on images that do not look like the training set",
+    )
+    parser.add_argument(
+        "--balance-classes",
+        action="store_true",
+        help="Sample every class equally often during training, so small classes are not drowned out",
     )
     parser.add_argument(
         "--max-images-per-class",
@@ -75,15 +89,15 @@ def main() -> None:
         image_size=args.image_size,
         seed=args.seed,
         strong_augment=args.strong_augment,
+        balance_classes=args.balance_classes,
     )
     write_json(output_dir / "dataset_split.json", splits.summary())
 
-    model = create_model(len(splits.classes), pretrained=not args.no_pretrained).to(device)
+    model = create_model(len(splits.classes), pretrained=not args.no_pretrained, arch=args.arch).to(device)
     if args.freeze_epochs > 0:
-        set_backbone_trainable(model, False)
+        set_backbone_trainable(model, False, args.arch)
 
-    backbone_parameters = [parameter for name, parameter in model.named_parameters() if not name.startswith("fc.")]
-    head_parameters = list(model.fc.parameters())
+    backbone_parameters, head_parameters = split_parameters(model, args.arch)
     optimizer = torch.optim.AdamW(
         [
             {"params": backbone_parameters, "lr": args.backbone_learning_rate},
@@ -95,7 +109,7 @@ def main() -> None:
     criterion = nn.CrossEntropyLoss(label_smoothing=args.label_smoothing)
     scaler = torch.amp.GradScaler("cuda", enabled=device.type == "cuda")
 
-    print(f"Device: {device}")
+    print(f"Device: {device} | arch: {args.arch}")
     if device.type == "cuda":
         print(f"GPU: {torch.cuda.get_device_name(device)}")
     print(f"Classes: {', '.join(splits.classes)}")
@@ -112,7 +126,7 @@ def main() -> None:
     for epoch_index in range(args.epochs):
         epoch = epoch_index + 1
         if epoch_index == args.freeze_epochs and args.freeze_epochs > 0:
-            set_backbone_trainable(model, True)
+            set_backbone_trainable(model, True, args.arch)
             print("Backbone unfrozen; fine-tuning the full network.")
 
         epoch_started = time.perf_counter()
@@ -145,6 +159,7 @@ def main() -> None:
                 best_val_accuracy,
                 config,
                 history,
+                args.arch,
             )
         else:
             epochs_without_improvement += 1
@@ -157,6 +172,7 @@ def main() -> None:
             best_val_accuracy,
             config,
             history,
+            args.arch,
         )
         print(
             f"Epoch {epoch:02d}/{args.epochs} | "
