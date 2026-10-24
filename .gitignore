@@ -35,3 +35,7 @@ hf_space/model.pt
 downloads/
 dataset_8lop_v3/
 realworld_mta_test/
+dataset_8lop_v4/
+realworld_rw5_test/
+realworld_bower_test/
+realworld_bdw_test/

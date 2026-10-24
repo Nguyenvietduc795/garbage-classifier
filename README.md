@@ -135,6 +135,44 @@ Giữ 0,5: lên 0,6 bớt 7 lần sai nhưng 3 ảnh đúng bị đổi thành "
 
 ---
 
+## Thêm pin chụp thật + rác Nam Á (24/10/2026) — chưa đưa lên web
+
+`dataset_8lop_v4` (20.158 ảnh) = v3 + hai bộ mới, train y như v3 (15 epoch, batch 32):
+
+- **Bower waste annotations** (Hugging Face, MIT): ảnh điện thoại, pin cũ đổ đống trên bàn,
+  sàn, trong lọ, còn trong vỉ. 438 box pin nhưng **chỉ nằm trong 53 ảnh**, box nhỏ (cạnh ngắn
+  trung vị 35 px) — mỗi ảnh lấy 1 mẫu là cả cụm pin, thêm box pin riêng ≥ 80 px. Lấy cả vật
+  không phải pin của Bower để model không học "nền Bower = pin". 20% số ảnh giữ làm
+  `realworld_bower_test`. Thêm được **59 ảnh pin** train.
+- **BDWaste** (Mendeley, CC BY 4.0): ảnh điện thoại ở Dhaka — vỏ trái cây, vỏ trứng, cơm,
+  nilon, gói snack, chai PET, ly giấy, mảnh kính. 649 ảnh là bản xoay/lật của ảnh khác (bộ gốc
+  có augmentation) → bỏ. Thêm 980 ảnh train, 15% giữ làm `realworld_bdw_test`.
+- **Real-World Waste 5 class** (Kaggle `tuhanasinan`, CC BY 4.0): 1.647 ảnh tự chụp ở khuôn
+  viên trường, **chỉ dùng để test** → `realworld_rw5_test`. Đây là bộ test ảnh thật lớn nhất
+  hiện có, nguồn khác hẳn dữ liệu train; có 300 ảnh hữu cơ thật.
+
+Số ảnh đúng theo 4 nhóm (bỏ ảnh trùng MD5 trong từng bộ):
+
+| Bộ test | v2 (web) | v3 | v4 |
+|---|---|---|---|
+| 102 ảnh cũ | 65 | **74** | 71 |
+| — pin (/14) | **10** | 7 | 6 |
+| `realworld_rw5_test` (1.642) | 1.425 (87%) | 1.522 (93%) | **1.534 (93%)** |
+| — hữu cơ (/300) | 250 | 226 | **251** |
+| `realworld_bower_test` (313, pin 11) | 254, pin 10 | 280, pin 9 | **281, pin 11** |
+| `realworld_bdw_test` (196) | 153 | 166 | 196 ⚠ |
+| `realworld_mta_test` (175) | 146 | **170** | 167 |
+
+- **Hữu cơ thật khá lên rõ** (226 → 251/300 trên bộ độc lập), nhờ BDWaste.
+- **Pin vẫn chưa chữa được:** đúng 11/11 trên ảnh Bower nhưng chỉ 6/14 trên 102 ảnh cũ —
+  53 ảnh từ một nguồn là quá ít; model học được "đống pin kiểu Bower", chưa học được pin nói
+  chung. Web vẫn giữ v2.
+- `realworld_bdw_test` 100% là **không đáng tin**: ảnh cùng một người chụp, cùng nền, chỉ
+  khác góc — dHash không bắt được hết các ảnh gần giống đó. Đừng dùng bộ này để so model.
+- Cả ba model đều sai **8/8 ảnh quần áo** trong 102 ảnh cũ.
+
+---
+
 ## Kết quả 7 lớp (trước khi thêm hữu cơ) — đọc kỹ cả hai cột
 
 | Model | Dữ liệu train | Ảnh cùng nguồn dataset | **Ảnh từ nguồn khác** |
@@ -302,6 +340,9 @@ Dataset không đẩy lên git vì dung lượng. Các bộ đã dùng:
 - **Bộ 11.107 ảnh** — đa dạng hơn, có ảnh chụp trong nhà thật
 - **49 ảnh test đời thực** — Wikimedia Commons, giấy phép tự do, nguồn và tác giả ghi
   trong `realworld_curated/manifest.json`
+- **Bower waste annotations** (MIT) — [huggingface.co/datasets/BowerApp/bower-waste-annotations](https://huggingface.co/datasets/BowerApp/bower-waste-annotations)
+- **BDWaste** (CC BY 4.0) — [data.mendeley.com/datasets/96g5pgfnfw](https://data.mendeley.com/datasets/96g5pgfnfw)
+- **Real-World Waste 5 class** (CC BY 4.0, chỉ để test) — [kaggle.com/datasets/tuhanasinan/real-world-waste-classification-dataset-5-class](https://www.kaggle.com/datasets/tuhanasinan/real-world-waste-classification-dataset-5-class)
 
 ## Ghi chú
 
