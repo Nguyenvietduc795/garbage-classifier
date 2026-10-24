@@ -151,7 +151,15 @@
   // Do tren 49 anh that: nguong 0,5 -> 41 dung / 3 sai / 5 "chua chac";
   // nguong 0,6 -> 38 dung / 2 sai / 9 "chua chac" (model train co label
   // smoothing nen xac suat hiem khi vuot 90%).
+  // Do lai tren 151 anh that (3 bo realworld_*), dung - sai - chua chac:
+  // nguong 0,4 -> 107-33-11; 0,5 -> 104-26-21; 0,6 -> 99-16-36. Giu 0,5:
+  // 0,6 bot 10 lan sai nhung 5 anh dung bi doi thanh "chua chac".
   const NGUONG_TIN_CAY = 0.50;
+  // Can bang do sang: anh co do sang trung binh < NGUONG_TOI thi nang gamma
+  // cho do sang ve ~DO_SANG_DICH; anh du sang giu nguyen. Do tren 151 anh
+  // that: anh goc 109 -> 109 (khong doi); lam toi con 25% do sang: 95 -> 107.
+  const NGUONG_TOI = 0.30;
+  const DO_SANG_DICH = 0.45;
   // Camera: nhan dien ~4 lan/giay la du muot, ma nhe may va do ton pin hon
   // nhieu so voi chay het 30 khung/giay.
   const CHU_KY_MS = 250;
@@ -244,12 +252,23 @@
     return c;
   }
 
-  /** Tra ve { chon: khoa nhom, theoNhom: { nhom: tong xac suat } }. */
+  /** x: anh [cao, rong, 3] gia tri 0..1. Anh toi thi nang gamma, con lai giu
+   *  nguyen. Tra ve { x, daTangSang }. */
+  function canBangSang(x) {
+    const sang = x.mul([0.299, 0.587, 0.114]).sum(-1).mean().dataSync()[0];
+    if (sang >= NGUONG_TOI || sang <= 0.01) return { x, daTangSang: false };
+    const gamma = Math.max(0.35, Math.log(DO_SANG_DICH) / Math.log(sang));
+    return { x: x.maximum(1e-6).pow(gamma), daTangSang: true };
+  }
+
+  /** Tra ve { chon: khoa nhom, theoNhom: { nhom: tong xac suat }, daTangSang }. */
   function duDoan(nguon, rong, cao) {
     const anh224 = catAnh(nguon, rong, cao);
+    let daTangSang = false;
     const xacSuat = tf.tidy(() => {
-      const x = tf.browser.fromPixels(anh224).toFloat().div(255)
-        .sub(meta.mean).div(meta.std).expandDims(0);
+      const sang = canBangSang(tf.browser.fromPixels(anh224).toFloat().div(255));
+      daTangSang = sang.daTangSang;
+      const x = sang.x.sub(meta.mean).div(meta.std).expandDims(0);
       return tf.softmax(model.predict(x)).dataSync();
     });
     const theoNhom = Object.fromEntries(Object.keys(NHOM_RAC).map(k => [k, 0]));
@@ -258,7 +277,7 @@
       theoNhom[LOAI_VAO_NHOM[loai]] += xacSuat[i];
       if (xacSuat[i] > xacSuat[top]) top = i;
     });
-    return { chon: LOAI_VAO_NHOM[meta.classes[top]], theoNhom };
+    return { chon: LOAI_VAO_NHOM[meta.classes[top]], theoNhom, daTangSang };
   }
 
   function moKetQua() { $("khung-tha").style.display = "none"; $("hang-nut").style.display = "none"; $("khu-ket-qua").classList.add("hien"); }
@@ -347,7 +366,7 @@
     hienKetQua(duDoan(img, img.naturalWidth, img.naturalHeight));
   }
 
-  function hienKetQua({ chon: khoaTop, theoNhom }) {
+  function hienKetQua({ chon: khoaTop, theoNhom, daTangSang }) {
     const xepHang = Object.entries(theoNhom).sort((a, b) => b[1] - a[1]);
     const pTop = theoNhom[khoaTop];
     const nhom = NHOM_RAC[khoaTop];
@@ -367,6 +386,7 @@
       $("huong-dan").textContent = `Máy nghiêng về ${nhom.ten.toLowerCase()} nhưng không đủ chắc để khuyên bạn. Đưa vật lại gần, đủ sáng, mỗi lần một vật.`;
       $("do-chac").textContent = `Cao nhất chỉ ${pct}%`;
     }
+    if (daTangSang) $("do-chac").textContent += " · ảnh tối, đã tự tăng sáng";
 
     const khung = $("khung-nhan");
     khung.innerHTML = "";
