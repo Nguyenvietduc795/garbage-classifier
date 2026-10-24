@@ -30,3 +30,8 @@ Thumbs.db
 
 # Model cho HF Space (trung voi backend/model.pt, khong can 2 ban trong git)
 hf_space/model.pt
+
+# --- Du lieu tai ve (10/2026) ---
+downloads/
+dataset_8lop_v3/
+realworld_mta_test/

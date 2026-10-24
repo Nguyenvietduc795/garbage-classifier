@@ -154,6 +154,7 @@ def build_dataloaders(
     seed: int = 42,
     strong_augment: bool = False,
     balance_classes: bool = False,
+    oversample: dict[str, float] | None = None,
 ) -> dict[str, DataLoader]:
     datasets = {
         "train": GarbageDataset(splits.train, get_train_transform(image_size, strong_augment)),
@@ -175,6 +176,12 @@ def build_dataloaders(
         for sample in splits.train:
             counts[sample.label] += 1
         weights = [1.0 / counts[sample.label] for sample in splits.train]
+        train_order = {"sampler": WeightedRandomSampler(weights, len(weights), replacement=True, generator=generator)}
+    elif oversample:
+        # Chi tang tan suat mot vai lop (vd pin x2), cac lop khac giu nguyen ti le
+        # tu nhien - can bang toan bo da thu va lam ket qua anh that kem di.
+        factors = [oversample.get(name, 1.0) for name in splits.classes]
+        weights = [factors[sample.label] for sample in splits.train]
         train_order = {"sampler": WeightedRandomSampler(weights, len(weights), replacement=True, generator=generator)}
     else:
         train_order = {"shuffle": True, "generator": generator}

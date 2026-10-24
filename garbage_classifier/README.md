@@ -107,5 +107,7 @@ Nội dung kỹ thuật từ tài liệu được diễn giải lại để tuâ
 - `--arch resnet18 | mobilenet_v3_large` — chọn kiến trúc. MobileNetV3 nhẹ hơn (~4 MB khi nén)
   nhưng trên ảnh đời thực kém hơn ResNet-18 rõ rệt (40/49 so với 44/49).
 - `--balance-classes` — lấy mẫu mỗi lớp ngang nhau khi train. Đã thử: không giúp, còn làm kém đi.
+- `--oversample battery=2` — chỉ lấy mẫu một lớp nhiều hơn N lần, các lớp khác giữ tỉ lệ tự
+  nhiên; lặp lại được cho nhiều lớp. Đã thử với pin trên `dataset_8lop_v3`: chỉ +2/27 ảnh pin.
 - `garbage-export-onnx` (cần `uv sync --extra export`) — xuất checkpoint sang ONNX để chuyển
   tiếp sang TF.js. Các bước còn lại xem README ở thư mục gốc.

@@ -56,6 +56,40 @@ lớp đúng thứ tự, mean/std ImageNet), rồi đổi `THU_MUC_MODEL` trong 
 
 ---
 
+## Thử thêm ảnh rác đời thực (24/10/2026) — chưa đưa lên web
+
+Bản nộp Vòng Khu vực được gắn tag `vong-khu-vuc-2026`.
+
+Gộp `dataset_8lop_v2` với hai bộ ảnh chụp thật thành `dataset_8lop_v3` (17.581 ảnh):
+
+- **RealWaste** (UCI, CC BY 4.0): rác thật ở bãi rác, nền xi măng — thêm 3.247 ảnh
+  (bìa, hữu cơ, vải, kính, kim loại, giấy, nhựa).
+- **Malaysian Trash Annotation** (Hugging Face, CC BY 4.0): ảnh điện thoại ở Đông Nam Á, có
+  ảnh chụp tối — cắt từng vật theo bbox, thêm 1.776 ảnh. Phần `test` của bộ này giữ riêng
+  làm `realworld_mta_test` (175 ảnh), không dùng để train.
+- Lọc trùng bằng dHash, kể cả với các bộ `realworld_*`.
+- Đã bỏ **TrashBusters `real_world`**: xem mẫu thì là ảnh sản phẩm/stock trên web, có cả ảnh
+  sai nhãn — không phải ảnh rác đời thực như tên gọi.
+- `Garbage Classification v2` (Kaggle, sumn2u) chính là `dataset_8lop_v2` — đã có sẵn.
+
+Số ảnh đúng theo 4 nhóm:
+
+| Bộ test | v2 (đang dùng) | v3 | v3 + `--oversample battery=2` |
+|---|---|---|---|
+| `realworld_curated` (49) | **44** | 42 | 41 |
+| `realworld_test` (49) | 22 | **29** | 27 |
+| `realworld_test2` (53) | 43 | **45** | 43 |
+| Tổng 3 bộ (151) | 109 | **116** | 111 |
+| **Pin** trong 3 bộ (27) | **20** | 14 | 16 |
+| `realworld_mta_test` (175, cùng nguồn với dữ liệu train) | 146 | 170 | 170 |
+
+v3 đúng nhiều hơn trên ảnh thật nói chung nhưng **nhận pin kém đi** — dữ liệu mới không có
+ảnh pin nào, pin bị các lớp khác lấn át. Lấy mẫu pin gấp đôi không chữa được. Vì pin là rác
+nguy hại, web giữ v2. Việc cần làm tiếp: tự chụp 200–300 ảnh pin thật (nhiều nền, đèn vàng,
+chỗ tối) rồi train lại v3. Vẫn chưa có bộ test ảnh tối nên chưa đo được độ bền ánh sáng.
+
+---
+
 ## Kết quả 7 lớp (trước khi thêm hữu cơ) — đọc kỹ cả hai cột
 
 | Model | Dữ liệu train | Ảnh cùng nguồn dataset | **Ảnh từ nguồn khác** |

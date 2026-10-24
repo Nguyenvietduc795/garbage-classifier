@@ -51,6 +51,13 @@ def parse_args() -> argparse.Namespace:
         help="Sample every class equally often during training, so small classes are not drowned out",
     )
     parser.add_argument(
+        "--oversample",
+        action="append",
+        default=[],
+        metavar="CLASS=FACTOR",
+        help="Sample one class FACTOR times more often, e.g. battery=2; repeatable",
+    )
+    parser.add_argument(
         "--max-images-per-class",
         type=int,
         default=0,
@@ -90,6 +97,7 @@ def main() -> None:
         seed=args.seed,
         strong_augment=args.strong_augment,
         balance_classes=args.balance_classes,
+        oversample={name: float(factor) for name, factor in (item.split("=") for item in args.oversample)},
     )
     write_json(output_dir / "dataset_split.json", splits.summary())
 
