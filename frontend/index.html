@@ -151,15 +151,21 @@
   // Do tren 49 anh that: nguong 0,5 -> 41 dung / 3 sai / 5 "chua chac";
   // nguong 0,6 -> 38 dung / 2 sai / 9 "chua chac" (model train co label
   // smoothing nen xac suat hiem khi vuot 90%).
-  // Do lai tren 151 anh that (3 bo realworld_*), dung - sai - chua chac:
-  // nguong 0,4 -> 107-33-11; 0,5 -> 104-26-21; 0,6 -> 99-16-36. Giu 0,5:
-  // 0,6 bot 10 lan sai nhung 5 anh dung bi doi thanh "chua chac".
+  // Do lai tren 102 anh that khong trung (3 bo realworld_*, da co luat pin),
+  // dung - sai - chua chac: nguong 0,4 -> 65-28-9; 0,5 -> 64-23-15;
+  // 0,6 -> 61-16-25. Giu 0,5: 0,6 bot 7 lan sai nhung 3 anh dung thanh "chua chac".
   const NGUONG_TIN_CAY = 0.50;
   // Can bang do sang: anh co do sang trung binh < NGUONG_TOI thi nang gamma
-  // cho do sang ve ~DO_SANG_DICH; anh du sang giu nguyen. Do tren 151 anh
-  // that: anh goc 109 -> 109 (khong doi); lam toi con 25% do sang: 95 -> 107.
+  // cho do sang ve ~DO_SANG_DICH; anh du sang giu nguyen. Do tren 102 anh
+  // that khong trung: anh goc 65 -> 65 (khong doi); lam toi con 25%: 58 -> 68.
   const NGUONG_TOI = 0.30;
   const DO_SANG_DICH = 0.45;
+  // Uu tien pin (rac nguy hai - bo sot nguy hiem hon bao nham): xac suat pin
+  // >= NGUONG_PIN thi bao rac nguy hai, ke ca khi pin khong cao nhat hay duoi
+  // NGUONG_TIN_CAY. Do tren 102 anh that khong trung: pin 10 -> 11/14, bao nham
+  // pin van 4; nguong 0,2 khong them pin nao ma bao nham len 8. Nguong chon
+  // tren chinh bo test nay nen chi la quy tac an toan, khong phai model tot hon.
+  const NGUONG_PIN = 0.30;
   // Camera: nhan dien ~4 lan/giay la du muot, ma nhe may va do ton pin hon
   // nhieu so voi chay het 30 khung/giay.
   const CHU_KY_MS = 250;
@@ -261,7 +267,8 @@
     return { x: x.maximum(1e-6).pow(gamma), daTangSang: true };
   }
 
-  /** Tra ve { chon: khoa nhom, theoNhom: { nhom: tong xac suat }, daTangSang }. */
+  /** Tra ve { chon: khoa nhom, theoNhom: { nhom: tong xac suat }, daTangSang,
+   *  uuTienPin: true neu chon nguy hai nho luat NGUONG_PIN }. */
   function duDoan(nguon, rong, cao) {
     const anh224 = catAnh(nguon, rong, cao);
     let daTangSang = false;
@@ -277,7 +284,11 @@
       theoNhom[LOAI_VAO_NHOM[loai]] += xacSuat[i];
       if (xacSuat[i] > xacSuat[top]) top = i;
     });
-    return { chon: LOAI_VAO_NHOM[meta.classes[top]], theoNhom, daTangSang };
+    const pPin = xacSuat[meta.classes.indexOf("battery")];
+    const chon = LOAI_VAO_NHOM[meta.classes[top]];
+    if (pPin >= NGUONG_PIN && (chon !== "nguy-hiem" || pPin < NGUONG_TIN_CAY))
+      return { chon: "nguy-hiem", theoNhom, daTangSang, uuTienPin: true };
+    return { chon, theoNhom, daTangSang, uuTienPin: false };
   }
 
   function moKetQua() { $("khung-tha").style.display = "none"; $("hang-nut").style.display = "none"; $("khu-ket-qua").classList.add("hien"); }
@@ -366,13 +377,20 @@
     hienKetQua(duDoan(img, img.naturalWidth, img.naturalHeight));
   }
 
-  function hienKetQua({ chon: khoaTop, theoNhom, daTangSang }) {
+  function hienKetQua({ chon: khoaTop, theoNhom, daTangSang, uuTienPin }) {
     const xepHang = Object.entries(theoNhom).sort((a, b) => b[1] - a[1]);
     const pTop = theoNhom[khoaTop];
     const nhom = NHOM_RAC[khoaTop];
     const pct = (pTop * 100).toFixed(0);
 
-    if (pTop >= NGUONG_TIN_CAY) {
+    if (uuTienPin) {
+      // Chua chac nhung co the la pin: khuyen xu ly nhu rac nguy hai cho an toan
+      $("phan-dap-an").className = khoaTop;
+      $("nhan").textContent = `Có thể là ${nhom.ten.toLowerCase()}`;
+      $("vi-du").textContent = `Gồm: ${nhom.viDu}`;
+      $("huong-dan").textContent = `Máy thấy ${pct}% khả năng là pin. Nếu đúng là pin: ${nhom.viec}`;
+      $("do-chac").textContent = `Độ chắc chắn ${pct}% · ưu tiên cảnh báo pin`;
+    } else if (pTop >= NGUONG_TIN_CAY) {
       $("phan-dap-an").className = khoaTop;
       $("nhan").textContent = nhom.ten;
       $("vi-du").textContent = `Gồm: ${nhom.viDu}`;

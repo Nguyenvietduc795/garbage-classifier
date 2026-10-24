@@ -79,44 +79,59 @@ Số ảnh đúng theo 4 nhóm:
 | `realworld_curated` (49) | **44** | 42 | 41 |
 | `realworld_test` (49) | 22 | **29** | 27 |
 | `realworld_test2` (53) | 43 | **45** | 43 |
-| Tổng 3 bộ (151) | 109 | **116** | 111 |
-| **Pin** trong 3 bộ (27) | **20** | 14 | 16 |
+| **3 bộ, bỏ ảnh trùng (102)** | 65 (64%) | **74 (73%)** | — |
+| **Pin**, bỏ ảnh trùng (14) | **10** | 7 | — |
 | `realworld_mta_test` (175, cùng nguồn với dữ liệu train) | 146 | 170 | 170 |
+
+**Ba bộ `realworld_*` trùng ảnh nhau:** `realworld_curated` lấy lại ảnh từ hai bộ kia, nên
+151 ảnh chỉ có 102 ảnh khác nhau (so MD5), pin 27 ảnh chỉ có 14. Cộng thẳng 3 bộ (109 / 116,
+pin 20 / 14) là đếm một ảnh hai lần — mọi con số "151 ảnh" cũ nên đọc theo dòng 102.
 
 v3 đúng nhiều hơn trên ảnh thật nói chung nhưng **nhận pin kém đi** — dữ liệu mới không có
 ảnh pin nào, pin bị các lớp khác lấn át. Lấy mẫu pin gấp đôi không chữa được. Vì pin là rác
 nguy hại, web giữ v2. Việc cần làm tiếp: tự chụp 200–300 ảnh pin thật (nhiều nền, đèn vàng,
 chỗ tối) rồi train lại v3. Vẫn chưa có bộ test ảnh tối nên chưa đo được độ bền ánh sáng.
 
-### Cân bằng độ sáng và ngưỡng tin cậy (web, model v2)
+### Xử lý thêm trên web, không train lại (model v2)
 
-Không train lại, chỉ thêm bước xử lý trước và sau khi chạy model trong `frontend/index.html`:
+Ba bước thêm trước và sau khi chạy model trong `frontend/index.html`:
 
 - **Cân bằng độ sáng:** ảnh có độ sáng trung bình < 0,30 thì nâng gamma cho độ sáng về
   ~0,45; ảnh đủ sáng giữ nguyên. Kết quả hiện thêm "ảnh tối, đã tự tăng sáng".
 - **Ngưỡng tin cậy 0,5:** nhóm được chọn có xác suất < 50% thì hiện "Chưa chắc" thay vì đoán.
+- **Ưu tiên pin:** xác suất pin ≥ 30% thì hiện "Có thể là rác nguy hại", kể cả khi pin không
+  phải lớp cao nhất. Pin là rác nguy hại nên bỏ sót tệ hơn báo nhầm.
 
-Chưa có ảnh tối thật, nên làm tối giả 151 ảnh (còn 25% độ sáng). Số ảnh đúng theo 4 nhóm:
+Đo trên 102 ảnh không trùng (PyTorch), số ảnh đúng theo 4 nhóm. Chưa có ảnh tối thật nên làm
+tối giả (còn 25% độ sáng):
 
-| | Không cân bằng | Có cân bằng |
-|---|---|---|
-| Ảnh gốc — PyTorch | 109 | 109 |
-| Ảnh tối giả — PyTorch | 95 | **107** |
-| Ảnh gốc — trình duyệt | 107 | 107 |
-| Ảnh tối giả — trình duyệt | 100 | **105** |
+| | Đúng nhóm | Pin đúng (/14) | Báo nhầm thành pin |
+|---|---|---|---|
+| v2 gốc | 65 | 10 | 4 |
+| + cân bằng độ sáng | 65 | 10 | 4 |
+| + ưu tiên pin (**web hiện tại**) | **66** | **11** | 4 |
+| Ảnh tối giả, v2 gốc | 58 | 7 | 6 |
+| Ảnh tối giả, + cân bằng độ sáng | 68 | 8 | 3 |
 
-(Trình duyệt và PyTorch thu nhỏ ảnh hơi khác nhau nên lệch 2 ảnh ở ảnh gốc.)
+Trên trình duyệt (web hiện tại): 63/102 đúng nhóm, pin 11/14, báo nhầm pin 5; ảnh tối giả
+66/102. Lệch vài ảnh so với PyTorch vì trình duyệt thu nhỏ ảnh hơi khác.
 
-Ngưỡng tin cậy trên 151 ảnh gốc (PyTorch), đúng – sai – "Chưa chắc":
+**Ưu tiên pin chỉ sửa được 1 ảnh** (pin AA rò rỉ, xác suất pin 34%, trước bị đoán thủy tinh),
+và ngưỡng 30% được chọn trên chính bộ test này — đây là quy tắc an toàn, không phải model tốt
+hơn. Hạ xuống 20% không nhận thêm pin nào mà báo nhầm tăng từ 4 lên 8. 3 ảnh pin v2 vẫn sai:
+vỉ pin còn bao bì giấy (đoán bìa), pin nhỏ nằm ở mép trên ảnh mạch điện (bị cắt mất khi lấy
+phần giữa ảnh), và ảnh *thùng thu gom pin* — ảnh này không có pin, không nên tính là lỗi.
+
+Ngưỡng tin cậy (đã có ưu tiên pin), đúng – sai – "Chưa chắc" trên 102 ảnh:
 
 | Ngưỡng | Đúng | Sai | Chưa chắc |
 |---|---|---|---|
-| 0,4 | 107 | 33 | 11 |
-| **0,5 (đang dùng)** | 104 | 26 | 21 |
-| 0,6 | 99 | 16 | 36 |
+| 0,4 | 65 | 28 | 9 |
+| **0,5 (đang dùng)** | 64 | 23 | 15 |
+| 0,6 | 61 | 16 | 25 |
 
-Giữ 0,5: lên 0,6 bớt 10 lần sai nhưng 5 ảnh đúng bị đổi thành "Chưa chắc", và cứ 4 ảnh
-thì 1 ảnh không có câu trả lời.
+Giữ 0,5: lên 0,6 bớt 7 lần sai nhưng 3 ảnh đúng bị đổi thành "Chưa chắc", và cứ 4 ảnh thì
+1 ảnh không có câu trả lời.
 
 ---
 
