@@ -8,7 +8,24 @@ Kèm các giao diện sử dụng: web (`frontend/`, Vercel), desktop (PyQt5) v�
 
 ---
 
-## Model đang chạy trên web (01/10/2026)
+## Model đang chạy trên web: v5 (24/10/2026)
+
+`frontend/models/r18-8lop-v5` — ResNet-18 train trên `dataset_8lop_v5` (19.657 ảnh, thêm ảnh
+pin thật). Luật pin: xác suất pin ≥ 50% thì báo nguy hại, dưới 50% thì chọn loại cao nhất
+trong 7 loại còn lại (bỏ luật "có thể là pin" ở 30% của bản v2). Số đo xem mục **v5** bên dưới.
+
+| | Trước (v2 + luật pin 30%) | Sau (v5 + luật pin 50%) |
+|---|---|---|
+| Nhận ra pin | cứ 10 pin bỏ sót 4 | cứ 10 pin bỏ sót 2 |
+| Báo nhầm thành pin | 55 lần | 45 lần |
+| Đúng nhóm, 1.642 ảnh rác chụp thật | 87% | 91% |
+| Hữu cơ (/300) | 250 | 238 |
+| Quần áo chụp thật | sai hết | vẫn sai hết |
+
+Bản v2 vẫn giữ ở `frontend/models/r18-8lop-v1`; muốn quay lại thì đổi `THU_MUC_MODEL` và
+khôi phục luật pin cũ (commit `d364ddf`).
+
+## Model v2 (01/10/2026) — chạy trên web tới 24/10/2026
 
 `frontend/` chạy **ResNet-18 8 loại ngay trong trình duyệt** (TensorFlow.js, nén uint8,
 11 MB) — không cần server, ảnh không rời máy người dùng.
@@ -137,7 +154,7 @@ Giữ 0,5: lên 0,6 bớt 7 lần sai nhưng 3 ảnh đúng bị đổi thành "
 
 ## Thêm pin chụp thật + rác Nam Á (24/10/2026) — chưa đưa lên web
 
-`dataset_8lop_v4` (20.158 ảnh) = v3 + hai bộ mới, train y như v3 (15 epoch, batch 32):
+`dataset_8lop_v4` (19.157 ảnh) = v3 + hai bộ mới, train y như v3 (15 epoch, batch 32):
 
 - **Bower waste annotations** (Hugging Face, MIT): ảnh điện thoại, pin cũ đổ đống trên bàn,
   sàn, trong lọ, còn trong vỉ. 438 box pin nhưng **chỉ nằm trong 53 ảnh**, box nhỏ (cạnh ngắn
@@ -170,6 +187,38 @@ Số ảnh đúng theo 4 nhóm (bỏ ảnh trùng MD5 trong từng bộ):
 - `realworld_bdw_test` 100% là **không đáng tin**: ảnh cùng một người chụp, cùng nền, chỉ
   khác góc — dHash không bắt được hết các ảnh gần giống đó. Đừng dùng bộ này để so model.
 - Cả ba model đều sai **8/8 ảnh quần áo** trong 102 ảnh cũ.
+
+## v5: thêm ~500 ảnh pin thật (24/10/2026) — pin tốt hơn mà không bị đổi chác
+
+`dataset_8lop_v5` = v4 + ảnh pin **lọc tay từng ảnh**:
+
+- **Open Images V7** (nhãn ảnh "Battery" do người kiểm, ảnh Flickr CC BY 2.0): 428 ảnh, tải
+  được 363, giữ 245 — bỏ khoang máy ô tô, màn hình hiện biểu tượng pin, kệ siêu thị.
+- **Wikimedia Commons** (các mục pin AA/AAA, cúc áo, sạc dự phòng, pin điện thoại/máy ảnh, pin
+  rỉ sét, thùng thu gom…): 1.124 ảnh, giữ 703. Bỏ 11 ảnh đã có trong bộ test.
+- Lọc trùng dHash (cả bản xoay/lật) với v4 và mọi bộ test → thêm 500 ảnh pin train
+  (pin 815 → 1.315). 20% ảnh pin mới giữ làm `realworld_pin_test` (141 ảnh).
+
+v5 nhận pin tốt hẳn nhưng **báo nhầm thành pin nhiều hơn** (lon, chai kim loại → pin). Chữa
+bằng ngưỡng: pin chỉ khi P(pin) ≥ t, không thì lấy lớp cao nhất **không tính pin**. Chọn t
+trên một nửa các bộ test (chia theo MD5), nửa còn lại để báo cáo — không chỉnh trên chính
+số liệu báo cáo.
+
+| | v2 + ưu tiên pin 30% (**web hiện tại**) | v5, t = 0,5 | v5, t = 0,7 |
+|---|---|---|---|
+| 102 ảnh cũ: đúng nhóm · pin /14 · báo nhầm | 66 · 11 · 4 | 67 · 10 · 5 | **70** · 9 · **1** |
+| `realworld_pin_test` (141 pin) | 82 (58%) | **110 (78%)** | 97 (69%) |
+| `realworld_rw5_test` (1.642): đúng · báo nhầm | 87% · 27 | 91% · 35 | **93% · 8** |
+| `realworld_bower_test` (313): đúng · pin /11 · nhầm | 250 · 10 · 22 | 281 · 9 · 5 | **283** · 8 · **2** |
+| `realworld_mta_test` (175) | 146 | **166** | **166** |
+| **Tổng pin nhận đúng (/166)** | 103 | **129** | 114 |
+| **Tổng báo nhầm thành pin** | 55 | 45 | **11** |
+
+- **v5 + t = 0,5 hơn web hiện tại ở mọi bộ test**: nhiều pin hơn 26 ảnh, ít báo nhầm hơn,
+  đúng nhóm cao hơn. t = 0,7 gần như hết báo nhầm nhưng bỏ sót pin nhiều hơn t = 0,5.
+- `realworld_pin_test` cùng nguồn (Open Images, Commons) với ảnh pin train nên con số 78% là
+  lạc quan. Trên 14 + 11 pin của các bộ khác, v5 ngang v2 (19 so với 21, trong sai số).
+- Quần áo chụp thật vẫn sai 8/8 — chưa có dữ liệu cho lớp này.
 
 ---
 

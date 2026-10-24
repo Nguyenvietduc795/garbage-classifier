@@ -147,7 +147,7 @@
   // Moi lan doi model: chep vao thu muc moi trong models/ roi doi THU_MUC_MODEL.
   // Vercel cache file trong models/ 1 nam (xem vercel.json), nen KHONG ghi de
   // vao thu muc cu - nguoi da mo trang se van dung model cu.
-  const THU_MUC_MODEL = "models/r18-8lop-v1";
+  const THU_MUC_MODEL = "models/r18-8lop-v5";
   // Do tren 49 anh that: nguong 0,5 -> 41 dung / 3 sai / 5 "chua chac";
   // nguong 0,6 -> 38 dung / 2 sai / 9 "chua chac" (model train co label
   // smoothing nen xac suat hiem khi vuot 90%).
@@ -160,12 +160,12 @@
   // that khong trung: anh goc 65 -> 65 (khong doi); lam toi con 25%: 58 -> 68.
   const NGUONG_TOI = 0.30;
   const DO_SANG_DICH = 0.45;
-  // Uu tien pin (rac nguy hai - bo sot nguy hiem hon bao nham): xac suat pin
-  // >= NGUONG_PIN thi bao rac nguy hai, ke ca khi pin khong cao nhat hay duoi
-  // NGUONG_TIN_CAY. Do tren 102 anh that khong trung: pin 10 -> 11/14, bao nham
-  // pin van 4; nguong 0,2 khong them pin nao ma bao nham len 8. Nguong chon
-  // tren chinh bo test nay nen chi la quy tac an toan, khong phai model tot hon.
-  const NGUONG_PIN = 0.30;
+  // Pin: xac suat pin >= NGUONG_PIN thi bao rac nguy hai; duoi nguong thi chon
+  // loai cao nhat trong 7 loai con lai. Model v5 hoc them ~500 anh pin nen hay
+  // goi lon/chai kim loai la pin; nguong nay chan bot. Chon tren nua A cac bo
+  // test that, bao cao tren nua B: so voi v2 + luat pin 30% cu, pin 52 -> 64/80,
+  // bao nham pin 22 -> 22. Nguong 0,3 voi v5 lam bao nham len 52.
+  const NGUONG_PIN = 0.50;
   // Camera: nhan dien ~4 lan/giay la du muot, ma nhe may va do ton pin hon
   // nhieu so voi chay het 30 khung/giay.
   const CHU_KY_MS = 250;
@@ -267,8 +267,7 @@
     return { x: x.maximum(1e-6).pow(gamma), daTangSang: true };
   }
 
-  /** Tra ve { chon: khoa nhom, theoNhom: { nhom: tong xac suat }, daTangSang,
-   *  uuTienPin: true neu chon nguy hai nho luat NGUONG_PIN }. */
+  /** Tra ve { chon: khoa nhom, theoNhom: { nhom: tong xac suat }, daTangSang }. */
   function duDoan(nguon, rong, cao) {
     const anh224 = catAnh(nguon, rong, cao);
     let daTangSang = false;
@@ -279,16 +278,14 @@
       return tf.softmax(model.predict(x)).dataSync();
     });
     const theoNhom = Object.fromEntries(Object.keys(NHOM_RAC).map(k => [k, 0]));
-    let top = 0;
+    const iPin = meta.classes.indexOf("battery");
+    let top = -1;
     meta.classes.forEach((loai, i) => {
       theoNhom[LOAI_VAO_NHOM[loai]] += xacSuat[i];
-      if (xacSuat[i] > xacSuat[top]) top = i;
+      if (i !== iPin && (top < 0 || xacSuat[i] > xacSuat[top])) top = i;
     });
-    const pPin = xacSuat[meta.classes.indexOf("battery")];
-    const chon = LOAI_VAO_NHOM[meta.classes[top]];
-    if (pPin >= NGUONG_PIN && (chon !== "nguy-hiem" || pPin < NGUONG_TIN_CAY))
-      return { chon: "nguy-hiem", theoNhom, daTangSang, uuTienPin: true };
-    return { chon, theoNhom, daTangSang, uuTienPin: false };
+    const chon = xacSuat[iPin] >= NGUONG_PIN ? "nguy-hiem" : LOAI_VAO_NHOM[meta.classes[top]];
+    return { chon, theoNhom, daTangSang };
   }
 
   function moKetQua() { $("khung-tha").style.display = "none"; $("hang-nut").style.display = "none"; $("khu-ket-qua").classList.add("hien"); }
@@ -377,20 +374,13 @@
     hienKetQua(duDoan(img, img.naturalWidth, img.naturalHeight));
   }
 
-  function hienKetQua({ chon: khoaTop, theoNhom, daTangSang, uuTienPin }) {
+  function hienKetQua({ chon: khoaTop, theoNhom, daTangSang }) {
     const xepHang = Object.entries(theoNhom).sort((a, b) => b[1] - a[1]);
     const pTop = theoNhom[khoaTop];
     const nhom = NHOM_RAC[khoaTop];
     const pct = (pTop * 100).toFixed(0);
 
-    if (uuTienPin) {
-      // Chua chac nhung co the la pin: khuyen xu ly nhu rac nguy hai cho an toan
-      $("phan-dap-an").className = khoaTop;
-      $("nhan").textContent = `Có thể là ${nhom.ten.toLowerCase()}`;
-      $("vi-du").textContent = `Gồm: ${nhom.viDu}`;
-      $("huong-dan").textContent = `Máy thấy ${pct}% khả năng là pin. Nếu đúng là pin: ${nhom.viec}`;
-      $("do-chac").textContent = `Độ chắc chắn ${pct}% · ưu tiên cảnh báo pin`;
-    } else if (pTop >= NGUONG_TIN_CAY) {
+    if (pTop >= NGUONG_TIN_CAY) {
       $("phan-dap-an").className = khoaTop;
       $("nhan").textContent = nhom.ten;
       $("vi-du").textContent = `Gồm: ${nhom.viDu}`;

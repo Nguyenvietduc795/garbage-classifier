@@ -1,0 +1,9 @@
+{
+  "arch": "resnet18",
+  "classes": ["battery", "cardboard", "clothes", "glass", "metal", "organic", "paper", "plastic"],
+  "imageSize": 224,
+  "mean": [0.485, 0.456, 0.406],
+  "std": [0.229, 0.224, 0.225],
+  "nguon": "garbage_classifier/artifacts/v5_r18/best_model.pt - dataset_8lop_v5 (19.657 anh, them anh pin that tu Bower, Open Images, Commons); TF.js nen uint8",
+  "do_chinh_xac_anh_that": "voi NGUONG_PIN 0,5: pin 129/166, bao nham pin 45; realworld_rw5_test 91% theo 4 nhom"
+}
