@@ -1,0 +1,4088 @@
+[
+ {
+  "ten_chi_so": "so anh lop battery",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 884,
+  "tu_so": 884,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop cardboard",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 1427,
+  "tu_so": 1427,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop clothes",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 3619,
+  "tu_so": 3619,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop glass",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 2066,
+  "tu_so": 2066,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop metal",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 1088,
+  "tu_so": 1088,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop organic",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 1451,
+  "tu_so": 1451,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop paper",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 1361,
+  "tu_so": 1361,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop plastic",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 1610,
+  "tu_so": 1610,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "tong so anh",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 13506,
+  "tu_so": 13506,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'ar' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 948,
+  "tu_so": 948,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'new' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 11107,
+  "tu_so": 11107,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'gam' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop",
+  "gia_tri": 1451,
+  "tu_so": 1451,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop battery",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 756,
+  "tu_so": 756,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop cardboard",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 1411,
+  "tu_so": 1411,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop clothes",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 3341,
+  "tu_so": 3341,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop glass",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 1736,
+  "tu_so": 1736,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop metal",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 930,
+  "tu_so": 930,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop organic",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 1451,
+  "tu_so": 1451,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop paper",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 1336,
+  "tu_so": 1336,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop plastic",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 1597,
+  "tu_so": 1597,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "tong so anh",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 12558,
+  "tu_so": 12558,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'goc' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 11107,
+  "tu_so": 11107,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'gam' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v2",
+  "gia_tri": 1451,
+  "tu_so": 1451,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v2/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop battery",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 756,
+  "tu_so": 756,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop cardboard",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 1793,
+  "tu_so": 1793,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop clothes",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 3653,
+  "tu_so": 3653,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop glass",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 2080,
+  "tu_so": 2080,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop metal",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 1582,
+  "tu_so": 1582,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop organic",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 2027,
+  "tu_so": 2027,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop paper",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 2245,
+  "tu_so": 2245,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop plastic",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 3445,
+  "tu_so": 3445,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "tong so anh",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 17581,
+  "tu_so": 17581,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'goc' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 11107,
+  "tu_so": 11107,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'rw' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 3247,
+  "tu_so": 3247,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'mta' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 1776,
+  "tu_so": 1776,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'gam' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v3",
+  "gia_tri": 1451,
+  "tu_so": 1451,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v3/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop battery",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 815,
+  "tu_so": 815,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop cardboard",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 1936,
+  "tu_so": 1936,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop clothes",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 3656,
+  "tu_so": 3656,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop glass",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 2292,
+  "tu_so": 2292,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop metal",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 1669,
+  "tu_so": 1669,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop organic",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 2402,
+  "tu_so": 2402,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop paper",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 2445,
+  "tu_so": 2445,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop plastic",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 3942,
+  "tu_so": 3942,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "tong so anh",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 19157,
+  "tu_so": 19157,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'goc' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 11107,
+  "tu_so": 11107,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'bower' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 596,
+  "tu_so": 596,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'rw' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 3247,
+  "tu_so": 3247,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'mta' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 1776,
+  "tu_so": 1776,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'bdw' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 980,
+  "tu_so": 980,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'gam' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v4",
+  "gia_tri": 1451,
+  "tu_so": 1451,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v4/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop battery",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 1315,
+  "tu_so": 1315,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop cardboard",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 1936,
+  "tu_so": 1936,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop clothes",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 3656,
+  "tu_so": 3656,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop glass",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 2292,
+  "tu_so": 2292,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop metal",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 1669,
+  "tu_so": 1669,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop organic",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 2402,
+  "tu_so": 2402,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop paper",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 2445,
+  "tu_so": 2445,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh lop plastic",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 3942,
+  "tu_so": 3942,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/ (dem file anh); audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "tong so anh",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 19657,
+  "tu_so": 19657,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'goc' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 11107,
+  "tu_so": 11107,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'bower' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 596,
+  "tu_so": 596,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'cm' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 347,
+  "tu_so": 347,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'oi' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 153,
+  "tu_so": 153,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'rw' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 3247,
+  "tu_so": 3247,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'mta' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 1776,
+  "tu_so": 1776,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'bdw' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 980,
+  "tu_so": 980,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh nguon 'gam' (tien to ten file; 'goc' = tien to la ten lop/shoes)",
+  "phien_ban": "dataset_8lop_v5",
+  "gia_tri": 1451,
+  "tu_so": 1451,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "dataset_8lop_v5/; audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop battery (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 59,
+  "tu_so": 59,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop cardboard (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 143,
+  "tu_so": 143,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop clothes (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 3,
+  "tu_so": 3,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop glass (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 212,
+  "tu_so": 212,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop metal (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 87,
+  "tu_so": 87,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop organic (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 375,
+  "tu_so": 375,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop paper (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 200,
+  "tu_so": 200,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop plastic (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 497,
+  "tu_so": 497,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'bdw' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 980,
+  "tu_so": 980,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'bower' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 596,
+  "tu_so": 596,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'gam' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'goc' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'mta' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'rw' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech tong (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 1576,
+  "tu_so": 1576,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop battery nguon 'bower' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 59,
+  "tu_so": 59,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop cardboard nguon 'bower' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 143,
+  "tu_so": 143,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop clothes nguon 'bower' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 3,
+  "tu_so": 3,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop glass nguon 'bdw' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 83,
+  "tu_so": 83,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop glass nguon 'bower' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 129,
+  "tu_so": 129,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop metal nguon 'bower' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 87,
+  "tu_so": 87,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop organic nguon 'bdw' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 375,
+  "tu_so": 375,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop paper nguon 'bdw' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 157,
+  "tu_so": 157,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop paper nguon 'bower' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 43,
+  "tu_so": 43,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop plastic nguon 'bdw' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 365,
+  "tu_so": 365,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop plastic nguon 'bower' (dataset_8lop_v3->dataset_8lop_v4)",
+  "phien_ban": "dataset_8lop_v3->dataset_8lop_v4",
+  "gia_tri": 132,
+  "tu_so": 132,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop battery (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 500,
+  "tu_so": 500,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop cardboard (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop clothes (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop glass (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop metal (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop organic (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop paper (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh lop plastic (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'bdw' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'bower' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'cm' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 347,
+  "tu_so": 347,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'gam' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'goc' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'mta' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'oi' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 153,
+  "tu_so": 153,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech so anh nguon 'rw' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech tong (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 500,
+  "tu_so": 500,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop battery nguon 'cm' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 347,
+  "tu_so": 347,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "chenh lech lop battery nguon 'oi' (dataset_8lop_v4->dataset_8lop_v5)",
+  "phien_ban": "dataset_8lop_v4->dataset_8lop_v5",
+  "gia_tri": 153,
+  "tu_so": 153,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "audit/round2/datasets.json"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_test",
+  "gia_tri": 43,
+  "tu_so": 43,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_test/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_test",
+  "gia_tri": 43,
+  "tu_so": 43,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_test/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_test",
+  "gia_tri": 7,
+  "tu_so": 7,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_test/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_test2",
+  "gia_tri": 52,
+  "tu_so": 52,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_test2/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_test2",
+  "gia_tri": 52,
+  "tu_so": 52,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_test2/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_test2",
+  "gia_tri": 7,
+  "tu_so": 7,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_test2/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_curated",
+  "gia_tri": 49,
+  "tu_so": 49,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_curated",
+  "gia_tri": 49,
+  "tu_so": 49,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_curated",
+  "gia_tri": 13,
+  "tu_so": 13,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_clothes_test",
+  "gia_tri": 43,
+  "tu_so": 43,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_clothes_test/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_clothes_test",
+  "gia_tri": 43,
+  "tu_so": 43,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_clothes_test/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_clothes_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_clothes_test/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_pin_test",
+  "gia_tri": 141,
+  "tu_so": 141,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_pin_test/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_pin_test",
+  "gia_tri": 141,
+  "tu_so": 141,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_pin_test/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_pin_test",
+  "gia_tri": 141,
+  "tu_so": 141,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_pin_test/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_mta_test",
+  "gia_tri": 175,
+  "tu_so": 175,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_mta_test/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_mta_test",
+  "gia_tri": 175,
+  "tu_so": 175,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_mta_test/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_mta_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_mta_test/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_bdw_test",
+  "gia_tri": 196,
+  "tu_so": 196,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_bdw_test/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_bdw_test",
+  "gia_tri": 196,
+  "tu_so": 196,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_bdw_test/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_bdw_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_bdw_test/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_bower_test",
+  "gia_tri": 314,
+  "tu_so": 314,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_bower_test/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_bower_test",
+  "gia_tri": 313,
+  "tu_so": 313,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_bower_test/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_bower_test",
+  "gia_tri": 11,
+  "tu_so": 11,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_bower_test/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_rw5_test",
+  "gia_tri": 1647,
+  "tu_so": 1647,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_rw5_test/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_rw5_test",
+  "gia_tri": 1642,
+  "tu_so": 1642,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_rw5_test/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_rw5_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_rw5_test/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_loai_bo/realworld_test",
+  "gia_tri": 6,
+  "tu_so": 6,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_loai_bo/realworld_test/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_loai_bo/realworld_test",
+  "gia_tri": 6,
+  "tu_so": 6,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_loai_bo/realworld_test/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_loai_bo/realworld_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_loai_bo/realworld_test/"
+ },
+ {
+  "ten_chi_so": "so anh truoc bo trung MD5",
+  "phien_ban": "realworld_loai_bo/realworld_test2",
+  "gia_tri": 1,
+  "tu_so": 1,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_loai_bo/realworld_test2/"
+ },
+ {
+  "ten_chi_so": "so anh sau bo trung MD5 (trong bo)",
+  "phien_ban": "realworld_loai_bo/realworld_test2",
+  "gia_tri": 1,
+  "tu_so": 1,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_loai_bo/realworld_test2/"
+ },
+ {
+  "ten_chi_so": "so anh pin (sau bo trung)",
+  "phien_ban": "realworld_loai_bo/realworld_test2",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_loai_bo/realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: curated_va_test",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 15,
+  "tu_so": 15,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: curated_va_test2",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 34,
+  "tu_so": 34,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: test_va_test2",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: curated_va_test_hoac_test2",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 49,
+  "tu_so": 49,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: ca_ba",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: anh_khac_nhau_3_bo",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 95,
+  "tu_so": 95,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: pin_khac_nhau_3_bo",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 14,
+  "tu_so": 14,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: curated_chi_rieng",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: nhan_mau_thuan",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 2,
+  "tu_so": 2,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: anh_102_cu_tong_file",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 102,
+  "tu_so": 102,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "trung MD5: anh_102_cu_khac_nhau",
+  "phien_ban": "curated/test/test2",
+  "gia_tri": 102,
+  "tu_so": 102,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, realworld_test/, realworld_test2/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_test/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_test2",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_test2/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_curated",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_curated/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_clothes_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_clothes_test/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_pin_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_pin_test/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_mta_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_mta_test/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_bdw_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_bdw_test/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_bower_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_bower_test/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_rw5_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_rw5_test/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_loai_bo/realworld_test",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_loai_bo/realworld_test/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "so anh trung MD5 voi dataset_8lop_v5",
+  "phien_ban": "realworld_loai_bo/realworld_test2",
+  "gia_tri": 0,
+  "tu_so": 0,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_datasets.py",
+  "file_nguon": "realworld_loai_bo/realworld_test2/, dataset_8lop_v5/"
+ },
+ {
+  "ten_chi_so": "accuracy 8 lop tap test noi bo (tai hien split data.py)",
+  "phien_ban": "v2_r18",
+  "gia_tri": "1788/1891 = 94.6%",
+  "tu_so": 1788,
+  "mau_so": 1891,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_test_split.py v2_r18 v5_r18",
+  "file_nguon": "C:\\AL-PLR\\dataset_8lop_v2; garbage_classifier/artifacts/v2_r18/best_model.pt; audit/round2/test_split.json"
+ },
+ {
+  "ten_chi_so": "split test tai hien khop dataset_split.json",
+  "phien_ban": "v2_r18",
+  "gia_tri": true,
+  "tu_so": true,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_test_split.py v2_r18 v5_r18",
+  "file_nguon": "garbage_classifier/artifacts/v2_r18/dataset_split.json"
+ },
+ {
+  "ten_chi_so": "accuracy 8 lop tap test noi bo (tai hien split data.py)",
+  "phien_ban": "v5_r18",
+  "gia_tri": "2699/2955 = 91.3%",
+  "tu_so": 2699,
+  "mau_so": 2955,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_test_split.py v2_r18 v5_r18",
+  "file_nguon": "C:\\AL-PLR\\dataset_8lop_v5; garbage_classifier/artifacts/v5_r18/best_model.pt; audit/round2/test_split.json"
+ },
+ {
+  "ten_chi_so": "split test tai hien khop dataset_split.json",
+  "phien_ban": "v5_r18",
+  "gia_tri": true,
+  "tu_so": true,
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_test_split.py v2_r18 v5_r18",
+  "file_nguon": "garbage_classifier/artifacts/v5_r18/dataset_split.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "1498/1642 = 91.2%",
+  "tu_so": 1498,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [rw5]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "35/1642 = 2.1%",
+  "tu_so": 35,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "250/300 = 83.3%",
+  "tu_so": 250,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "165/175 = 94.3%",
+  "tu_so": 165,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [mta]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "0/175 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "281/313 = 89.8%",
+  "tu_so": 281,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "9/11 = 81.8%",
+  "tu_so": 9,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bower]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "5/302 = 1.7%",
+  "tu_so": 5,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bdw]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "196/196 = 100.0%",
+  "tu_so": 196,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bdw]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "0/196 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "40/49 = 81.6%",
+  "tu_so": 40,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "10/13 = 76.9%",
+  "tu_so": 10,
+  "mau_so": 13,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "2/36 = 5.6%",
+  "tu_so": 2,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "28/43 = 65.1%",
+  "tu_so": 28,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "5/7 = 71.4%",
+  "tu_so": 5,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "3/36 = 8.3%",
+  "tu_so": 3,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test2]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "39/52 = 75.0%",
+  "tu_so": 39,
+  "mau_so": 52,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test2]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "5/7 = 71.4%",
+  "tu_so": 5,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test2]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "2/45 = 4.4%",
+  "tu_so": 2,
+  "mau_so": 45,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [clothes]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "31/43 = 72.1%",
+  "tu_so": 31,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [clothes]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "0/43 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [pin_test]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "107/141 = 75.9%",
+  "tu_so": 107,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [pin_test]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "107/141 = 75.9%",
+  "tu_so": 107,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [pin_test]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "0/0 = None%",
+  "tu_so": 0,
+  "mau_so": 0,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "67/102 = 65.7%",
+  "tu_so": 67,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "10/14 = 71.4%",
+  "tu_so": 10,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "5/88 = 5.7%",
+  "tu_so": 5,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "2278/2513 = 90.6%",
+  "tu_so": 2278,
+  "mau_so": 2513,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "29/38 = 76.3%",
+  "tu_so": 29,
+  "mau_so": 38,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "47/2475 = 1.9%",
+  "tu_so": 47,
+  "mau_so": 2475,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "2238/2464 = 90.8%",
+  "tu_so": 2238,
+  "mau_so": 2464,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "19/25 = 76.0%",
+  "tu_so": 19,
+  "mau_so": 25,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "45/2439 = 1.8%",
+  "tu_so": 45,
+  "mau_so": 2439,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin nhan dung tren 166 anh pin (102 cu + pin_test + bower)",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "126/166 = 75.9%",
+  "tu_so": 126,
+  "mau_so": 166,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin tren 102 cu + rw5 + bower + mta",
+  "phien_ban": "v5_r18 luat web t=0.5",
+  "gia_tri": "45/2207 = 2.0%",
+  "tu_so": 45,
+  "mau_so": 2207,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "1524/1642 = 92.8%",
+  "tu_so": 1524,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [rw5]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "8/1642 = 0.5%",
+  "tu_so": 8,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "250/300 = 83.3%",
+  "tu_so": 250,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "165/175 = 94.3%",
+  "tu_so": 165,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [mta]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "0/175 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "283/313 = 90.4%",
+  "tu_so": 283,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "8/11 = 72.7%",
+  "tu_so": 8,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bower]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "2/302 = 0.7%",
+  "tu_so": 2,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bdw]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "196/196 = 100.0%",
+  "tu_so": 196,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bdw]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "0/196 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [curated]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "40/49 = 81.6%",
+  "tu_so": 40,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [curated]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "9/13 = 69.2%",
+  "tu_so": 9,
+  "mau_so": 13,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [curated]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "1/36 = 2.8%",
+  "tu_so": 1,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "30/43 = 69.8%",
+  "tu_so": 30,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "4/7 = 57.1%",
+  "tu_so": 4,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "0/36 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test2]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "40/52 = 76.9%",
+  "tu_so": 40,
+  "mau_so": 52,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test2]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "5/7 = 71.4%",
+  "tu_so": 5,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test2]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "1/45 = 2.2%",
+  "tu_so": 1,
+  "mau_so": 45,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [clothes]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "31/43 = 72.1%",
+  "tu_so": 31,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [clothes]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "0/43 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [pin_test]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "95/141 = 67.4%",
+  "tu_so": 95,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [pin_test]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "95/141 = 67.4%",
+  "tu_so": 95,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [pin_test]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "0/0 = None%",
+  "tu_so": 0,
+  "mau_so": 0,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "70/102 = 68.6%",
+  "tu_so": 70,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "9/14 = 64.3%",
+  "tu_so": 9,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "1/88 = 1.1%",
+  "tu_so": 1,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "2309/2513 = 91.9%",
+  "tu_so": 2309,
+  "mau_so": 2513,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "26/38 = 68.4%",
+  "tu_so": 26,
+  "mau_so": 38,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "12/2475 = 0.5%",
+  "tu_so": 12,
+  "mau_so": 2475,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "2269/2464 = 92.1%",
+  "tu_so": 2269,
+  "mau_so": 2464,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "17/25 = 68.0%",
+  "tu_so": 17,
+  "mau_so": 25,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "11/2439 = 0.5%",
+  "tu_so": 11,
+  "mau_so": 2439,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin nhan dung tren 166 anh pin (102 cu + pin_test + bower)",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "112/166 = 67.5%",
+  "tu_so": 112,
+  "mau_so": 166,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin tren 102 cu + rw5 + bower + mta",
+  "phien_ban": "v5_r18 luat web t=0.7",
+  "gia_tri": "11/2207 = 0.5%",
+  "tu_so": 11,
+  "mau_so": 2207,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "1426/1642 = 86.8%",
+  "tu_so": 1426,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [rw5]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "21/1642 = 1.3%",
+  "tu_so": 21,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "250/300 = 83.3%",
+  "tu_so": 250,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "144/175 = 82.3%",
+  "tu_so": 144,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [mta]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "2/175 = 1.1%",
+  "tu_so": 2,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "250/313 = 79.9%",
+  "tu_so": 250,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "10/11 = 90.9%",
+  "tu_so": 10,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bower]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "20/302 = 6.6%",
+  "tu_so": 20,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bdw]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "153/196 = 78.1%",
+  "tu_so": 153,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bdw]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "0/196 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [curated]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "44/49 = 89.8%",
+  "tu_so": 44,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [curated]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "10/13 = 76.9%",
+  "tu_so": 10,
+  "mau_so": 13,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [curated]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "0/36 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "24/43 = 55.8%",
+  "tu_so": 24,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "5/7 = 71.4%",
+  "tu_so": 5,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "4/36 = 11.1%",
+  "tu_so": 4,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test2]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "42/52 = 80.8%",
+  "tu_so": 42,
+  "mau_so": 52,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test2]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "5/7 = 71.4%",
+  "tu_so": 5,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test2]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "0/45 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 45,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [clothes]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "36/43 = 83.7%",
+  "tu_so": 36,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [clothes]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "0/43 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [pin_test]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "77/141 = 54.6%",
+  "tu_so": 77,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [pin_test]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "77/141 = 54.6%",
+  "tu_so": 77,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [pin_test]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "0/0 = None%",
+  "tu_so": 0,
+  "mau_so": 0,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "66/102 = 64.7%",
+  "tu_so": 66,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "10/14 = 71.4%",
+  "tu_so": 10,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [102_anh_cu]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "4/88 = 4.5%",
+  "tu_so": 4,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "2119/2513 = 84.3%",
+  "tu_so": 2119,
+  "mau_so": 2513,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "30/38 = 78.9%",
+  "tu_so": 30,
+  "mau_so": 38,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "47/2475 = 1.9%",
+  "tu_so": 47,
+  "mau_so": 2475,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo_bo_curated]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "2075/2464 = 84.2%",
+  "tu_so": 2075,
+  "mau_so": 2464,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo_bo_curated]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "20/25 = 80.0%",
+  "tu_so": 20,
+  "mau_so": 25,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo_bo_curated]",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "47/2439 = 1.9%",
+  "tu_so": 47,
+  "mau_so": 2439,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin nhan dung tren 166 anh pin (102 cu + pin_test + bower)",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "97/166 = 58.4%",
+  "tu_so": 97,
+  "mau_so": 166,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin tren 102 cu + rw5 + bower + mta",
+  "phien_ban": "v2_r18 luat web t=0.3",
+  "gia_tri": "47/2207 = 2.1%",
+  "tu_so": 47,
+  "mau_so": 2207,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "1492/1642 = 90.9%",
+  "tu_so": 1492,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [rw5]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "37/1642 = 2.3%",
+  "tu_so": 37,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "251/300 = 83.7%",
+  "tu_so": 251,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "168/175 = 96.0%",
+  "tu_so": 168,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [mta]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "0/175 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "280/313 = 89.5%",
+  "tu_so": 280,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "7/11 = 63.6%",
+  "tu_so": 7,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bower]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "4/302 = 1.3%",
+  "tu_so": 4,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bdw]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "196/196 = 100.0%",
+  "tu_so": 196,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bdw]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "0/196 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [curated]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "41/49 = 83.7%",
+  "tu_so": 41,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [curated]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "8/13 = 61.5%",
+  "tu_so": 8,
+  "mau_so": 13,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [curated]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "2/36 = 5.6%",
+  "tu_so": 2,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "27/43 = 62.8%",
+  "tu_so": 27,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "3/7 = 42.9%",
+  "tu_so": 3,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "2/36 = 5.6%",
+  "tu_so": 2,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test2]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "45/52 = 86.5%",
+  "tu_so": 45,
+  "mau_so": 52,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test2]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "5/7 = 71.4%",
+  "tu_so": 5,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test2]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "2/45 = 4.4%",
+  "tu_so": 2,
+  "mau_so": 45,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [clothes]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "29/43 = 67.4%",
+  "tu_so": 29,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [clothes]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "0/43 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [pin_test]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "111/141 = 78.7%",
+  "tu_so": 111,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [pin_test]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "111/141 = 78.7%",
+  "tu_so": 111,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [pin_test]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "0/0 = None%",
+  "tu_so": 0,
+  "mau_so": 0,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "73/102 = 71.6%",
+  "tu_so": 73,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "8/14 = 57.1%",
+  "tu_so": 8,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [102_anh_cu]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "4/88 = 4.5%",
+  "tu_so": 4,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "2278/2513 = 90.6%",
+  "tu_so": 2278,
+  "mau_so": 2513,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "23/38 = 60.5%",
+  "tu_so": 23,
+  "mau_so": 38,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "47/2475 = 1.9%",
+  "tu_so": 47,
+  "mau_so": 2475,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "2237/2464 = 90.8%",
+  "tu_so": 2237,
+  "mau_so": 2464,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "15/25 = 60.0%",
+  "tu_so": 15,
+  "mau_so": 25,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "45/2439 = 1.8%",
+  "tu_so": 45,
+  "mau_so": 2439,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin nhan dung tren 166 anh pin (102 cu + pin_test + bower)",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "126/166 = 75.9%",
+  "tu_so": 126,
+  "mau_so": 166,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin tren 102 cu + rw5 + bower + mta",
+  "phien_ban": "v5_r18_s1 luat web t=0.5",
+  "gia_tri": "45/2207 = 2.0%",
+  "tu_so": 45,
+  "mau_so": 2207,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "1491/1642 = 90.8%",
+  "tu_so": 1491,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [rw5]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "32/1642 = 1.9%",
+  "tu_so": 32,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "239/300 = 79.7%",
+  "tu_so": 239,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "167/175 = 95.4%",
+  "tu_so": 167,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [mta]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "0/175 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "289/313 = 92.3%",
+  "tu_so": 289,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "11/11 = 100.0%",
+  "tu_so": 11,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bower]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "3/302 = 1.0%",
+  "tu_so": 3,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bdw]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "196/196 = 100.0%",
+  "tu_so": 196,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bdw]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "0/196 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [curated]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "44/49 = 89.8%",
+  "tu_so": 44,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [curated]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "9/13 = 69.2%",
+  "tu_so": 9,
+  "mau_so": 13,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [curated]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "1/36 = 2.8%",
+  "tu_so": 1,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "30/43 = 69.8%",
+  "tu_so": 30,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "4/7 = 57.1%",
+  "tu_so": 4,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "4/36 = 11.1%",
+  "tu_so": 4,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test2]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "46/52 = 88.5%",
+  "tu_so": 46,
+  "mau_so": 52,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test2]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "5/7 = 71.4%",
+  "tu_so": 5,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test2]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "1/45 = 2.2%",
+  "tu_so": 1,
+  "mau_so": 45,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [clothes]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "29/43 = 67.4%",
+  "tu_so": 29,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [clothes]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "0/43 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [pin_test]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "110/141 = 78.0%",
+  "tu_so": 110,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [pin_test]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "110/141 = 78.0%",
+  "tu_so": 110,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [pin_test]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "0/0 = None%",
+  "tu_so": 0,
+  "mau_so": 0,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "76/102 = 74.5%",
+  "tu_so": 76,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "9/14 = 64.3%",
+  "tu_so": 9,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [102_anh_cu]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "5/88 = 5.7%",
+  "tu_so": 5,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "2292/2513 = 91.2%",
+  "tu_so": 2292,
+  "mau_so": 2513,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "29/38 = 76.3%",
+  "tu_so": 29,
+  "mau_so": 38,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "41/2475 = 1.7%",
+  "tu_so": 41,
+  "mau_so": 2475,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "2248/2464 = 91.2%",
+  "tu_so": 2248,
+  "mau_so": 2464,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "20/25 = 80.0%",
+  "tu_so": 20,
+  "mau_so": 25,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo_bo_curated]",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "40/2439 = 1.6%",
+  "tu_so": 40,
+  "mau_so": 2439,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin nhan dung tren 166 anh pin (102 cu + pin_test + bower)",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "130/166 = 78.3%",
+  "tu_so": 130,
+  "mau_so": 166,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin tren 102 cu + rw5 + bower + mta",
+  "phien_ban": "v5_r18_s2 luat web t=0.5",
+  "gia_tri": "40/2207 = 1.8%",
+  "tu_so": 40,
+  "mau_so": 2207,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "1439/1642 = 87.6%",
+  "tu_so": 1439,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [rw5]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "6/1642 = 0.4%",
+  "tu_so": 6,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "250/300 = 83.3%",
+  "tu_so": 250,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "144/175 = 82.3%",
+  "tu_so": 144,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [mta]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "2/175 = 1.1%",
+  "tu_so": 2,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "259/313 = 82.7%",
+  "tu_so": 259,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "9/11 = 81.8%",
+  "tu_so": 9,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bower]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "9/302 = 3.0%",
+  "tu_so": 9,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bdw]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "153/196 = 78.1%",
+  "tu_so": 153,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [bdw]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "0/196 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 196,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [curated]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "42/49 = 85.7%",
+  "tu_so": 42,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [curated]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "8/13 = 61.5%",
+  "tu_so": 8,
+  "mau_so": 13,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [curated]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "0/36 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "24/43 = 55.8%",
+  "tu_so": 24,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "3/7 = 42.9%",
+  "tu_so": 3,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "2/36 = 5.6%",
+  "tu_so": 2,
+  "mau_so": 36,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [test2]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "42/52 = 80.8%",
+  "tu_so": 42,
+  "mau_so": 52,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [test2]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "5/7 = 71.4%",
+  "tu_so": 5,
+  "mau_so": 7,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [test2]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "0/45 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 45,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [clothes]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "36/43 = 83.7%",
+  "tu_so": 36,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [clothes]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "0/43 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 43,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [pin_test]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "53/141 = 37.6%",
+  "tu_so": 53,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [pin_test]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "53/141 = 37.6%",
+  "tu_so": 53,
+  "mau_so": 141,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [pin_test]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "0/0 = None%",
+  "tu_so": 0,
+  "mau_so": 0,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "66/102 = 64.7%",
+  "tu_so": 66,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "8/14 = 57.1%",
+  "tu_so": 8,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [102_anh_cu]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "2/88 = 2.3%",
+  "tu_so": 2,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "2139/2513 = 85.1%",
+  "tu_so": 2139,
+  "mau_so": 2513,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "25/38 = 65.8%",
+  "tu_so": 25,
+  "mau_so": 38,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "19/2475 = 0.8%",
+  "tu_so": 19,
+  "mau_so": 2475,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [tong_8_bo_bo_curated]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "2097/2464 = 85.1%",
+  "tu_so": 2097,
+  "mau_so": 2464,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [tong_8_bo_bo_curated]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "17/25 = 68.0%",
+  "tu_so": 17,
+  "mau_so": 25,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "anh khong phai pin bi bao nham pin [tong_8_bo_bo_curated]",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "19/2439 = 0.8%",
+  "tu_so": 19,
+  "mau_so": 2439,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin nhan dung tren 166 anh pin (102 cu + pin_test + bower)",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "70/166 = 42.2%",
+  "tu_so": 70,
+  "mau_so": 166,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin tren 102 cu + rw5 + bower + mta",
+  "phien_ban": "v2_r18 luat web t=0.5",
+  "gia_tri": "19/2207 = 0.9%",
+  "tu_so": 19,
+  "mau_so": 2207,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "66/102 = 64.7%",
+  "tu_so": 66,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "10/14 = 71.4%",
+  "tu_so": 10,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [102_anh_cu]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "4/88 = 4.5%",
+  "tu_so": 4,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "1424/1642 = 86.7%",
+  "tu_so": 1424,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [rw5]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "23/1642 = 1.4%",
+  "tu_so": 23,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "250/300 = 83.3%",
+  "tu_so": 250,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "254/313 = 81.2%",
+  "tu_so": 254,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "10/11 = 90.9%",
+  "tu_so": 10,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [bower]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "18/302 = 6.0%",
+  "tu_so": 18,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "146/175 = 83.4%",
+  "tu_so": 146,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [mta]",
+  "phien_ban": "v2_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "2/175 = 1.1%",
+  "tu_so": 2,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "74/102 = 72.5%",
+  "tu_so": 74,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "7/14 = 50.0%",
+  "tu_so": 7,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [102_anh_cu]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "2/88 = 2.3%",
+  "tu_so": 2,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "1522/1642 = 92.7%",
+  "tu_so": 1522,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [rw5]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "6/1642 = 0.4%",
+  "tu_so": 6,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "226/300 = 75.3%",
+  "tu_so": 226,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "280/313 = 89.5%",
+  "tu_so": 280,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "9/11 = 81.8%",
+  "tu_so": 9,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [bower]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "9/302 = 3.0%",
+  "tu_so": 9,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "170/175 = 97.1%",
+  "tu_so": 170,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [mta]",
+  "phien_ban": "v3_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "0/175 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "71/102 = 69.6%",
+  "tu_so": 71,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "6/14 = 42.9%",
+  "tu_so": 6,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [102_anh_cu]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "3/88 = 3.4%",
+  "tu_so": 3,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "1534/1642 = 93.4%",
+  "tu_so": 1534,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [rw5]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "7/1642 = 0.4%",
+  "tu_so": 7,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "251/300 = 83.7%",
+  "tu_so": 251,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "281/313 = 89.8%",
+  "tu_so": 281,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "11/11 = 100.0%",
+  "tu_so": 11,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [bower]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "7/302 = 2.3%",
+  "tu_so": 7,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "167/175 = 95.4%",
+  "tu_so": 167,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [mta]",
+  "phien_ban": "v4_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "1/175 = 0.6%",
+  "tu_so": 1,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [102_anh_cu]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "65/102 = 63.7%",
+  "tu_so": 65,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [102_anh_cu]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "12/14 = 85.7%",
+  "tu_so": 12,
+  "mau_so": 14,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [102_anh_cu]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "11/88 = 12.5%",
+  "tu_so": 11,
+  "mau_so": 88,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [rw5]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "1458/1642 = 88.8%",
+  "tu_so": 1458,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [rw5]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "79/1642 = 4.8%",
+  "tu_so": 79,
+  "mau_so": 1642,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "huu co dung [rw5]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "248/300 = 82.7%",
+  "tu_so": 248,
+  "mau_so": 300,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [bower]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "273/313 = 87.2%",
+  "tu_so": 273,
+  "mau_so": 313,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "pin dung [bower]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "9/11 = 81.8%",
+  "tu_so": 9,
+  "mau_so": 11,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [bower]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "13/302 = 4.3%",
+  "tu_so": 13,
+  "mau_so": 302,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung nhom [mta]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "166/175 = 94.9%",
+  "tu_so": 166,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "bao nham pin [mta]",
+  "phien_ban": "v5_r18 luat backend (argmax 8 lop, khong tang sang)",
+  "gia_tri": "0/175 = 0.0%",
+  "tu_so": 0,
+  "mau_so": 175,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung (du tin cay) [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.4",
+  "gia_tri": "67/102 = 65.7%",
+  "tu_so": 67,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "sai (du tin cay) [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.4",
+  "gia_tri": "20/102 = 19.6%",
+  "tu_so": 20,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "chua chac [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.4",
+  "gia_tri": "15/102 = 14.7%",
+  "tu_so": 15,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung (du tin cay) [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.5",
+  "gia_tri": "64/102 = 62.7%",
+  "tu_so": 64,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "sai (du tin cay) [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.5",
+  "gia_tri": "19/102 = 18.6%",
+  "tu_so": 19,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "chua chac [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.5",
+  "gia_tri": "19/102 = 18.6%",
+  "tu_so": 19,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung (du tin cay) [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.6",
+  "gia_tri": "59/102 = 57.8%",
+  "tu_so": 59,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "sai (du tin cay) [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.6",
+  "gia_tri": "13/102 = 12.7%",
+  "tu_so": 13,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "chua chac [102_anh_cu]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.6",
+  "gia_tri": "30/102 = 29.4%",
+  "tu_so": 30,
+  "mau_so": 102,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung (du tin cay) [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.4",
+  "gia_tri": "40/49 = 81.6%",
+  "tu_so": 40,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "sai (du tin cay) [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.4",
+  "gia_tri": "4/49 = 8.2%",
+  "tu_so": 4,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "chua chac [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.4",
+  "gia_tri": "5/49 = 10.2%",
+  "tu_so": 5,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung (du tin cay) [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.5",
+  "gia_tri": "39/49 = 79.6%",
+  "tu_so": 39,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "sai (du tin cay) [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.5",
+  "gia_tri": "4/49 = 8.2%",
+  "tu_so": 4,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "chua chac [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.5",
+  "gia_tri": "6/49 = 12.2%",
+  "tu_so": 6,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "dung (du tin cay) [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.6",
+  "gia_tri": "35/49 = 71.4%",
+  "tu_so": 35,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "sai (du tin cay) [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.6",
+  "gia_tri": "3/49 = 6.1%",
+  "tu_so": 3,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "chua chac [curated]",
+  "phien_ban": "v5_r18 luat web t=0.5, nguong tin cay 0.6",
+  "gia_tri": "11/49 = 22.4%",
+  "tu_so": 11,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "curated: chon nhom theo lop cao nhat (8 lop, khong luat pin) - dung nhom",
+  "phien_ban": "v5_r18 (khong tang sang)",
+  "gia_tri": "39/49 = 79.6%",
+  "tu_so": 39,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "curated: chon nhom theo tong xac suat nhom - dung nhom",
+  "phien_ban": "v5_r18 (khong tang sang)",
+  "gia_tri": "44/49 = 89.8%",
+  "tu_so": 44,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "curated: chon nhom theo lop cao nhat (8 lop, khong luat pin) - dung nhom",
+  "phien_ban": "v5_r18 (co tang sang)",
+  "gia_tri": "39/49 = 79.6%",
+  "tu_so": 39,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "curated: chon nhom theo tong xac suat nhom - dung nhom",
+  "phien_ban": "v5_r18 (co tang sang)",
+  "gia_tri": "44/49 = 89.8%",
+  "tu_so": 44,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "curated: chon nhom theo lop cao nhat (8 lop, khong luat pin) - dung nhom",
+  "phien_ban": "v2_r18 (khong tang sang)",
+  "gia_tri": "44/49 = 89.8%",
+  "tu_so": 44,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "curated: chon nhom theo tong xac suat nhom - dung nhom",
+  "phien_ban": "v2_r18 (khong tang sang)",
+  "gia_tri": "42/49 = 85.7%",
+  "tu_so": 42,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "curated: chon nhom theo lop cao nhat (8 lop, khong luat pin) - dung nhom",
+  "phien_ban": "v2_r18 (co tang sang)",
+  "gia_tri": "44/49 = 89.8%",
+  "tu_so": 44,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "curated: chon nhom theo tong xac suat nhom - dung nhom",
+  "phien_ban": "v2_r18 (co tang sang)",
+  "gia_tri": "42/49 = 85.7%",
+  "tu_so": 42,
+  "mau_so": 49,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_infer_realworld.py && garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_build_ledger.py",
+  "file_nguon": "audit/round2/probs_realworld.json"
+ },
+ {
+  "ten_chi_so": "backend/model.pt trung state_dict voi artifact",
+  "phien_ban": "backend",
+  "gia_tri": "v2_r18",
+  "tu_so": "v2_r18",
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_model_identity.py",
+  "file_nguon": "backend/model.pt; garbage_classifier/artifacts/*/best_model.pt"
+ },
+ {
+  "ten_chi_so": "frontend/models/r18-8lop-v5 khop artifact (lop fc giai nen uint8, sai so <= scale/2)",
+  "phien_ban": "frontend",
+  "gia_tri": "v5_r18",
+  "tu_so": "v5_r18",
+  "mau_so": null,
+  "lenh_tao_ra": "garbage_classifier/.venv/Scripts/python.exe audit/round2/scripts/r2_model_identity.py",
+  "file_nguon": "frontend/models/r18-8lop-v5/model.json + *.bin; garbage_classifier/artifacts/*/best_model.pt"
+ }
+]

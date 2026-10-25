@@ -9,7 +9,7 @@ Model phân **4 nhóm rác**:
 | Rác nguy hại | Pin, ắc quy |
 
 > **Đã đổi model (01/10/2026).** Phần A và C dùng **ResNet-18 8 loại**
-> (`garbage_resnet18.pt`, PyTorch) — cùng model với trang web `frontend/`. Model phân
+> (`garbage_resnet18.pt`, PyTorch) — đây là model **v2**; trang web `frontend/` hiện đã chạy v5. Model phân
 > 8 loại vật liệu rồi gộp thành 4 nhóm, chọn nhóm theo loại có xác suất cao nhất.
 > Đo trên 49 ảnh đời thực: **44/49 đúng nhóm** (model Teachable Machine cũ: 37/49).
 >
@@ -26,7 +26,7 @@ Dự án có 3 phần:
 | C. API | `app.py`, `test_client.py` | Khi cần gọi model qua API |
 
 Phần A và C dùng chung model và tiền xử lý (cạnh ngắn về 256 → cắt giữa 224×224 →
-chuẩn hóa ImageNet), nên kết quả luôn khớp nhau và khớp trang `frontend/`.
+chuẩn hóa ImageNet), nên kết quả của A và C khớp nhau. Trang `frontend/` dùng v5 và luật pin 50%, nên có thể cho kết quả khác.
 
 ---
 
@@ -68,7 +68,7 @@ Giao diện gồm:
 ### 5. Tùy chỉnh
 - Đổi tên nhóm, ví dụ vật thể, hướng dẫn xử lý → sửa dict `NHOM_RAC` trong file `phan_loai_rac.py` (dùng chung cho cả giao diện lẫn API). Loại vật liệu nào thuộc nhóm nào → `LOAI_VAO_NHOM`.
 - Đổi màu sắc/giao diện → sửa các biến `MAU_...` và chuỗi `STYLESHEET` ở đầu file `giao_dien_pyqt.py`.
-- Đổi ngưỡng độ tin cậy hiển thị gợi ý (mặc định 60%) → sửa biến `NGUONG_TIN_CAY` trong `giao_dien_pyqt.py`.
+- Đổi ngưỡng độ tin cậy hiển thị gợi ý (mặc định 50%) → sửa biến `NGUONG_TIN_CAY` trong `giao_dien_pyqt.py`.
 
 ---
 
@@ -89,7 +89,7 @@ Chạy `app.py`, terminal hiện `Running on http://127.0.0.1:5000`.
 Test bằng: `python test_client.py duong_dan_anh.jpg`
 
 API trả về JSON gồm: `class` (khóa nhóm: `huu-co`, `tai-che`…), `ten` (tên nhóm tiếng Việt),
-`vi_du`, `confidence`, `chac_chan` (có vượt ngưỡng 60% không), `goi_y_xu_ly`, và
+`vi_du`, `confidence`, `chac_chan` (có vượt ngưỡng 50% không), `goi_y_xu_ly`, và
 `all_scores` cho cả 4 nhóm. Dùng chung model và
 tiền xử lý với `phan_loai_rac.py` nên **kết quả luôn khớp giao diện desktop**.
 

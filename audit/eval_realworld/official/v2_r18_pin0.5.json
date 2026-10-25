@@ -1,0 +1,198 @@
+{
+  "realworld_test": {
+    "dung": 0,
+    "tong": 6,
+    "bao_nham_pin": 0,
+    "bao_nham_quan_ao": 0,
+    "theo_loai": {
+      "clothes": [
+        0,
+        6
+      ]
+    }
+  },
+  "realworld_test2": {
+    "dung": 0,
+    "tong": 1,
+    "bao_nham_pin": 0,
+    "bao_nham_quan_ao": 0,
+    "theo_loai": {
+      "clothes": [
+        0,
+        1
+      ]
+    }
+  },
+  "realworld_clothes_test": {
+    "dung": 36,
+    "tong": 43,
+    "bao_nham_pin": 0,
+    "bao_nham_quan_ao": 0,
+    "theo_loai": {
+      "clothes": [
+        36,
+        43
+      ]
+    }
+  },
+  "realworld_pin_test": {
+    "dung": 53,
+    "tong": 141,
+    "bao_nham_pin": 0,
+    "bao_nham_quan_ao": 6,
+    "theo_loai": {
+      "battery": [
+        53,
+        141
+      ]
+    }
+  },
+  "realworld_mta_test": {
+    "dung": 144,
+    "tong": 175,
+    "bao_nham_pin": 2,
+    "bao_nham_quan_ao": 13,
+    "theo_loai": {
+      "clothes": [
+        2,
+        2
+      ],
+      "glass": [
+        4,
+        4
+      ],
+      "metal": [
+        7,
+        7
+      ],
+      "organic": [
+        10,
+        10
+      ],
+      "paper": [
+        21,
+        26
+      ],
+      "plastic": [
+        100,
+        126
+      ]
+    }
+  },
+  "realworld_bdw_test": {
+    "dung": 153,
+    "tong": 196,
+    "bao_nham_pin": 0,
+    "bao_nham_quan_ao": 34,
+    "theo_loai": {
+      "glass": [
+        11,
+        11
+      ],
+      "organic": [
+        54,
+        83
+      ],
+      "paper": [
+        23,
+        27
+      ],
+      "plastic": [
+        65,
+        75
+      ]
+    }
+  },
+  "realworld_bower_test": {
+    "dung": 259,
+    "tong": 313,
+    "bao_nham_pin": 9,
+    "bao_nham_quan_ao": 20,
+    "theo_loai": {
+      "battery": [
+        9,
+        11
+      ],
+      "cardboard": [
+        72,
+        91
+      ],
+      "glass": [
+        25,
+        27
+      ],
+      "metal": [
+        25,
+        30
+      ],
+      "paper": [
+        10,
+        12
+      ],
+      "plastic": [
+        118,
+        142
+      ]
+    }
+  },
+  "realworld_rw5_test": {
+    "dung": 1440,
+    "tong": 1642,
+    "bao_nham_pin": 6,
+    "bao_nham_quan_ao": 151,
+    "theo_loai": {
+      "glass": [
+        305,
+        314
+      ],
+      "metal": [
+        350,
+        373
+      ],
+      "organic": [
+        250,
+        300
+      ],
+      "paper": [
+        278,
+        320
+      ],
+      "plastic": [
+        257,
+        335
+      ]
+    }
+  },
+  "realworld_curated": {
+    "dung": 42,
+    "tong": 49,
+    "bao_nham_pin": 0,
+    "bao_nham_quan_ao": 1,
+    "theo_loai": {
+      "battery": [
+        8,
+        13
+      ],
+      "cardboard": [
+        4,
+        4
+      ],
+      "glass": [
+        8,
+        9
+      ],
+      "metal": [
+        6,
+        6
+      ],
+      "paper": [
+        7,
+        7
+      ],
+      "plastic": [
+        9,
+        10
+      ]
+    }
+  }
+}

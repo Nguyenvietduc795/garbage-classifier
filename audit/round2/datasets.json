@@ -1,0 +1,462 @@
+{
+ "datasets": {
+  "dataset_8lop": {
+   "per_class": {
+    "battery": 884,
+    "cardboard": 1427,
+    "clothes": 3619,
+    "glass": 2066,
+    "metal": 1088,
+    "organic": 1451,
+    "paper": 1361,
+    "plastic": 1610
+   },
+   "total": 13506,
+   "per_source": {
+    "ar": 948,
+    "new": 11107,
+    "gam": 1451
+   },
+   "per_class_source": {
+    "battery": {
+     "ar": 128,
+     "new": 756
+    },
+    "cardboard": {
+     "ar": 16,
+     "new": 1411
+    },
+    "clothes": {
+     "ar": 278,
+     "new": 3341
+    },
+    "glass": {
+     "ar": 330,
+     "new": 1736
+    },
+    "metal": {
+     "ar": 158,
+     "new": 930
+    },
+    "organic": {
+     "gam": 1451
+    },
+    "paper": {
+     "ar": 25,
+     "new": 1336
+    },
+    "plastic": {
+     "ar": 13,
+     "new": 1597
+    }
+   }
+  },
+  "dataset_8lop_v2": {
+   "per_class": {
+    "battery": 756,
+    "cardboard": 1411,
+    "clothes": 3341,
+    "glass": 1736,
+    "metal": 930,
+    "organic": 1451,
+    "paper": 1336,
+    "plastic": 1597
+   },
+   "total": 12558,
+   "per_source": {
+    "goc": 11107,
+    "gam": 1451
+   },
+   "per_class_source": {
+    "battery": {
+     "goc": 756
+    },
+    "cardboard": {
+     "goc": 1411
+    },
+    "clothes": {
+     "goc": 3341
+    },
+    "glass": {
+     "goc": 1736
+    },
+    "metal": {
+     "goc": 930
+    },
+    "organic": {
+     "gam": 1451
+    },
+    "paper": {
+     "goc": 1336
+    },
+    "plastic": {
+     "goc": 1597
+    }
+   }
+  },
+  "dataset_8lop_v3": {
+   "per_class": {
+    "battery": 756,
+    "cardboard": 1793,
+    "clothes": 3653,
+    "glass": 2080,
+    "metal": 1582,
+    "organic": 2027,
+    "paper": 2245,
+    "plastic": 3445
+   },
+   "total": 17581,
+   "per_source": {
+    "goc": 11107,
+    "rw": 3247,
+    "mta": 1776,
+    "gam": 1451
+   },
+   "per_class_source": {
+    "battery": {
+     "goc": 756
+    },
+    "cardboard": {
+     "goc": 1411,
+     "rw": 382
+    },
+    "clothes": {
+     "goc": 3341,
+     "mta": 41,
+     "rw": 271
+    },
+    "glass": {
+     "goc": 1736,
+     "mta": 31,
+     "rw": 313
+    },
+    "metal": {
+     "goc": 930,
+     "mta": 67,
+     "rw": 585
+    },
+    "organic": {
+     "gam": 1451,
+     "mta": 189,
+     "rw": 387
+    },
+    "paper": {
+     "mta": 448,
+     "goc": 1336,
+     "rw": 461
+    },
+    "plastic": {
+     "mta": 1000,
+     "goc": 1597,
+     "rw": 848
+    }
+   }
+  },
+  "dataset_8lop_v4": {
+   "per_class": {
+    "battery": 815,
+    "cardboard": 1936,
+    "clothes": 3656,
+    "glass": 2292,
+    "metal": 1669,
+    "organic": 2402,
+    "paper": 2445,
+    "plastic": 3942
+   },
+   "total": 19157,
+   "per_source": {
+    "goc": 11107,
+    "bower": 596,
+    "rw": 3247,
+    "mta": 1776,
+    "bdw": 980,
+    "gam": 1451
+   },
+   "per_class_source": {
+    "battery": {
+     "goc": 756,
+     "bower": 59
+    },
+    "cardboard": {
+     "bower": 143,
+     "goc": 1411,
+     "rw": 382
+    },
+    "clothes": {
+     "bower": 3,
+     "goc": 3341,
+     "mta": 41,
+     "rw": 271
+    },
+    "glass": {
+     "bdw": 83,
+     "bower": 129,
+     "goc": 1736,
+     "mta": 31,
+     "rw": 313
+    },
+    "metal": {
+     "bower": 87,
+     "goc": 930,
+     "mta": 67,
+     "rw": 585
+    },
+    "organic": {
+     "bdw": 375,
+     "gam": 1451,
+     "mta": 189,
+     "rw": 387
+    },
+    "paper": {
+     "bdw": 157,
+     "bower": 43,
+     "mta": 448,
+     "goc": 1336,
+     "rw": 461
+    },
+    "plastic": {
+     "bdw": 365,
+     "bower": 132,
+     "mta": 1000,
+     "goc": 1597,
+     "rw": 848
+    }
+   }
+  },
+  "dataset_8lop_v5": {
+   "per_class": {
+    "battery": 1315,
+    "cardboard": 1936,
+    "clothes": 3656,
+    "glass": 2292,
+    "metal": 1669,
+    "organic": 2402,
+    "paper": 2445,
+    "plastic": 3942
+   },
+   "total": 19657,
+   "per_source": {
+    "goc": 11107,
+    "bower": 596,
+    "cm": 347,
+    "oi": 153,
+    "rw": 3247,
+    "mta": 1776,
+    "bdw": 980,
+    "gam": 1451
+   },
+   "per_class_source": {
+    "battery": {
+     "goc": 756,
+     "bower": 59,
+     "cm": 347,
+     "oi": 153
+    },
+    "cardboard": {
+     "bower": 143,
+     "goc": 1411,
+     "rw": 382
+    },
+    "clothes": {
+     "bower": 3,
+     "goc": 3341,
+     "mta": 41,
+     "rw": 271
+    },
+    "glass": {
+     "bdw": 83,
+     "bower": 129,
+     "goc": 1736,
+     "mta": 31,
+     "rw": 313
+    },
+    "metal": {
+     "bower": 87,
+     "goc": 930,
+     "mta": 67,
+     "rw": 585
+    },
+    "organic": {
+     "bdw": 375,
+     "gam": 1451,
+     "mta": 189,
+     "rw": 387
+    },
+    "paper": {
+     "bdw": 157,
+     "bower": 43,
+     "mta": 448,
+     "goc": 1336,
+     "rw": 461
+    },
+    "plastic": {
+     "bdw": 365,
+     "bower": 132,
+     "mta": 1000,
+     "goc": 1597,
+     "rw": 848
+    }
+   }
+  }
+ },
+ "realworld": {
+  "realworld_test": {
+   "truoc_bo_trung": 43,
+   "sau_bo_trung": 43,
+   "pin_truoc": 7,
+   "pin_sau": 7,
+   "theo_lop_sau_bo_trung": {
+    "battery": 7,
+    "cardboard": 7,
+    "clothes": 1,
+    "glass": 8,
+    "metal": 7,
+    "paper": 6,
+    "plastic": 7
+   }
+  },
+  "realworld_test2": {
+   "truoc_bo_trung": 52,
+   "sau_bo_trung": 52,
+   "pin_truoc": 7,
+   "pin_sau": 7,
+   "theo_lop_sau_bo_trung": {
+    "battery": 7,
+    "cardboard": 9,
+    "glass": 9,
+    "metal": 9,
+    "paper": 9,
+    "plastic": 9
+   }
+  },
+  "realworld_curated": {
+   "truoc_bo_trung": 49,
+   "sau_bo_trung": 49,
+   "pin_truoc": 13,
+   "pin_sau": 13,
+   "theo_lop_sau_bo_trung": {
+    "battery": 13,
+    "cardboard": 4,
+    "glass": 9,
+    "metal": 6,
+    "paper": 7,
+    "plastic": 10
+   }
+  },
+  "realworld_clothes_test": {
+   "truoc_bo_trung": 43,
+   "sau_bo_trung": 43,
+   "pin_truoc": 0,
+   "pin_sau": 0,
+   "theo_lop_sau_bo_trung": {
+    "clothes": 43
+   }
+  },
+  "realworld_pin_test": {
+   "truoc_bo_trung": 141,
+   "sau_bo_trung": 141,
+   "pin_truoc": 141,
+   "pin_sau": 141,
+   "theo_lop_sau_bo_trung": {
+    "battery": 141
+   }
+  },
+  "realworld_mta_test": {
+   "truoc_bo_trung": 175,
+   "sau_bo_trung": 175,
+   "pin_truoc": 0,
+   "pin_sau": 0,
+   "theo_lop_sau_bo_trung": {
+    "clothes": 2,
+    "glass": 4,
+    "metal": 7,
+    "organic": 10,
+    "paper": 26,
+    "plastic": 126
+   }
+  },
+  "realworld_bdw_test": {
+   "truoc_bo_trung": 196,
+   "sau_bo_trung": 196,
+   "pin_truoc": 0,
+   "pin_sau": 0,
+   "theo_lop_sau_bo_trung": {
+    "glass": 11,
+    "organic": 83,
+    "paper": 27,
+    "plastic": 75
+   }
+  },
+  "realworld_bower_test": {
+   "truoc_bo_trung": 314,
+   "sau_bo_trung": 313,
+   "pin_truoc": 11,
+   "pin_sau": 11,
+   "theo_lop_sau_bo_trung": {
+    "battery": 11,
+    "cardboard": 91,
+    "glass": 27,
+    "metal": 30,
+    "paper": 12,
+    "plastic": 142
+   }
+  },
+  "realworld_rw5_test": {
+   "truoc_bo_trung": 1647,
+   "sau_bo_trung": 1642,
+   "pin_truoc": 0,
+   "pin_sau": 0,
+   "theo_lop_sau_bo_trung": {
+    "glass": 314,
+    "metal": 373,
+    "organic": 300,
+    "paper": 320,
+    "plastic": 335
+   }
+  },
+  "realworld_loai_bo/realworld_test": {
+   "truoc_bo_trung": 6,
+   "sau_bo_trung": 6,
+   "pin_truoc": 0,
+   "pin_sau": 0,
+   "theo_lop_sau_bo_trung": {
+    "clothes": 6
+   }
+  },
+  "realworld_loai_bo/realworld_test2": {
+   "truoc_bo_trung": 1,
+   "sau_bo_trung": 1,
+   "pin_truoc": 0,
+   "pin_sau": 0,
+   "theo_lop_sau_bo_trung": {
+    "clothes": 1
+   }
+  }
+ },
+ "trung_md5": {
+  "curated_va_test": 15,
+  "curated_va_test2": 34,
+  "test_va_test2": 0,
+  "curated_va_test_hoac_test2": 49,
+  "ca_ba": 0,
+  "anh_khac_nhau_3_bo": 95,
+  "pin_khac_nhau_3_bo": 14,
+  "curated_chi_rieng": 0,
+  "nhan_mau_thuan": 2,
+  "anh_102_cu_tong_file": 102,
+  "anh_102_cu_khac_nhau": 102
+ },
+ "trung_voi_dataset_v5": {
+  "realworld_test": 0,
+  "realworld_test2": 0,
+  "realworld_curated": 0,
+  "realworld_clothes_test": 0,
+  "realworld_pin_test": 0,
+  "realworld_mta_test": 0,
+  "realworld_bdw_test": 0,
+  "realworld_bower_test": 0,
+  "realworld_rw5_test": 0,
+  "realworld_loai_bo/realworld_test": 0,
+  "realworld_loai_bo/realworld_test2": 0
+ }
+}

@@ -1,0 +1,356 @@
+{
+ "v5 t=0.5 102cu": [
+  67,
+  102,
+  10,
+  14,
+  5
+ ],
+ "v5 t=0.5 realworld_pin_test": [
+  107,
+  141,
+  107,
+  141,
+  0
+ ],
+ "v5 t=0.5 realworld_rw5_test": [
+  1498,
+  1642,
+  0,
+  0,
+  35
+ ],
+ "v5 t=0.5 realworld_bower_test": [
+  281,
+  313,
+  9,
+  11,
+  5
+ ],
+ "v5 t=0.5 realworld_mta_test": [
+  165,
+  175,
+  0,
+  0,
+  0
+ ],
+ "v5 t=0.7 102cu": [
+  70,
+  102,
+  9,
+  14,
+  1
+ ],
+ "v5 t=0.7 realworld_pin_test": [
+  95,
+  141,
+  95,
+  141,
+  0
+ ],
+ "v5 t=0.7 realworld_rw5_test": [
+  1524,
+  1642,
+  0,
+  0,
+  8
+ ],
+ "v5 t=0.7 realworld_bower_test": [
+  283,
+  313,
+  8,
+  11,
+  2
+ ],
+ "v5 t=0.7 realworld_mta_test": [
+  165,
+  175,
+  0,
+  0,
+  0
+ ],
+ "v2 pin0.3 class p_web 102cu": [
+  65,
+  102,
+  10,
+  14,
+  4
+ ],
+ "v2 pin0.3 class p_web realworld_pin_test": [
+  77,
+  141,
+  77,
+  141,
+  0
+ ],
+ "v2 pin0.3 class p_web realworld_rw5_test": [
+  1427,
+  1642,
+  0,
+  0,
+  21
+ ],
+ "v2 pin0.3 class p_web realworld_bower_test": [
+  250,
+  313,
+  10,
+  11,
+  20
+ ],
+ "v2 pin0.3 class p_web realworld_mta_test": [
+  144,
+  175,
+  0,
+  0,
+  2
+ ],
+ "v2 pin0.3 class p_backend 102cu": [
+  65,
+  102,
+  10,
+  14,
+  4
+ ],
+ "v2 pin0.3 class p_backend realworld_pin_test": [
+  79,
+  141,
+  79,
+  141,
+  0
+ ],
+ "v2 pin0.3 class p_backend realworld_rw5_test": [
+  1426,
+  1642,
+  0,
+  0,
+  22
+ ],
+ "v2 pin0.3 class p_backend realworld_bower_test": [
+  251,
+  313,
+  10,
+  11,
+  20
+ ],
+ "v2 pin0.3 class p_backend realworld_mta_test": [
+  146,
+  175,
+  0,
+  0,
+  2
+ ],
+ "v2 pin0.3 group p_web 102cu": [
+  74,
+  102,
+  10,
+  14,
+  4
+ ],
+ "v2 pin0.3 group p_web realworld_pin_test": [
+  77,
+  141,
+  77,
+  141,
+  0
+ ],
+ "v2 pin0.3 group p_web realworld_rw5_test": [
+  1486,
+  1642,
+  0,
+  0,
+  21
+ ],
+ "v2 pin0.3 group p_web realworld_bower_test": [
+  277,
+  313,
+  10,
+  11,
+  20
+ ],
+ "v2 pin0.3 group p_web realworld_mta_test": [
+  154,
+  175,
+  0,
+  0,
+  2
+ ],
+ "v2 pin0.3 group p_backend 102cu": [
+  74,
+  102,
+  10,
+  14,
+  4
+ ],
+ "v2 pin0.3 group p_backend realworld_pin_test": [
+  79,
+  141,
+  79,
+  141,
+  0
+ ],
+ "v2 pin0.3 group p_backend realworld_rw5_test": [
+  1485,
+  1642,
+  0,
+  0,
+  22
+ ],
+ "v2 pin0.3 group p_backend realworld_bower_test": [
+  277,
+  313,
+  10,
+  11,
+  20
+ ],
+ "v2 pin0.3 group p_backend realworld_mta_test": [
+  154,
+  175,
+  0,
+  0,
+  2
+ ],
+ "v5_r18 8bo t0.5": [
+  2278,
+  2513,
+  29,
+  38,
+  47
+ ],
+ "v5_r18 pin_test": [
+  107,
+  141,
+  107,
+  141,
+  0
+ ],
+ "v5_r18 clothes": [
+  31,
+  43,
+  0,
+  0,
+  0
+ ],
+ "v5_r18 8bo khong trung curated": [
+  2238,
+  2464,
+  19,
+  25,
+  45
+ ],
+ "v5_r18_s1 8bo t0.5": [
+  2278,
+  2513,
+  23,
+  38,
+  47
+ ],
+ "v5_r18_s1 pin_test": [
+  111,
+  141,
+  111,
+  141,
+  0
+ ],
+ "v5_r18_s1 clothes": [
+  29,
+  43,
+  0,
+  0,
+  0
+ ],
+ "v5_r18_s1 8bo khong trung curated": [
+  2237,
+  2464,
+  15,
+  25,
+  45
+ ],
+ "v5_r18_s2 8bo t0.5": [
+  2291,
+  2513,
+  29,
+  38,
+  41
+ ],
+ "v5_r18_s2 pin_test": [
+  110,
+  141,
+  110,
+  141,
+  0
+ ],
+ "v5_r18_s2 clothes": [
+  29,
+  43,
+  0,
+  0,
+  0
+ ],
+ "v5_r18_s2 8bo khong trung curated": [
+  2247,
+  2464,
+  20,
+  25,
+  40
+ ],
+ "conf v2_r18 t=0.4 102cu": [
+  64,
+  29,
+  9
+ ],
+ "conf v2_r18 t=0.4 curated49": [
+  42,
+  7,
+  0
+ ],
+ "conf v2_r18 t=0.5 102cu": [
+  63,
+  23,
+  16
+ ],
+ "conf v2_r18 t=0.5 curated49": [
+  42,
+  5,
+  2
+ ],
+ "conf v2_r18 t=0.6 102cu": [
+  59,
+  15,
+  28
+ ],
+ "conf v2_r18 t=0.6 curated49": [
+  40,
+  3,
+  6
+ ],
+ "conf v5_r18 t=0.4 102cu": [
+  67,
+  20,
+  15
+ ],
+ "conf v5_r18 t=0.4 curated49": [
+  40,
+  4,
+  5
+ ],
+ "conf v5_r18 t=0.5 102cu": [
+  64,
+  19,
+  19
+ ],
+ "conf v5_r18 t=0.5 curated49": [
+  39,
+  4,
+  6
+ ],
+ "conf v5_r18 t=0.6 102cu": [
+  59,
+  13,
+  30
+ ],
+ "conf v5_r18 t=0.6 curated49": [
+  35,
+  3,
+  11
+ ]
+}

@@ -1,0 +1,3237 @@
+{
+ "datasets": {
+  "dataset_8lop": {
+   "per_class": {
+    "battery": {
+     "so_anh": 884,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 884,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 756,
+      "archive/Garbage_Classification (ar_)": 128
+     },
+     "nguon_theo_md5_pool": {
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 479,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 168,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 109,
+      "archive/Data/Garbage_Classification": 96,
+      "archive/Data/Garbage_Classification + dataset_sach_zip": 32
+     }
+    },
+    "cardboard": {
+     "so_anh": 1427,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1427,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 1411,
+      "archive/Garbage_Classification (ar_)": 16
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1024,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 195,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 8,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 8
+     }
+    },
+    "clothes": {
+     "so_anh": 3619,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3619,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 3341,
+      "archive/Garbage_Classification (ar_)": 278
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 3187,
+      "archive/Data/Garbage_Classification": 143,
+      "archive/Data/Garbage_Classification + dataset_sach_zip": 135,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 89,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 65
+     }
+    },
+    "glass": {
+     "so_anh": 2066,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2066,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 1736,
+      "archive/Garbage_Classification (ar_)": 330
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1121,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 186,
+      "archive/Data/Garbage_Classification": 176,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 170,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 144,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 68,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 67,
+      "archive/Data/Garbage_Classification + dataset_sach_zip": 65,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 49,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 20
+     }
+    },
+    "metal": {
+     "so_anh": 1088,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1088,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 930,
+      "archive/Garbage_Classification (ar_)": 158
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 319,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 293,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 160,
+      "archive/Data/Garbage_Classification": 107,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 106,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 52,
+      "archive/Data/Garbage_Classification + dataset_sach_zip": 40,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 9,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 2
+     }
+    },
+    "organic": {
+     "so_anh": 1451,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1433,
+     "so_file_trung_md5_thua": 18,
+     "nguon_theo_tien_to": {
+      "gam_ (khong ro bo goc)": 1451
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 1451
+     }
+    },
+    "paper": {
+     "so_anh": 1361,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1361,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 1336,
+      "archive/Garbage_Classification (ar_)": 25
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 767,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 377,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 17,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 8
+     }
+    },
+    "plastic": {
+     "so_anh": 1610,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1610,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 1597,
+      "archive/Garbage_Classification (ar_)": 13
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1146,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 194,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 178,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 79,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 7,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 6
+     }
+    }
+   },
+   "tong_anh": 13506,
+   "so_md5_duy_nhat_toan_bo": 13485,
+   "so_file_trung_md5_thua_toan_bo": 21,
+   "md5_xuat_hien_o_nhieu_lop": 3,
+   "tong_theo_nguon_tien_to": {
+    "bo new11k (new_<lop>_N)": 11107,
+    "gam_ (khong ro bo goc)": 1451,
+    "archive/Garbage_Classification (ar_)": 948
+   },
+   "mtime_moi_nhat": 1790817805.0
+  },
+  "dataset_8lop_v2": {
+   "per_class": {
+    "battery": {
+     "so_anh": 756,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 756,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 756
+     },
+     "nguon_theo_md5_pool": {
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 479,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 168,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 109
+     }
+    },
+    "cardboard": {
+     "so_anh": 1411,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1411,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1411
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1024,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 195,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "clothes": {
+     "so_anh": 3341,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3341,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1892,
+      "bo new11k (shoes_N)": 1449
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 3187,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 89,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 65
+     }
+    },
+    "glass": {
+     "so_anh": 1736,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1736,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1736
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1121,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 186,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 170,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 144,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 68,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 47
+     }
+    },
+    "metal": {
+     "so_anh": 930,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 930,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 930
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 319,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 293,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 160,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 106,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 52
+     }
+    },
+    "organic": {
+     "so_anh": 1451,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1433,
+     "so_file_trung_md5_thua": 18,
+     "nguon_theo_tien_to": {
+      "gam_ (khong ro bo goc)": 1451
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 1451
+     }
+    },
+    "paper": {
+     "so_anh": 1336,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1336,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1336
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 767,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 377,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "plastic": {
+     "so_anh": 1597,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1597,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1597
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1146,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 194,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 178,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 79
+     }
+    }
+   },
+   "tong_anh": 12558,
+   "so_md5_duy_nhat_toan_bo": 12540,
+   "so_file_trung_md5_thua_toan_bo": 18,
+   "md5_xuat_hien_o_nhieu_lop": 0,
+   "tong_theo_nguon_tien_to": {
+    "bo new11k (<lop>_N)": 9658,
+    "gam_ (khong ro bo goc)": 1451,
+    "bo new11k (shoes_N)": 1449
+   },
+   "mtime_moi_nhat": 1790817805.0
+  },
+  "dataset_8lop_v3": {
+   "per_class": {
+    "battery": {
+     "so_anh": 756,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 756,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 756
+     },
+     "nguon_theo_md5_pool": {
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 479,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 168,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 109
+     }
+    },
+    "cardboard": {
+     "so_anh": 1793,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1793,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1411,
+      "RealWaste (rw_)": 382
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1024,
+      "(khong khop pool cuc bo nao)": 382,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 195,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "clothes": {
+     "so_anh": 3653,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3653,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1892,
+      "bo new11k (shoes_N)": 1449,
+      "RealWaste (rw_)": 271,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 41
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 3187,
+      "(khong khop pool cuc bo nao)": 312,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 89,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 65
+     }
+    },
+    "glass": {
+     "so_anh": 2080,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2080,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1736,
+      "RealWaste (rw_)": 313,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 31
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1121,
+      "(khong khop pool cuc bo nao)": 344,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 186,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 170,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 144,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 68,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 47
+     }
+    },
+    "metal": {
+     "so_anh": 1582,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1582,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 930,
+      "RealWaste (rw_)": 585,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 67
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 652,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 319,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 293,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 160,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 106,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 52
+     }
+    },
+    "organic": {
+     "so_anh": 2027,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2009,
+     "so_file_trung_md5_thua": 18,
+     "nguon_theo_tien_to": {
+      "gam_ (khong ro bo goc)": 1451,
+      "RealWaste (rw_)": 387,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 189
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 2027
+     }
+    },
+    "paper": {
+     "so_anh": 2245,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2245,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1336,
+      "RealWaste (rw_)": 461,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 448
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 909,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 767,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 377,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "plastic": {
+     "so_anh": 3445,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3445,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1597,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 1000,
+      "RealWaste (rw_)": 848
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 1848,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1146,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 194,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 178,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 79
+     }
+    }
+   },
+   "tong_anh": 17581,
+   "so_md5_duy_nhat_toan_bo": 17563,
+   "so_file_trung_md5_thua_toan_bo": 18,
+   "md5_xuat_hien_o_nhieu_lop": 0,
+   "tong_theo_nguon_tien_to": {
+    "bo new11k (<lop>_N)": 9658,
+    "RealWaste (rw_)": 3247,
+    "Malaysian Trash Annotation/Roboflow (mta_)": 1776,
+    "gam_ (khong ro bo goc)": 1451,
+    "bo new11k (shoes_N)": 1449
+   },
+   "mtime_moi_nhat": 1792826011.3109565
+  },
+  "dataset_8lop_v4": {
+   "per_class": {
+    "battery": {
+     "so_anh": 815,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 815,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 756,
+      "Bower (bower_)": 59
+     },
+     "nguon_theo_md5_pool": {
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 479,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 168,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 109,
+      "(khong khop pool cuc bo nao)": 59
+     }
+    },
+    "cardboard": {
+     "so_anh": 1936,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1936,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1411,
+      "RealWaste (rw_)": 382,
+      "Bower (bower_)": 143
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1024,
+      "(khong khop pool cuc bo nao)": 525,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 195,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "clothes": {
+     "so_anh": 3656,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3656,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1892,
+      "bo new11k (shoes_N)": 1449,
+      "RealWaste (rw_)": 271,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 41,
+      "Bower (bower_)": 3
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 3187,
+      "(khong khop pool cuc bo nao)": 315,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 89,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 65
+     }
+    },
+    "glass": {
+     "so_anh": 2292,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2292,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1736,
+      "RealWaste (rw_)": 313,
+      "Bower (bower_)": 129,
+      "BDWaste (bdw_)": 83,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 31
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1121,
+      "(khong khop pool cuc bo nao)": 556,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 186,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 170,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 144,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 68,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 47
+     }
+    },
+    "metal": {
+     "so_anh": 1669,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1669,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 930,
+      "RealWaste (rw_)": 585,
+      "Bower (bower_)": 87,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 67
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 739,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 319,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 293,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 160,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 106,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 52
+     }
+    },
+    "organic": {
+     "so_anh": 2402,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2384,
+     "so_file_trung_md5_thua": 18,
+     "nguon_theo_tien_to": {
+      "gam_ (khong ro bo goc)": 1451,
+      "RealWaste (rw_)": 387,
+      "BDWaste (bdw_)": 375,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 189
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 2402
+     }
+    },
+    "paper": {
+     "so_anh": 2445,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2445,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1336,
+      "RealWaste (rw_)": 461,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 448,
+      "BDWaste (bdw_)": 157,
+      "Bower (bower_)": 43
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 1109,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 767,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 377,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "plastic": {
+     "so_anh": 3942,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3942,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1597,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 1000,
+      "RealWaste (rw_)": 848,
+      "BDWaste (bdw_)": 365,
+      "Bower (bower_)": 132
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 2345,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1146,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 194,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 178,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 79
+     }
+    }
+   },
+   "tong_anh": 19157,
+   "so_md5_duy_nhat_toan_bo": 19139,
+   "so_file_trung_md5_thua_toan_bo": 18,
+   "md5_xuat_hien_o_nhieu_lop": 0,
+   "tong_theo_nguon_tien_to": {
+    "bo new11k (<lop>_N)": 9658,
+    "RealWaste (rw_)": 3247,
+    "Malaysian Trash Annotation/Roboflow (mta_)": 1776,
+    "gam_ (khong ro bo goc)": 1451,
+    "bo new11k (shoes_N)": 1449,
+    "BDWaste (bdw_)": 980,
+    "Bower (bower_)": 596
+   },
+   "mtime_moi_nhat": 1792838515.197294
+  },
+  "dataset_8lop_v5": {
+   "per_class": {
+    "battery": {
+     "so_anh": 1315,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1315,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 756,
+      "Wikimedia Commons (cm_)": 347,
+      "Open Images (oi_)": 153,
+      "Bower (bower_)": 59
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 559,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 479,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 168,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 109
+     }
+    },
+    "cardboard": {
+     "so_anh": 1936,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1936,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1411,
+      "RealWaste (rw_)": 382,
+      "Bower (bower_)": 143
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1024,
+      "(khong khop pool cuc bo nao)": 525,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 195,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "clothes": {
+     "so_anh": 3656,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3656,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1892,
+      "bo new11k (shoes_N)": 1449,
+      "RealWaste (rw_)": 271,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 41,
+      "Bower (bower_)": 3
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 3187,
+      "(khong khop pool cuc bo nao)": 315,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 89,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 65
+     }
+    },
+    "glass": {
+     "so_anh": 2292,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2292,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1736,
+      "RealWaste (rw_)": 313,
+      "Bower (bower_)": 129,
+      "BDWaste (bdw_)": 83,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 31
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1121,
+      "(khong khop pool cuc bo nao)": 556,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 186,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 170,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 144,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 68,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 47
+     }
+    },
+    "metal": {
+     "so_anh": 1669,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1669,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 930,
+      "RealWaste (rw_)": 585,
+      "Bower (bower_)": 87,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 67
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 739,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 319,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 293,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 160,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 106,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 52
+     }
+    },
+    "organic": {
+     "so_anh": 2402,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2384,
+     "so_file_trung_md5_thua": 18,
+     "nguon_theo_tien_to": {
+      "gam_ (khong ro bo goc)": 1451,
+      "RealWaste (rw_)": 387,
+      "BDWaste (bdw_)": 375,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 189
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 2402
+     }
+    },
+    "paper": {
+     "so_anh": 2445,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2445,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1336,
+      "RealWaste (rw_)": 461,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 448,
+      "BDWaste (bdw_)": 157,
+      "Bower (bower_)": 43
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 1109,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 767,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 377,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "plastic": {
+     "so_anh": 3942,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3942,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1597,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 1000,
+      "RealWaste (rw_)": 848,
+      "BDWaste (bdw_)": 365,
+      "Bower (bower_)": 132
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 2345,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1146,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 194,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 178,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 79
+     }
+    }
+   },
+   "tong_anh": 19657,
+   "so_md5_duy_nhat_toan_bo": 19639,
+   "so_file_trung_md5_thua_toan_bo": 18,
+   "md5_xuat_hien_o_nhieu_lop": 0,
+   "tong_theo_nguon_tien_to": {
+    "bo new11k (<lop>_N)": 9658,
+    "RealWaste (rw_)": 3247,
+    "Malaysian Trash Annotation/Roboflow (mta_)": 1776,
+    "gam_ (khong ro bo goc)": 1451,
+    "bo new11k (shoes_N)": 1449,
+    "BDWaste (bdw_)": 980,
+    "Bower (bower_)": 596,
+    "Wikimedia Commons (cm_)": 347,
+    "Open Images (oi_)": 153
+   },
+   "mtime_moi_nhat": 1792842107.7855577
+  },
+  "dataset_8lop_v6a": {
+   "per_class": {
+    "battery": {
+     "so_anh": 1315,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1315,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 756,
+      "Wikimedia Commons (cm_)": 347,
+      "Open Images (oi_)": 153,
+      "Bower (bower_)": 59
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 559,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 479,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 168,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 109
+     }
+    },
+    "cardboard": {
+     "so_anh": 1936,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1936,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1411,
+      "RealWaste (rw_)": 382,
+      "Bower (bower_)": 143
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1024,
+      "(khong khop pool cuc bo nao)": 525,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 195,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "clothes": {
+     "so_anh": 4656,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 4654,
+     "so_file_trung_md5_thua": 2,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1892,
+      "bo new11k (shoes_N)": 1449,
+      "RISE (rise_)": 1000,
+      "RealWaste (rw_)": 271,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 41,
+      "Bower (bower_)": 3
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 3187,
+      "downloads/rise": 1000,
+      "(khong khop pool cuc bo nao)": 315,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 89,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 65
+     }
+    },
+    "glass": {
+     "so_anh": 2292,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2292,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1736,
+      "RealWaste (rw_)": 313,
+      "Bower (bower_)": 129,
+      "BDWaste (bdw_)": 83,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 31
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1121,
+      "(khong khop pool cuc bo nao)": 556,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 186,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 170,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 144,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 68,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 47
+     }
+    },
+    "metal": {
+     "so_anh": 1669,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1669,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 930,
+      "RealWaste (rw_)": 585,
+      "Bower (bower_)": 87,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 67
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 739,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 319,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 293,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 160,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 106,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 52
+     }
+    },
+    "organic": {
+     "so_anh": 2402,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2384,
+     "so_file_trung_md5_thua": 18,
+     "nguon_theo_tien_to": {
+      "gam_ (khong ro bo goc)": 1451,
+      "RealWaste (rw_)": 387,
+      "BDWaste (bdw_)": 375,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 189
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 2402
+     }
+    },
+    "paper": {
+     "so_anh": 2445,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2445,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1336,
+      "RealWaste (rw_)": 461,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 448,
+      "BDWaste (bdw_)": 157,
+      "Bower (bower_)": 43
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 1109,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 767,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 377,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "plastic": {
+     "so_anh": 3942,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3942,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1597,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 1000,
+      "RealWaste (rw_)": 848,
+      "BDWaste (bdw_)": 365,
+      "Bower (bower_)": 132
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 2345,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1146,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 194,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 178,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 79
+     }
+    }
+   },
+   "tong_anh": 20657,
+   "so_md5_duy_nhat_toan_bo": 20637,
+   "so_file_trung_md5_thua_toan_bo": 20,
+   "md5_xuat_hien_o_nhieu_lop": 0,
+   "tong_theo_nguon_tien_to": {
+    "bo new11k (<lop>_N)": 9658,
+    "RealWaste (rw_)": 3247,
+    "Malaysian Trash Annotation/Roboflow (mta_)": 1776,
+    "gam_ (khong ro bo goc)": 1451,
+    "bo new11k (shoes_N)": 1449,
+    "RISE (rise_)": 1000,
+    "BDWaste (bdw_)": 980,
+    "Bower (bower_)": 596,
+    "Wikimedia Commons (cm_)": 347,
+    "Open Images (oi_)": 153
+   },
+   "mtime_moi_nhat": 1792851398.7324717
+  },
+  "dataset_8lop_v6b": {
+   "per_class": {
+    "battery": {
+     "so_anh": 1315,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1315,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 756,
+      "Wikimedia Commons (cm_)": 347,
+      "Open Images (oi_)": 153,
+      "Bower (bower_)": 59
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 559,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 479,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 168,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 109
+     }
+    },
+    "cardboard": {
+     "so_anh": 1936,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1936,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1411,
+      "RealWaste (rw_)": 382,
+      "Bower (bower_)": 143
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1024,
+      "(khong khop pool cuc bo nao)": 525,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 195,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "clothes": {
+     "so_anh": 5231,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 5229,
+     "so_file_trung_md5_thua": 2,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1892,
+      "bo new11k (shoes_N)": 1449,
+      "RISE (rise_)": 1000,
+      "NPCG (npcg_)": 575,
+      "RealWaste (rw_)": 271,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 41,
+      "Bower (bower_)": 3
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 3187,
+      "downloads/rise": 1000,
+      "downloads/npcg": 575,
+      "(khong khop pool cuc bo nao)": 315,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 89,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 65
+     }
+    },
+    "glass": {
+     "so_anh": 2292,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2292,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1736,
+      "RealWaste (rw_)": 313,
+      "Bower (bower_)": 129,
+      "BDWaste (bdw_)": 83,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 31
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1121,
+      "(khong khop pool cuc bo nao)": 556,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 186,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 170,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 144,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 68,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 47
+     }
+    },
+    "metal": {
+     "so_anh": 1669,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1669,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 930,
+      "RealWaste (rw_)": 585,
+      "Bower (bower_)": 87,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 67
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 739,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 319,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 293,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 160,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 106,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 52
+     }
+    },
+    "organic": {
+     "so_anh": 2402,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2384,
+     "so_file_trung_md5_thua": 18,
+     "nguon_theo_tien_to": {
+      "gam_ (khong ro bo goc)": 1451,
+      "RealWaste (rw_)": 387,
+      "BDWaste (bdw_)": 375,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 189
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 2402
+     }
+    },
+    "paper": {
+     "so_anh": 2445,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2445,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1336,
+      "RealWaste (rw_)": 461,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 448,
+      "BDWaste (bdw_)": 157,
+      "Bower (bower_)": 43
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 1109,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 767,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 377,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192
+     }
+    },
+    "plastic": {
+     "so_anh": 3942,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3942,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (<lop>_N)": 1597,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 1000,
+      "RealWaste (rw_)": 848,
+      "BDWaste (bdw_)": 365,
+      "Bower (bower_)": 132
+     },
+     "nguon_theo_md5_pool": {
+      "(khong khop pool cuc bo nao)": 2345,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1146,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 194,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 178,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 79
+     }
+    }
+   },
+   "tong_anh": 21232,
+   "so_md5_duy_nhat_toan_bo": 21212,
+   "so_file_trung_md5_thua_toan_bo": 20,
+   "md5_xuat_hien_o_nhieu_lop": 0,
+   "tong_theo_nguon_tien_to": {
+    "bo new11k (<lop>_N)": 9658,
+    "RealWaste (rw_)": 3247,
+    "Malaysian Trash Annotation/Roboflow (mta_)": 1776,
+    "gam_ (khong ro bo goc)": 1451,
+    "bo new11k (shoes_N)": 1449,
+    "RISE (rise_)": 1000,
+    "BDWaste (bdw_)": 980,
+    "Bower (bower_)": 596,
+    "NPCG (npcg_)": 575,
+    "Wikimedia Commons (cm_)": 347,
+    "Open Images (oi_)": 153
+   },
+   "mtime_moi_nhat": 1792853343.9498878
+  },
+  "dataset_merged": {
+   "per_class": {
+    "battery": {
+     "so_anh": 884,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 884,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 756,
+      "archive/Garbage_Classification (ar_)": 128
+     },
+     "nguon_theo_md5_pool": {
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 479,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 168,
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 109,
+      "archive/Data/Garbage_Classification": 96,
+      "archive/Data/Garbage_Classification + dataset_sach_zip": 32
+     }
+    },
+    "cardboard": {
+     "so_anh": 1427,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1427,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 1411,
+      "archive/Garbage_Classification (ar_)": 16
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1024,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 195,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 8,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 8
+     }
+    },
+    "clothes": {
+     "so_anh": 3619,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 3619,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 3341,
+      "archive/Garbage_Classification (ar_)": 278
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 3187,
+      "archive/Data/Garbage_Classification": 143,
+      "archive/Data/Garbage_Classification + dataset_sach_zip": 135,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 89,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 65
+     }
+    },
+    "glass": {
+     "so_anh": 2066,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 2066,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 1736,
+      "archive/Garbage_Classification (ar_)": 330
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1121,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 186,
+      "archive/Data/Garbage_Classification": 176,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 170,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 144,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 68,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 67,
+      "archive/Data/Garbage_Classification + dataset_sach_zip": 65,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 49,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 20
+     }
+    },
+    "metal": {
+     "so_anh": 1088,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1088,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 930,
+      "archive/Garbage_Classification (ar_)": 158
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 319,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 293,
+      "archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 160,
+      "archive/Data/Garbage_Classification": 107,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 106,
+      "archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 52,
+      "archive/Data/Garbage_Classification + dataset_sach_zip": 40,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 9,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 2
+     }
+    },
+    "paper": {
+     "so_anh": 1361,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1361,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 1336,
+      "archive/Garbage_Classification (ar_)": 25
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 767,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 377,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 192,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 17,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 8
+     }
+    },
+    "plastic": {
+     "so_anh": 1610,
+     "so_file_khong_phai_anh": 0,
+     "ext_khong_phai_anh": {},
+     "so_md5_duy_nhat": 1610,
+     "so_file_trung_md5_thua": 0,
+     "nguon_theo_tien_to": {
+      "bo new11k (new_<lop>_N)": 1597,
+      "archive/Garbage_Classification (ar_)": 13
+     },
+     "nguon_theo_md5_pool": {
+      "new11k (C:/Users/admin/Documents/dataset/dataset)": 1146,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip + new11k (C:/Users/admin/Documents/dataset/dataset)": 194,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + new11k (C:/Users/admin/Documents/dataset/dataset)": 178,
+      "TrashNet (trashnet/data/dataset-resized.zip) + new11k (C:/Users/admin/Documents/dataset/dataset)": 79,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification": 7,
+      "TrashNet (trashnet/data/dataset-resized.zip) + archive/Data/Garbage_Classification + dataset_sach_zip": 6
+     }
+    }
+   },
+   "tong_anh": 12055,
+   "so_md5_duy_nhat_toan_bo": 12052,
+   "so_file_trung_md5_thua_toan_bo": 3,
+   "md5_xuat_hien_o_nhieu_lop": 3,
+   "tong_theo_nguon_tien_to": {
+    "bo new11k (new_<lop>_N)": 11107,
+    "archive/Garbage_Classification (ar_)": 948
+   },
+   "mtime_moi_nhat": 1771781898.0
+  }
+ },
+ "diffs": {
+  "dataset_8lop->dataset_8lop_v2": {
+   "per_class": {
+    "battery": {
+     "truoc": 884,
+     "sau": 756,
+     "chenh": -128,
+     "md5_moi": 0,
+     "md5_bi_bo": 128,
+     "nguon_anh_moi": {}
+    },
+    "cardboard": {
+     "truoc": 1427,
+     "sau": 1411,
+     "chenh": -16,
+     "md5_moi": 0,
+     "md5_bi_bo": 16,
+     "nguon_anh_moi": {}
+    },
+    "clothes": {
+     "truoc": 3619,
+     "sau": 3341,
+     "chenh": -278,
+     "md5_moi": 0,
+     "md5_bi_bo": 278,
+     "nguon_anh_moi": {}
+    },
+    "glass": {
+     "truoc": 2066,
+     "sau": 1736,
+     "chenh": -330,
+     "md5_moi": 0,
+     "md5_bi_bo": 330,
+     "nguon_anh_moi": {}
+    },
+    "metal": {
+     "truoc": 1088,
+     "sau": 930,
+     "chenh": -158,
+     "md5_moi": 0,
+     "md5_bi_bo": 158,
+     "nguon_anh_moi": {}
+    },
+    "organic": {
+     "truoc": 1451,
+     "sau": 1451,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "paper": {
+     "truoc": 1361,
+     "sau": 1336,
+     "chenh": -25,
+     "md5_moi": 0,
+     "md5_bi_bo": 25,
+     "nguon_anh_moi": {}
+    },
+    "plastic": {
+     "truoc": 1610,
+     "sau": 1597,
+     "chenh": -13,
+     "md5_moi": 0,
+     "md5_bi_bo": 13,
+     "nguon_anh_moi": {}
+    }
+   },
+   "tong_truoc": 13506,
+   "tong_sau": 12558,
+   "chenh_tong": -948
+  },
+  "dataset_8lop_v2->dataset_8lop_v3": {
+   "per_class": {
+    "battery": {
+     "truoc": 756,
+     "sau": 756,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "cardboard": {
+     "truoc": 1411,
+     "sau": 1793,
+     "chenh": 382,
+     "md5_moi": 382,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "RealWaste (rw_)": 382
+     }
+    },
+    "clothes": {
+     "truoc": 3341,
+     "sau": 3653,
+     "chenh": 312,
+     "md5_moi": 312,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "RealWaste (rw_)": 271,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 41
+     }
+    },
+    "glass": {
+     "truoc": 1736,
+     "sau": 2080,
+     "chenh": 344,
+     "md5_moi": 344,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "RealWaste (rw_)": 313,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 31
+     }
+    },
+    "metal": {
+     "truoc": 930,
+     "sau": 1582,
+     "chenh": 652,
+     "md5_moi": 652,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "RealWaste (rw_)": 585,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 67
+     }
+    },
+    "organic": {
+     "truoc": 1451,
+     "sau": 2027,
+     "chenh": 576,
+     "md5_moi": 576,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "RealWaste (rw_)": 387,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 189
+     }
+    },
+    "paper": {
+     "truoc": 1336,
+     "sau": 2245,
+     "chenh": 909,
+     "md5_moi": 909,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "RealWaste (rw_)": 461,
+      "Malaysian Trash Annotation/Roboflow (mta_)": 448
+     }
+    },
+    "plastic": {
+     "truoc": 1597,
+     "sau": 3445,
+     "chenh": 1848,
+     "md5_moi": 1848,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "Malaysian Trash Annotation/Roboflow (mta_)": 1000,
+      "RealWaste (rw_)": 848
+     }
+    }
+   },
+   "tong_truoc": 12558,
+   "tong_sau": 17581,
+   "chenh_tong": 5023
+  },
+  "dataset_8lop_v3->dataset_8lop_v4": {
+   "per_class": {
+    "battery": {
+     "truoc": 756,
+     "sau": 815,
+     "chenh": 59,
+     "md5_moi": 59,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "Bower (bower_)": 59
+     }
+    },
+    "cardboard": {
+     "truoc": 1793,
+     "sau": 1936,
+     "chenh": 143,
+     "md5_moi": 143,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "Bower (bower_)": 143
+     }
+    },
+    "clothes": {
+     "truoc": 3653,
+     "sau": 3656,
+     "chenh": 3,
+     "md5_moi": 3,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "Bower (bower_)": 3
+     }
+    },
+    "glass": {
+     "truoc": 2080,
+     "sau": 2292,
+     "chenh": 212,
+     "md5_moi": 212,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "Bower (bower_)": 129,
+      "BDWaste (bdw_)": 83
+     }
+    },
+    "metal": {
+     "truoc": 1582,
+     "sau": 1669,
+     "chenh": 87,
+     "md5_moi": 87,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "Bower (bower_)": 87
+     }
+    },
+    "organic": {
+     "truoc": 2027,
+     "sau": 2402,
+     "chenh": 375,
+     "md5_moi": 375,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "BDWaste (bdw_)": 375
+     }
+    },
+    "paper": {
+     "truoc": 2245,
+     "sau": 2445,
+     "chenh": 200,
+     "md5_moi": 200,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "BDWaste (bdw_)": 157,
+      "Bower (bower_)": 43
+     }
+    },
+    "plastic": {
+     "truoc": 3445,
+     "sau": 3942,
+     "chenh": 497,
+     "md5_moi": 497,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "BDWaste (bdw_)": 365,
+      "Bower (bower_)": 132
+     }
+    }
+   },
+   "tong_truoc": 17581,
+   "tong_sau": 19157,
+   "chenh_tong": 1576
+  },
+  "dataset_8lop_v4->dataset_8lop_v5": {
+   "per_class": {
+    "battery": {
+     "truoc": 815,
+     "sau": 1315,
+     "chenh": 500,
+     "md5_moi": 500,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "Wikimedia Commons (cm_)": 347,
+      "Open Images (oi_)": 153
+     }
+    },
+    "cardboard": {
+     "truoc": 1936,
+     "sau": 1936,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "clothes": {
+     "truoc": 3656,
+     "sau": 3656,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "glass": {
+     "truoc": 2292,
+     "sau": 2292,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "metal": {
+     "truoc": 1669,
+     "sau": 1669,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "organic": {
+     "truoc": 2402,
+     "sau": 2402,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "paper": {
+     "truoc": 2445,
+     "sau": 2445,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "plastic": {
+     "truoc": 3942,
+     "sau": 3942,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    }
+   },
+   "tong_truoc": 19157,
+   "tong_sau": 19657,
+   "chenh_tong": 500
+  },
+  "dataset_8lop_v5->dataset_8lop_v6a": {
+   "per_class": {
+    "battery": {
+     "truoc": 1315,
+     "sau": 1315,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "cardboard": {
+     "truoc": 1936,
+     "sau": 1936,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "clothes": {
+     "truoc": 3656,
+     "sau": 4656,
+     "chenh": 1000,
+     "md5_moi": 998,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "RISE (rise_)": 1000
+     }
+    },
+    "glass": {
+     "truoc": 2292,
+     "sau": 2292,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "metal": {
+     "truoc": 1669,
+     "sau": 1669,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "organic": {
+     "truoc": 2402,
+     "sau": 2402,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "paper": {
+     "truoc": 2445,
+     "sau": 2445,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "plastic": {
+     "truoc": 3942,
+     "sau": 3942,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    }
+   },
+   "tong_truoc": 19657,
+   "tong_sau": 20657,
+   "chenh_tong": 1000
+  },
+  "dataset_8lop_v6a->dataset_8lop_v6b": {
+   "per_class": {
+    "battery": {
+     "truoc": 1315,
+     "sau": 1315,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "cardboard": {
+     "truoc": 1936,
+     "sau": 1936,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "clothes": {
+     "truoc": 4656,
+     "sau": 5231,
+     "chenh": 575,
+     "md5_moi": 575,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "NPCG (npcg_)": 575
+     }
+    },
+    "glass": {
+     "truoc": 2292,
+     "sau": 2292,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "metal": {
+     "truoc": 1669,
+     "sau": 1669,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "organic": {
+     "truoc": 2402,
+     "sau": 2402,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "paper": {
+     "truoc": 2445,
+     "sau": 2445,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "plastic": {
+     "truoc": 3942,
+     "sau": 3942,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    }
+   },
+   "tong_truoc": 20657,
+   "tong_sau": 21232,
+   "chenh_tong": 575
+  },
+  "dataset_8lop_v5->dataset_8lop_v6b": {
+   "per_class": {
+    "battery": {
+     "truoc": 1315,
+     "sau": 1315,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "cardboard": {
+     "truoc": 1936,
+     "sau": 1936,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "clothes": {
+     "truoc": 3656,
+     "sau": 5231,
+     "chenh": 1575,
+     "md5_moi": 1573,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {
+      "RISE (rise_)": 1000,
+      "NPCG (npcg_)": 575
+     }
+    },
+    "glass": {
+     "truoc": 2292,
+     "sau": 2292,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "metal": {
+     "truoc": 1669,
+     "sau": 1669,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "organic": {
+     "truoc": 2402,
+     "sau": 2402,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "paper": {
+     "truoc": 2445,
+     "sau": 2445,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    },
+    "plastic": {
+     "truoc": 3942,
+     "sau": 3942,
+     "chenh": 0,
+     "md5_moi": 0,
+     "md5_bi_bo": 0,
+     "nguon_anh_moi": {}
+    }
+   },
+   "tong_truoc": 19657,
+   "tong_sau": 21232,
+   "chenh_tong": 1575
+  }
+ },
+ "splits": {
+  "v2_r18": {
+   "dataset": "dataset_8lop_v2",
+   "seed": 42,
+   "train_ratio": 0.7,
+   "val_ratio": 0.15,
+   "summary": {
+    "classes": [
+     "battery",
+     "cardboard",
+     "clothes",
+     "glass",
+     "metal",
+     "organic",
+     "paper",
+     "plastic"
+    ],
+    "train": {
+     "total": 8787,
+     "per_class": {
+      "battery": 529,
+      "cardboard": 987,
+      "clothes": 2338,
+      "glass": 1215,
+      "metal": 651,
+      "organic": 1015,
+      "paper": 935,
+      "plastic": 1117
+     }
+    },
+    "val": {
+     "total": 1880,
+     "per_class": {
+      "battery": 113,
+      "cardboard": 211,
+      "clothes": 501,
+      "glass": 260,
+      "metal": 139,
+      "organic": 217,
+      "paper": 200,
+      "plastic": 239
+     }
+    },
+    "test": {
+     "total": 1891,
+     "per_class": {
+      "battery": 114,
+      "cardboard": 213,
+      "clothes": 502,
+      "glass": 261,
+      "metal": 140,
+      "organic": 219,
+      "paper": 201,
+      "plastic": 241
+     }
+    }
+   },
+   "khop_dataset_split_json_da_luu": true,
+   "dataset_mtime_moi_nhat_truoc_best_model": true,
+   "test_trung_md5_voi_train": 4,
+   "val_trung_md5_voi_train": 3,
+   "test_trung_md5_voi_train_theo_lop": {
+    "organic": 4
+   }
+  },
+  "v3_r18": {
+   "dataset": "dataset_8lop_v3",
+   "seed": 42,
+   "train_ratio": 0.7,
+   "val_ratio": 0.15,
+   "summary": {
+    "classes": [
+     "battery",
+     "cardboard",
+     "clothes",
+     "glass",
+     "metal",
+     "organic",
+     "paper",
+     "plastic"
+    ],
+    "train": {
+     "total": 12304,
+     "per_class": {
+      "battery": 529,
+      "cardboard": 1255,
+      "clothes": 2557,
+      "glass": 1456,
+      "metal": 1107,
+      "organic": 1418,
+      "paper": 1571,
+      "plastic": 2411
+     }
+    },
+    "val": {
+     "total": 2633,
+     "per_class": {
+      "battery": 113,
+      "cardboard": 268,
+      "clothes": 547,
+      "glass": 312,
+      "metal": 237,
+      "organic": 304,
+      "paper": 336,
+      "plastic": 516
+     }
+    },
+    "test": {
+     "total": 2644,
+     "per_class": {
+      "battery": 114,
+      "cardboard": 270,
+      "clothes": 549,
+      "glass": 312,
+      "metal": 238,
+      "organic": 305,
+      "paper": 338,
+      "plastic": 518
+     }
+    }
+   },
+   "khop_dataset_split_json_da_luu": true,
+   "dataset_mtime_moi_nhat_truoc_best_model": true,
+   "test_trung_md5_voi_train": 5,
+   "val_trung_md5_voi_train": 3,
+   "test_trung_md5_voi_train_theo_lop": {
+    "organic": 5
+   }
+  },
+  "v4_r18": {
+   "dataset": "dataset_8lop_v4",
+   "seed": 42,
+   "train_ratio": 0.7,
+   "val_ratio": 0.15,
+   "summary": {
+    "classes": [
+     "battery",
+     "cardboard",
+     "clothes",
+     "glass",
+     "metal",
+     "organic",
+     "paper",
+     "plastic"
+    ],
+    "train": {
+     "total": 13407,
+     "per_class": {
+      "battery": 570,
+      "cardboard": 1355,
+      "clothes": 2559,
+      "glass": 1604,
+      "metal": 1168,
+      "organic": 1681,
+      "paper": 1711,
+      "plastic": 2759
+     }
+    },
+    "val": {
+     "total": 2870,
+     "per_class": {
+      "battery": 122,
+      "cardboard": 290,
+      "clothes": 548,
+      "glass": 343,
+      "metal": 250,
+      "organic": 360,
+      "paper": 366,
+      "plastic": 591
+     }
+    },
+    "test": {
+     "total": 2880,
+     "per_class": {
+      "battery": 123,
+      "cardboard": 291,
+      "clothes": 549,
+      "glass": 345,
+      "metal": 251,
+      "organic": 361,
+      "paper": 368,
+      "plastic": 592
+     }
+    }
+   },
+   "khop_dataset_split_json_da_luu": true,
+   "dataset_mtime_moi_nhat_truoc_best_model": true,
+   "test_trung_md5_voi_train": 3,
+   "val_trung_md5_voi_train": 3,
+   "test_trung_md5_voi_train_theo_lop": {
+    "organic": 3
+   }
+  },
+  "v5_r18": {
+   "dataset": "dataset_8lop_v5",
+   "seed": 42,
+   "train_ratio": 0.7,
+   "val_ratio": 0.15,
+   "summary": {
+    "classes": [
+     "battery",
+     "cardboard",
+     "clothes",
+     "glass",
+     "metal",
+     "organic",
+     "paper",
+     "plastic"
+    ],
+    "train": {
+     "total": 13757,
+     "per_class": {
+      "battery": 920,
+      "cardboard": 1355,
+      "clothes": 2559,
+      "glass": 1604,
+      "metal": 1168,
+      "organic": 1681,
+      "paper": 1711,
+      "plastic": 2759
+     }
+    },
+    "val": {
+     "total": 2945,
+     "per_class": {
+      "battery": 197,
+      "cardboard": 290,
+      "clothes": 548,
+      "glass": 343,
+      "metal": 250,
+      "organic": 360,
+      "paper": 366,
+      "plastic": 591
+     }
+    },
+    "test": {
+     "total": 2955,
+     "per_class": {
+      "battery": 198,
+      "cardboard": 291,
+      "clothes": 549,
+      "glass": 345,
+      "metal": 251,
+      "organic": 361,
+      "paper": 368,
+      "plastic": 592
+     }
+    }
+   },
+   "khop_dataset_split_json_da_luu": true,
+   "dataset_mtime_moi_nhat_truoc_best_model": true,
+   "test_trung_md5_voi_train": 3,
+   "val_trung_md5_voi_train": 3,
+   "test_trung_md5_voi_train_theo_lop": {
+    "organic": 3
+   }
+  },
+  "v5_r18_s1": {
+   "dataset": "dataset_8lop_v5",
+   "seed": 1,
+   "train_ratio": 0.7,
+   "val_ratio": 0.15,
+   "summary": {
+    "classes": [
+     "battery",
+     "cardboard",
+     "clothes",
+     "glass",
+     "metal",
+     "organic",
+     "paper",
+     "plastic"
+    ],
+    "train": {
+     "total": 13757,
+     "per_class": {
+      "battery": 920,
+      "cardboard": 1355,
+      "clothes": 2559,
+      "glass": 1604,
+      "metal": 1168,
+      "organic": 1681,
+      "paper": 1711,
+      "plastic": 2759
+     }
+    },
+    "val": {
+     "total": 2945,
+     "per_class": {
+      "battery": 197,
+      "cardboard": 290,
+      "clothes": 548,
+      "glass": 343,
+      "metal": 250,
+      "organic": 360,
+      "paper": 366,
+      "plastic": 591
+     }
+    },
+    "test": {
+     "total": 2955,
+     "per_class": {
+      "battery": 198,
+      "cardboard": 291,
+      "clothes": 549,
+      "glass": 345,
+      "metal": 251,
+      "organic": 361,
+      "paper": 368,
+      "plastic": 592
+     }
+    }
+   },
+   "khop_dataset_split_json_da_luu": true,
+   "dataset_mtime_moi_nhat_truoc_best_model": true,
+   "test_trung_md5_voi_train": 6,
+   "val_trung_md5_voi_train": 4,
+   "test_trung_md5_voi_train_theo_lop": {
+    "organic": 6
+   }
+  },
+  "v5_r18_s2": {
+   "dataset": "dataset_8lop_v5",
+   "seed": 2,
+   "train_ratio": 0.7,
+   "val_ratio": 0.15,
+   "summary": {
+    "classes": [
+     "battery",
+     "cardboard",
+     "clothes",
+     "glass",
+     "metal",
+     "organic",
+     "paper",
+     "plastic"
+    ],
+    "train": {
+     "total": 13757,
+     "per_class": {
+      "battery": 920,
+      "cardboard": 1355,
+      "clothes": 2559,
+      "glass": 1604,
+      "metal": 1168,
+      "organic": 1681,
+      "paper": 1711,
+      "plastic": 2759
+     }
+    },
+    "val": {
+     "total": 2945,
+     "per_class": {
+      "battery": 197,
+      "cardboard": 290,
+      "clothes": 548,
+      "glass": 343,
+      "metal": 250,
+      "organic": 360,
+      "paper": 366,
+      "plastic": 591
+     }
+    },
+    "test": {
+     "total": 2955,
+     "per_class": {
+      "battery": 198,
+      "cardboard": 291,
+      "clothes": 549,
+      "glass": 345,
+      "metal": 251,
+      "organic": 361,
+      "paper": 368,
+      "plastic": 592
+     }
+    }
+   },
+   "khop_dataset_split_json_da_luu": true,
+   "dataset_mtime_moi_nhat_truoc_best_model": true,
+   "test_trung_md5_voi_train": 5,
+   "val_trung_md5_voi_train": 3,
+   "test_trung_md5_voi_train_theo_lop": {
+    "organic": 5
+   }
+  },
+  "v6a_r18": {
+   "dataset": "dataset_8lop_v6a",
+   "seed": 42,
+   "train_ratio": 0.7,
+   "val_ratio": 0.15,
+   "summary": {
+    "classes": [
+     "battery",
+     "cardboard",
+     "clothes",
+     "glass",
+     "metal",
+     "organic",
+     "paper",
+     "plastic"
+    ],
+    "train": {
+     "total": 14457,
+     "per_class": {
+      "battery": 920,
+      "cardboard": 1355,
+      "clothes": 3259,
+      "glass": 1604,
+      "metal": 1168,
+      "organic": 1681,
+      "paper": 1711,
+      "plastic": 2759
+     }
+    },
+    "val": {
+     "total": 3095,
+     "per_class": {
+      "battery": 197,
+      "cardboard": 290,
+      "clothes": 698,
+      "glass": 343,
+      "metal": 250,
+      "organic": 360,
+      "paper": 366,
+      "plastic": 591
+     }
+    },
+    "test": {
+     "total": 3105,
+     "per_class": {
+      "battery": 198,
+      "cardboard": 291,
+      "clothes": 699,
+      "glass": 345,
+      "metal": 251,
+      "organic": 361,
+      "paper": 368,
+      "plastic": 592
+     }
+    }
+   },
+   "khop_dataset_split_json_da_luu": true,
+   "dataset_mtime_moi_nhat_truoc_best_model": true,
+   "test_trung_md5_voi_train": 3,
+   "val_trung_md5_voi_train": 3,
+   "test_trung_md5_voi_train_theo_lop": {
+    "organic": 3
+   }
+  },
+  "v6b_r18": {
+   "dataset": "dataset_8lop_v6b",
+   "seed": 42,
+   "train_ratio": 0.7,
+   "val_ratio": 0.15,
+   "summary": {
+    "classes": [
+     "battery",
+     "cardboard",
+     "clothes",
+     "glass",
+     "metal",
+     "organic",
+     "paper",
+     "plastic"
+    ],
+    "train": {
+     "total": 14859,
+     "per_class": {
+      "battery": 920,
+      "cardboard": 1355,
+      "clothes": 3661,
+      "glass": 1604,
+      "metal": 1168,
+      "organic": 1681,
+      "paper": 1711,
+      "plastic": 2759
+     }
+    },
+    "val": {
+     "total": 3181,
+     "per_class": {
+      "battery": 197,
+      "cardboard": 290,
+      "clothes": 784,
+      "glass": 343,
+      "metal": 250,
+      "organic": 360,
+      "paper": 366,
+      "plastic": 591
+     }
+    },
+    "test": {
+     "total": 3192,
+     "per_class": {
+      "battery": 198,
+      "cardboard": 291,
+      "clothes": 786,
+      "glass": 345,
+      "metal": 251,
+      "organic": 361,
+      "paper": 368,
+      "plastic": 592
+     }
+    }
+   },
+   "khop_dataset_split_json_da_luu": true,
+   "dataset_mtime_moi_nhat_truoc_best_model": true,
+   "test_trung_md5_voi_train": 3,
+   "val_trung_md5_voi_train": 4,
+   "test_trung_md5_voi_train_theo_lop": {
+    "organic": 3
+   }
+  }
+ },
+ "realworld": {
+  "realworld_test": {
+   "per_class": {
+    "battery": {
+     "so_anh_tho": 7,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 7
+    },
+    "cardboard": {
+     "so_anh_tho": 7,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 7
+    },
+    "clothes": {
+     "so_anh_tho": 1,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 1
+    },
+    "glass": {
+     "so_anh_tho": 8,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 8
+    },
+    "metal": {
+     "so_anh_tho": 7,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 7
+    },
+    "paper": {
+     "so_anh_tho": 6,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 6
+    },
+    "plastic": {
+     "so_anh_tho": 7,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 7
+    }
+   },
+   "tong_tho": 43,
+   "tong_sau_bo_trung": 43,
+   "so_file_trung_thua": 0,
+   "co_manifest": true,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_test2": {
+   "per_class": {
+    "battery": {
+     "so_anh_tho": 7,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 7
+    },
+    "cardboard": {
+     "so_anh_tho": 9,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 9
+    },
+    "glass": {
+     "so_anh_tho": 9,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 9
+    },
+    "metal": {
+     "so_anh_tho": 9,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 9
+    },
+    "paper": {
+     "so_anh_tho": 9,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 9
+    },
+    "plastic": {
+     "so_anh_tho": 9,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 9
+    }
+   },
+   "tong_tho": 52,
+   "tong_sau_bo_trung": 52,
+   "so_file_trung_thua": 0,
+   "co_manifest": true,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_clothes_test": {
+   "per_class": {
+    "clothes": {
+     "so_anh_tho": 43,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 43
+    }
+   },
+   "tong_tho": 43,
+   "tong_sau_bo_trung": 43,
+   "so_file_trung_thua": 0,
+   "co_manifest": true,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_pin_test": {
+   "per_class": {
+    "battery": {
+     "so_anh_tho": 141,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 141
+    }
+   },
+   "tong_tho": 141,
+   "tong_sau_bo_trung": 141,
+   "so_file_trung_thua": 0,
+   "co_manifest": false,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_mta_test": {
+   "per_class": {
+    "clothes": {
+     "so_anh_tho": 2,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 2
+    },
+    "glass": {
+     "so_anh_tho": 4,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 4
+    },
+    "metal": {
+     "so_anh_tho": 7,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 7
+    },
+    "organic": {
+     "so_anh_tho": 10,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 10
+    },
+    "paper": {
+     "so_anh_tho": 26,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 26
+    },
+    "plastic": {
+     "so_anh_tho": 126,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 126
+    }
+   },
+   "tong_tho": 175,
+   "tong_sau_bo_trung": 175,
+   "so_file_trung_thua": 0,
+   "co_manifest": false,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_bdw_test": {
+   "per_class": {
+    "glass": {
+     "so_anh_tho": 11,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 11
+    },
+    "organic": {
+     "so_anh_tho": 83,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 83
+    },
+    "paper": {
+     "so_anh_tho": 27,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 27
+    },
+    "plastic": {
+     "so_anh_tho": 75,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 75
+    }
+   },
+   "tong_tho": 196,
+   "tong_sau_bo_trung": 196,
+   "so_file_trung_thua": 0,
+   "co_manifest": false,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_bower_test": {
+   "per_class": {
+    "battery": {
+     "so_anh_tho": 11,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 11
+    },
+    "cardboard": {
+     "so_anh_tho": 91,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 91
+    },
+    "glass": {
+     "so_anh_tho": 27,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 27
+    },
+    "metal": {
+     "so_anh_tho": 30,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 30
+    },
+    "paper": {
+     "so_anh_tho": 12,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 12
+    },
+    "plastic": {
+     "so_anh_tho": 143,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 142
+    }
+   },
+   "tong_tho": 314,
+   "tong_sau_bo_trung": 313,
+   "so_file_trung_thua": 1,
+   "co_manifest": false,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_rw5_test": {
+   "per_class": {
+    "glass": {
+     "so_anh_tho": 314,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 314
+    },
+    "metal": {
+     "so_anh_tho": 375,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 373
+    },
+    "organic": {
+     "so_anh_tho": 300,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 300
+    },
+    "paper": {
+     "so_anh_tho": 323,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 320
+    },
+    "plastic": {
+     "so_anh_tho": 335,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 335
+    }
+   },
+   "tong_tho": 1647,
+   "tong_sau_bo_trung": 1642,
+   "so_file_trung_thua": 5,
+   "co_manifest": false,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_curated": {
+   "per_class": {
+    "battery": {
+     "so_anh_tho": 13,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 13
+    },
+    "cardboard": {
+     "so_anh_tho": 4,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 4
+    },
+    "glass": {
+     "so_anh_tho": 9,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 9
+    },
+    "metal": {
+     "so_anh_tho": 6,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 6
+    },
+    "paper": {
+     "so_anh_tho": 7,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 7
+    },
+    "plastic": {
+     "so_anh_tho": 10,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 10
+    }
+   },
+   "tong_tho": 49,
+   "tong_sau_bo_trung": 49,
+   "so_file_trung_thua": 0,
+   "co_manifest": false,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_loai_bo/realworld_test": {
+   "per_class": {
+    "clothes": {
+     "so_anh_tho": 6,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 6
+    }
+   },
+   "tong_tho": 6,
+   "tong_sau_bo_trung": 6,
+   "so_file_trung_thua": 0,
+   "co_manifest": false,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  },
+  "realworld_loai_bo/realworld_test2": {
+   "per_class": {
+    "clothes": {
+     "so_anh_tho": 1,
+     "so_anh_sau_bo_trung_md5_thu_tu_realworld_py": 1
+    }
+   },
+   "tong_tho": 1,
+   "tong_sau_bo_trung": 1,
+   "so_file_trung_thua": 0,
+   "co_manifest": false,
+   "md5_duy_nhat_trung_voi_dataset": {
+    "dataset_8lop": 0,
+    "dataset_8lop_v2": 0,
+    "dataset_8lop_v3": 0,
+    "dataset_8lop_v4": 0,
+    "dataset_8lop_v5": 0,
+    "dataset_8lop_v6a": 0,
+    "dataset_8lop_v6b": 0,
+    "dataset_merged": 0
+   },
+   "md5_duy_nhat_trung_voi_split": {
+    "v2_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v3_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v4_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s1": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v5_r18_s2": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6a_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    },
+    "v6b_r18": {
+     "train": 0,
+     "val": 0,
+     "test": 0
+    }
+   }
+  }
+ },
+ "realworld_cross": {
+  "realworld_test&realworld_curated": 15,
+  "realworld_test2&realworld_curated": 34
+ },
+ "realworld_test_vs_test2_chi_tiet": []
+}

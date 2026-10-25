@@ -1,0 +1,8 @@
+realworld_test: 30/43 (70%) dung nhom, bao nham pin 0, bao nham quan ao 4 | battery 4/7 cardboard 6/7 clothes 0/1 glass 6/8 metal 6/7 paper 4/6 plastic 4/7
+realworld_test2: 40/52 (77%) dung nhom, bao nham pin 1, bao nham quan ao 3 | battery 5/7 cardboard 7/9 glass 7/9 metal 5/9 paper 8/9 plastic 8/9
+realworld_pin_test: 95/141 (67%) dung nhom, bao nham pin 0, bao nham quan ao 1 | battery 95/141
+realworld_mta_test: 165/175 (94%) dung nhom, bao nham pin 0, bao nham quan ao 4 | clothes 2/2 glass 4/4 metal 7/7 organic 9/10 paper 24/26 plastic 119/126
+realworld_bower_test: 283/313 (90%) dung nhom, bao nham pin 2, bao nham quan ao 8 | battery 8/11 cardboard 83/91 glass 25/27 metal 28/30 paper 12/12 plastic 127/142
+realworld_rw5_test: 1524/1642 (93%) dung nhom, bao nham pin 8, bao nham quan ao 57 | glass 303/314 metal 359/373 organic 250/300 paper 303/320 plastic 309/335
+realworld_test: 0/6 (0%) dung nhom, bao nham pin 0, bao nham quan ao 0 | clothes 0/6
+realworld_test2: 0/1 (0%) dung nhom, bao nham pin 0, bao nham quan ao 0 | clothes 0/1

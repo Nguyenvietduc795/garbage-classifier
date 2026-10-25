@@ -1,0 +1,90 @@
+{
+ "v2_r18": {
+  "data_dir": "C:\\AL-PLR\\dataset_8lop_v2",
+  "seed": 42,
+  "dung": 1788,
+  "tong": 1891,
+  "train": 8787,
+  "val": 1880,
+  "per_class": {
+   "battery": [
+    111,
+    114
+   ],
+   "cardboard": [
+    201,
+    213
+   ],
+   "clothes": [
+    501,
+    502
+   ],
+   "glass": [
+    242,
+    261
+   ],
+   "metal": [
+    128,
+    140
+   ],
+   "organic": [
+    210,
+    219
+   ],
+   "paper": [
+    185,
+    201
+   ],
+   "plastic": [
+    210,
+    241
+   ]
+  },
+  "test_total_trong_dataset_split_json": 1891,
+  "khop_dataset_split_json": true
+ },
+ "v5_r18": {
+  "data_dir": "C:\\AL-PLR\\dataset_8lop_v5",
+  "seed": 42,
+  "dung": 2699,
+  "tong": 2955,
+  "train": 13757,
+  "val": 2945,
+  "per_class": {
+   "battery": [
+    180,
+    198
+   ],
+   "cardboard": [
+    250,
+    291
+   ],
+   "clothes": [
+    538,
+    549
+   ],
+   "glass": [
+    311,
+    345
+   ],
+   "metal": [
+    223,
+    251
+   ],
+   "organic": [
+    354,
+    361
+   ],
+   "paper": [
+    327,
+    368
+   ],
+   "plastic": [
+    516,
+    592
+   ]
+  },
+  "test_total_trong_dataset_split_json": 2955,
+  "khop_dataset_split_json": true
+ }
+}

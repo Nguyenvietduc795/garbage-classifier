@@ -1,0 +1,124 @@
+{
+ "backend": {
+  "aug": false,
+  "big": false,
+  "full": false,
+  "gentle": false,
+  "merged": false,
+  "new11k": false,
+  "r18_8lop": false,
+  "v2_mnv3": false,
+  "v2_mnv3_bal": false,
+  "v2_r18": true,
+  "v2_r18_bal": false,
+  "v3_r18": false,
+  "v3_r18_pin2": false,
+  "v4_r18": false,
+  "v5_r18": false,
+  "v5_r18_s1": false,
+  "v5_r18_s2": false,
+  "v6a_r18": false,
+  "v6b_r18": false,
+  "v6b_r18_s1": false,
+  "v6b_r18_s2": false
+ },
+ "frontend_v5": {
+  "r18_8lop": {
+   "max_sai_fc_w": 0.06870291655262313,
+   "max_sai_fc_b": 0.011769562083132123,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v2_r18": {
+   "max_sai_fc_w": 0.061971331884463646,
+   "max_sai_fc_b": 0.006521753090269422,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v2_r18_bal": {
+   "max_sai_fc_w": 0.06373812531431518,
+   "max_sai_fc_b": 0.008459392058498716,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v3_r18": {
+   "max_sai_fc_w": 0.04162208009511233,
+   "max_sai_fc_b": 0.0026123049285481925,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v3_r18_pin2": {
+   "max_sai_fc_w": 0.05129933456579844,
+   "max_sai_fc_b": 0.003975023679873527,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v4_r18": {
+   "max_sai_fc_w": 0.04945688744386037,
+   "max_sai_fc_b": 0.0012431423015454302,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v5_r18": {
+   "max_sai_fc_w": 0.0005074787264068986,
+   "max_sai_fc_b": 0.00013284620774143413,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": true
+  },
+  "v5_r18_s1": {
+   "max_sai_fc_w": 0.09761601705104113,
+   "max_sai_fc_b": 0.07066204815226443,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v5_r18_s2": {
+   "max_sai_fc_w": 0.10240881443023682,
+   "max_sai_fc_b": 0.07513611873283106,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v6a_r18": {
+   "max_sai_fc_w": 0.02656078062330683,
+   "max_sai_fc_b": 0.0019148993031943493,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v6b_r18": {
+   "max_sai_fc_w": 0.035960533532003555,
+   "max_sai_fc_b": 0.0026545237530680305,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v6b_r18_s1": {
+   "max_sai_fc_w": 0.09466834105551243,
+   "max_sai_fc_b": 0.07055401100831873,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  },
+  "v6b_r18_s2": {
+   "max_sai_fc_w": 0.10028129369020462,
+   "max_sai_fc_b": 0.07803483416928965,
+   "nua_scale_w": 0.0005075002710024516,
+   "nua_scale_b": 0.00013961862115299,
+   "khop": false
+  }
+ },
+ "backend_config": {
+  "data_dir": "C:\\AL-PLR\\dataset_8lop_v2",
+  "output_dir": "C:\\AL-PLR\\garbage_classifier\\artifacts\\v2_r18",
+  "seed": "42"
+ },
+ "backend_epoch": 10
+}

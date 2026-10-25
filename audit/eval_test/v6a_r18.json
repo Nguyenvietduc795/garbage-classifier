@@ -1,0 +1,221 @@
+{
+ "run": "v6a_r18",
+ "checkpoint": "C:\\AL-PLR\\garbage_classifier\\artifacts\\v6a_r18\\best_model.pt",
+ "data_dir": "C:\\AL-PLR\\dataset_8lop_v6a",
+ "seed": 42,
+ "classes": [
+  "battery",
+  "cardboard",
+  "clothes",
+  "glass",
+  "metal",
+  "organic",
+  "paper",
+  "plastic"
+ ],
+ "n_test": 3105,
+ "dung": 2856,
+ "accuracy": 0.9198067632850242,
+ "loss": 0.7104840001910205,
+ "confusion_matrix": [
+  [
+   182,
+   4,
+   0,
+   2,
+   3,
+   1,
+   3,
+   3
+  ],
+  [
+   4,
+   254,
+   1,
+   1,
+   8,
+   6,
+   12,
+   5
+  ],
+  [
+   1,
+   1,
+   687,
+   1,
+   0,
+   1,
+   4,
+   4
+  ],
+  [
+   0,
+   2,
+   2,
+   307,
+   11,
+   3,
+   1,
+   19
+  ],
+  [
+   3,
+   4,
+   1,
+   4,
+   226,
+   1,
+   3,
+   9
+  ],
+  [
+   0,
+   1,
+   2,
+   1,
+   1,
+   355,
+   0,
+   1
+  ],
+  [
+   1,
+   20,
+   5,
+   0,
+   4,
+   7,
+   322,
+   9
+  ],
+  [
+   4,
+   9,
+   1,
+   21,
+   12,
+   10,
+   12,
+   523
+  ]
+ ],
+ "per_class": {
+  "battery": {
+   "dung": 182,
+   "tong": 198
+  },
+  "cardboard": {
+   "dung": 254,
+   "tong": 291
+  },
+  "clothes": {
+   "dung": 687,
+   "tong": 699
+  },
+  "glass": {
+   "dung": 307,
+   "tong": 345
+  },
+  "metal": {
+   "dung": 226,
+   "tong": 251
+  },
+  "organic": {
+   "dung": 355,
+   "tong": 361
+  },
+  "paper": {
+   "dung": 322,
+   "tong": 368
+  },
+  "plastic": {
+   "dung": 523,
+   "tong": 592
+  }
+ },
+ "groups": [
+  "huu-co",
+  "nguy-hiem",
+  "tai-che",
+  "khong-tai-che"
+ ],
+ "group_confusion_argmax": [
+  [
+   355,
+   0,
+   4,
+   2
+  ],
+  [
+   1,
+   182,
+   15,
+   0
+  ],
+  [
+   27,
+   12,
+   1798,
+   10
+  ],
+  [
+   1,
+   1,
+   10,
+   687
+  ]
+ ],
+ "group_confusion_pin0.5": [
+  [
+   355,
+   0,
+   4,
+   2
+  ],
+  [
+   2,
+   176,
+   20,
+   0
+  ],
+  [
+   28,
+   4,
+   1805,
+   10
+  ],
+  [
+   1,
+   0,
+   10,
+   688
+  ]
+ ],
+ "group_confusion_pin0.3": [
+  [
+   355,
+   0,
+   4,
+   2
+  ],
+  [
+   1,
+   185,
+   12,
+   0
+  ],
+  [
+   27,
+   17,
+   1793,
+   10
+  ],
+  [
+   1,
+   1,
+   10,
+   687
+  ]
+ ],
+ "argmax_pass2_dung": 2856
+}

@@ -17,13 +17,74 @@ trong 7 loại còn lại (bỏ luật "có thể là pin" ở 30% của bản v
 | | Trước (v2 + luật pin 30%) | Sau (v5 + luật pin 50%) |
 |---|---|---|
 | Nhận ra pin | cứ 10 pin bỏ sót 4 | cứ 10 pin bỏ sót 2 |
-| Báo nhầm thành pin | 55 lần | 45 lần |
-| Đúng nhóm, 1.642 ảnh rác chụp thật | 87% | 91% |
-| Hữu cơ (/300) | 250 | 238 |
-| Quần áo chụp thật | sai hết | vẫn sai hết |
+| Báo nhầm thành pin | 47 lần | 45 lần |
+| Đúng nhóm, 1.642 ảnh rác chụp thật | 86,9% | 91,2% |
+| Hữu cơ (/300) | 250 | 250 |
+| Quần áo chụp thật | — | 31/43 (bộ test mới, xem mục **v6**) |
+
+Dòng "quần áo sai hết" trước đây là do bộ test: phần lớn ảnh "quần áo" trong đó không có
+quần áo (thùng thu gom, logo chữ…). Đã lọc lại — xem mục **v6**.
 
 Bản v2 vẫn giữ ở `frontend/models/r18-8lop-v1`; muốn quay lại thì đổi `THU_MUC_MODEL` và
 khôi phục luật pin cũ (commit `d364ddf`).
+
+## v6: bộ test quần áo mới + thêm quần áo cũ thật (24/10/2026) — chưa đưa lên web
+
+**Bộ test quần áo cũ đo sai.** 7/10 ảnh "quần áo" không có quần áo làm vật chính (cây treo
+vải, thùng thu gom quần áo, xe tải chở kiện vải, hộp điện, logo chữ). Đã chuyển sang
+`realworld_loai_bo/` (lý do ghi trong `manifest.json`), còn lại 1 ảnh ở `realworld_test` và
+2 ảnh ở `realworld_mta_test`.
+
+**Bộ test mới `realworld_clothes_test`** (43 ảnh): Wikimedia Commons, lọc tay từng ảnh — giày
+cũ vứt trên vỉa hè/cỏ/bùn, quần áo đổ đống bên đường, giẻ treo, áo bỏ trên cầu thang. Bỏ ảnh
+người mặc, ảnh sản phẩm, tranh vẽ. Lọc trùng dHash với train (gần nhất cách 10 bit). Mới lọc
+420/1.103 ảnh ứng viên (Commons giới hạn tốc độ tải); phần lớn là giày, ít quần áo.
+
+**Dữ liệu train thêm** (đều là đồ cũ thật chụp trải phẳng trên nền trắng, không có bối cảnh rác):
+
+- `dataset_8lop_v6a` = v5 + **1.000 ảnh RISE** "Clothing Dataset for Second-Hand Fashion"
+  (CC BY 4.0, bản front-only trên Hugging Face): chọn `usage = Recycle` hoặc `condition ≤ 2`,
+  ưu tiên đồ thủng/bẩn, mỗi loại đồ ≤ 15%, cắt sát món đồ.
+- `dataset_8lop_v6b` = v6a + **575 ảnh Na Uy** "Norway post-consumer garment data" (CC BY-SA
+  4.0, Zenodo, chỉ tải khu F 8,3 GB): chỉ lấy món `Sorted_as = T_waste` (đồ vứt bỏ), bỏ ảnh
+  nhãn mác/thẻ số, cắt theo vùng vật lớn nhất.
+- Train giống hệt v5 (15 epoch, batch 32, không augmentation mạnh). Lớp `clothes`: 3.656 →
+  4.656 (v6a) → 5.231 (v6b).
+
+Đo bằng `uv run python -m garbage_classifier.realworld` (đúng luật web: tăng sáng ảnh tối, pin
+≥ 50%, đúng theo 4 nhóm, bỏ trùng MD5). Bộ test cũ đã bỏ 7 ảnh nên số khác bảng trước.
+
+| | v5 (web) | v6a | v6b |
+|---|---|---|---|
+| **Quần áo thật** `realworld_clothes_test` (43) | **31** | 30 | 29 |
+| `realworld_test` (43) · `test2` (52) · `curated` (49) | 28 · 39 · 40 | 26 · 42 · 41 | 27 · **43** · **43** |
+| MTA (175) · Bower (313) · BDWaste (196) | 165 · 281 · 196 | 168 · 282 · 195 | 166 · 282 · 196 |
+| rw5 (1.642) | 1.498 (91%) | 1.498 (91%) | **1.512 (92%)** |
+| **Tổng đúng nhóm, 8 bộ (2.513)** | 2.278 | 2.282 | **2.298** |
+| Báo nhầm thành pin (8 bộ) | 47 | 50 | **35** |
+| Báo nhầm thành quần áo (8 bộ) | 75 | 78 | **69** |
+| `realworld_pin_test` (141) | 107 | **112** | 111 |
+
+- **Quần áo chụp trải phẳng không giúp nhận quần áo trong rác**: 31 → 30 → 29/43 (chênh trong
+  sai số). Ảnh còn sai là giày nhỏ giữa vỉa hè/cỏ, quần áo đổ đống lẫn rác, mũ/áo nhàu —
+  model đoán giấy/nhựa/kim loại. Thứ còn thiếu là ảnh đồ **trong bối cảnh rác**, không phải
+  thêm ảnh đồ cũ.
+- Nền trắng của RISE/Na Uy **không** làm model đoán bừa sang quần áo (báo nhầm 75 → 69).
+- v6b nhỉnh hơn v5 ở lần train đầu (+20 ảnh, ít báo nhầm pin hơn), nhưng **train lại 3 seed
+  thì hết chênh** (seed đổi cả cách chia train/val) — nên **giữ v5 trên web**:
+
+  | 3 lần train (seed 42 · 1 · 2) | v5 | v6b |
+  |---|---|---|
+  | Quần áo thật (/43) | 31 · 29 · 29 (TB 29,7) | 29 · 31 · 27 (TB 29,0) |
+  | Tổng đúng nhóm, 8 bộ (/2.513) | 2.278 · 2.278 · 2.291 (TB 2.282) | 2.298 · 2.265 · 2.290 (TB 2.284) |
+  | Báo nhầm thành pin | 47 · 47 · 41 | 35 · 74 · 39 |
+  | Báo nhầm thành quần áo | 75 · 72 · 74 | 69 · 70 · 70 |
+  | `realworld_pin_test` (/141) | 107 · 111 · 110 | 111 · 114 · 115 |
+
+  Cùng một dataset, chỉ đổi seed đã lệch tới 33 ảnh tổng và 39 lần báo nhầm pin (v6b seed 1)
+  — mọi chênh lệch nhỏ hơn thế giữa hai model đơn lẻ đều không đáng tin.
+- Số v5 đo lại bằng script mới lệch README cũ 1 ảnh ở MTA (165 so với 166) và 3 ảnh ở
+  `realworld_pin_test` (107 so với 110).
 
 ## Model v2 (01/10/2026) — chạy trên web tới 24/10/2026
 
@@ -36,7 +97,7 @@ khôi phục luật pin cũ (commit `d364ddf`).
 |---|---|---|
 | Teachable Machine 4 nhóm (MobileNet, chỉ train phần đầu) | 37/49 | 5 |
 | ResNet-18 7 lớp cũ (`new11k`, chưa có hữu cơ) | 43/49 | 9 |
-| **ResNet-18 8 lớp (`v2_r18`) ← đang dùng** | **44/49** | **11** |
+| **ResNet-18 8 lớp (`v2_r18`) ← web lúc đó** | **44/49** | **11** |
 | MobileNetV3-Large 8 lớp | 40/49 | 5 |
 | ResNet-18 / MobileNetV3 + cân bằng lớp | 43/49 · 36/49 | — |
 | ResNet-18 trên `dataset_merged` + augmentation mạnh | 38/49 | 6 |
@@ -91,11 +152,11 @@ Gộp `dataset_8lop_v2` với hai bộ ảnh chụp thật thành `dataset_8lop_
 
 Số ảnh đúng theo 4 nhóm:
 
-| Bộ test | v2 (đang dùng) | v3 | v3 + `--oversample battery=2` |
+| Bộ test | v2 (web lúc đó) | v3 | v3 + `--oversample battery=2` |
 |---|---|---|---|
 | `realworld_curated` (49) | **44** | 42 | 41 |
-| `realworld_test` (49) | 22 | **29** | 27 |
-| `realworld_test2` (53) | 43 | **45** | 43 |
+| `realworld_test` (49, bộ cũ trước khi bỏ 6 ảnh) | 22 | **29** | 27 |
+| `realworld_test2` (53, bộ cũ trước khi bỏ 1 ảnh) | 43 | **45** | 43 |
 | **3 bộ, bỏ ảnh trùng (102)** | 65 (64%) | **74 (73%)** | — |
 | **Pin**, bỏ ảnh trùng (14) | **10** | 7 | — |
 | `realworld_mta_test` (175, cùng nguồn với dữ liệu train) | 146 | 170 | 170 |
@@ -126,11 +187,11 @@ tối giả (còn 25% độ sáng):
 |---|---|---|---|
 | v2 gốc | 65 | 10 | 4 |
 | + cân bằng độ sáng | 65 | 10 | 4 |
-| + ưu tiên pin (**web hiện tại**) | **66** | **11** | 4 |
+| + ưu tiên pin 30% (**web lúc đó, v2**) | **65** | **10** | 4 |
 | Ảnh tối giả, v2 gốc | 58 | 7 | 6 |
 | Ảnh tối giả, + cân bằng độ sáng | 68 | 8 | 3 |
 
-Trên trình duyệt (web hiện tại): 63/102 đúng nhóm, pin 11/14, báo nhầm pin 5; ảnh tối giả
+Trên trình duyệt (web lúc đó, v2): 63/102 đúng nhóm, pin 11/14, báo nhầm pin 5; ảnh tối giả
 66/102. Lệch vài ảnh so với PyTorch vì trình duyệt thu nhỏ ảnh hơi khác.
 
 **Ưu tiên pin chỉ sửa được 1 ảnh** (pin AA rò rỉ, xác suất pin 34%, trước bị đoán thủy tinh),
@@ -139,12 +200,14 @@ hơn. Hạ xuống 20% không nhận thêm pin nào mà báo nhầm tăng từ 4
 vỉ pin còn bao bì giấy (đoán bìa), pin nhỏ nằm ở mép trên ảnh mạch điện (bị cắt mất khi lấy
 phần giữa ảnh), và ảnh *thùng thu gom pin* — ảnh này không có pin, không nên tính là lỗi.
 
-Ngưỡng tin cậy (đã có ưu tiên pin), đúng – sai – "Chưa chắc" trên 102 ảnh:
+Ngưỡng tin cậy (đã có ưu tiên pin), đúng – sai – "Chưa chắc" trên 102 ảnh — số đo ở giai đoạn v2,
+chưa tái hiện được bằng script hiện tại; số của v5 (đang chạy) xem bảng 5.4 trong báo cáo:
+0,4 → 67-20-15; 0,5 → 64-19-19; 0,6 → 59-13-30.
 
 | Ngưỡng | Đúng | Sai | Chưa chắc |
 |---|---|---|---|
 | 0,4 | 65 | 28 | 9 |
-| **0,5 (đang dùng)** | 64 | 23 | 15 |
+| **0,5 (chọn ở giai đoạn v2)** | 64 | 23 | 15 |
 | 0,6 | 61 | 16 | 25 |
 
 Giữ 0,5: lên 0,6 bớt 7 lần sai nhưng 3 ảnh đúng bị đổi thành "Chưa chắc", và cứ 4 ảnh thì
@@ -164,7 +227,7 @@ Giữ 0,5: lên 0,6 bớt 7 lần sai nhưng 3 ảnh đúng bị đổi thành "
 - **BDWaste** (Mendeley, CC BY 4.0): ảnh điện thoại ở Dhaka — vỏ trái cây, vỏ trứng, cơm,
   nilon, gói snack, chai PET, ly giấy, mảnh kính. 649 ảnh là bản xoay/lật của ảnh khác (bộ gốc
   có augmentation) → bỏ. Thêm 980 ảnh train, 15% giữ làm `realworld_bdw_test`.
-- **Real-World Waste 5 class** (Kaggle `tuhanasinan`, CC BY 4.0): 1.647 ảnh tự chụp ở khuôn
+- **Real-World Waste 5 class** (Kaggle `tuhanasinan`, CC BY 4.0): 1.647 ảnh (1.642 sau khi bỏ 5 ảnh trùng MD5) tự chụp ở khuôn
   viên trường, **chỉ dùng để test** → `realworld_rw5_test`. Đây là bộ test ảnh thật lớn nhất
   hiện có, nguồn khác hẳn dữ liệu train; có 300 ảnh hữu cơ thật.
 
@@ -182,11 +245,11 @@ Số ảnh đúng theo 4 nhóm (bỏ ảnh trùng MD5 trong từng bộ):
 
 - **Hữu cơ thật khá lên rõ** (226 → 251/300 trên bộ độc lập), nhờ BDWaste.
 - **Pin vẫn chưa chữa được:** đúng 11/11 trên ảnh Bower nhưng chỉ 6/14 trên 102 ảnh cũ —
-  53 ảnh từ một nguồn là quá ít; model học được "đống pin kiểu Bower", chưa học được pin nói
+  59 ảnh pin train từ một nguồn là quá ít; model học được "đống pin kiểu Bower", chưa học được pin nói
   chung. Web vẫn giữ v2.
 - `realworld_bdw_test` 100% là **không đáng tin**: ảnh cùng một người chụp, cùng nền, chỉ
   khác góc — dHash không bắt được hết các ảnh gần giống đó. Đừng dùng bộ này để so model.
-- Cả ba model đều sai **8/8 ảnh quần áo** trong 102 ảnh cũ.
+- Cả ba model đều sai **8/8 ảnh quần áo** trong 102 ảnh cũ (không phải bộ `realworld_clothes_test`).
 
 ## v5: thêm ~500 ảnh pin thật (24/10/2026) — pin tốt hơn mà không bị đổi chác
 
@@ -204,21 +267,21 @@ bằng ngưỡng: pin chỉ khi P(pin) ≥ t, không thì lấy lớp cao nhất
 trên một nửa các bộ test (chia theo MD5), nửa còn lại để báo cáo — không chỉnh trên chính
 số liệu báo cáo.
 
-| | v2 + ưu tiên pin 30% (**web hiện tại**) | v5, t = 0,5 | v5, t = 0,7 |
+| | v2 + ưu tiên pin 30% (**web lúc đó**) | v5, t = 0,5 | v5, t = 0,7 |
 |---|---|---|---|
-| 102 ảnh cũ: đúng nhóm · pin /14 · báo nhầm | 66 · 11 · 4 | 67 · 10 · 5 | **70** · 9 · **1** |
-| `realworld_pin_test` (141 pin) | 82 (58%) | **110 (78%)** | 97 (69%) |
-| `realworld_rw5_test` (1.642): đúng · báo nhầm | 87% · 27 | 91% · 35 | **93% · 8** |
-| `realworld_bower_test` (313): đúng · pin /11 · nhầm | 250 · 10 · 22 | 281 · 9 · 5 | **283** · 8 · **2** |
-| `realworld_mta_test` (175) | 146 | **166** | **166** |
-| **Tổng pin nhận đúng (/166)** | 103 | **129** | 114 |
-| **Tổng báo nhầm thành pin** | 55 | 45 | **11** |
+| 102 ảnh cũ: đúng nhóm · pin /14 · báo nhầm | 65 · 10 · 4 | 67 · 10 · 5 | **70** · 9 · **1** |
+| `realworld_pin_test` (141 pin) | 77 (54,6%) | **107 (75,9%)** | 95 (67,4%) |
+| `realworld_rw5_test` (1.642): đúng · báo nhầm | 86,9% · 21 | 91,2% · 35 | **92,8% · 8** |
+| `realworld_bower_test` (313): đúng · pin /11 · nhầm | 250 · 10 · 20 | 281 · 9 · 5 | **283** · 8 · **2** |
+| `realworld_mta_test` (175): đúng · báo nhầm | 144 · 2 | **165** · 0 | **165** · 0 |
+| **Tổng pin nhận đúng (/166)** | 97 | **126** | 112 |
+| **Tổng báo nhầm thành pin** (102 ảnh cũ + rw5 + Bower + MTA) | 47 | 45 | **11** |
 
-- **v5 + t = 0,5 hơn web hiện tại ở mọi bộ test**: nhiều pin hơn 26 ảnh, ít báo nhầm hơn,
-  đúng nhóm cao hơn. t = 0,7 gần như hết báo nhầm nhưng bỏ sót pin nhiều hơn t = 0,5.
-- `realworld_pin_test` cùng nguồn (Open Images, Commons) với ảnh pin train nên con số 78% là
-  lạc quan. Trên 14 + 11 pin của các bộ khác, v5 ngang v2 (19 so với 21, trong sai số).
-- Quần áo chụp thật vẫn sai 8/8 — chưa có dữ liệu cho lớp này.
+- **v5 + t = 0,5 đúng nhóm cao hơn v2 ở mọi bộ test**, nhận đúng thêm 29 ảnh pin, báo nhầm
+  thành pin tương đương (45 so với 47). Cột v2 đo lại bằng `realworld.py --nguong-pin 0.3`. t = 0,7 gần như hết báo nhầm nhưng bỏ sót pin nhiều hơn t = 0,5.
+- `realworld_pin_test` cùng nguồn (Open Images, Commons) với ảnh pin train nên con số 75,9% là
+  lạc quan. Trên 14 + 11 pin của các bộ khác, v5 ngang v2 (19 so với 20, trong sai số).
+- 8 ảnh quần áo trong 102 ảnh cũ vẫn sai cả 8 (bộ quần áo mới 43 ảnh: 31/43, xem mục **v6**).
 
 ---
 
@@ -301,7 +364,7 @@ uv sync
 ```
 
 **Về GPU:** `pyproject.toml` đã trỏ sang index CUDA 13.0 của PyTorch. Mặc định PyPI chỉ
-có bản torch **CPU-only** cho Windows — cài nhầm bản đó thì train chậm hơn khoảng **20 lần**
+có bản torch **CPU-only** cho Windows — cài nhầm bản đó thì train chậm hơn khoảng **24 lần**
 (72 phút so với 3 phút cho cùng một lần train). Kiểm tra bằng:
 
 ```bash
@@ -356,15 +419,16 @@ python app.py
 Gửi `POST /predict` kèm file ảnh, trả về JSON có `class`, `ten`, `confidence`, `chac_chan`,
 `goi_y_xu_ly`, `all_scores`.
 
-**Web `frontend/`, desktop, API và `backend/` cùng dùng ResNet-18 8 loại** (xem đầu file),
-gộp thành 4 nhóm theo cùng một cách, nên cho cùng kết quả. Riêng `trash_ai_ui/index.html`
+**Web `frontend/` chạy v5** (luật pin 50%, tăng sáng ảnh tối). **API `backend/` và giao diện
+desktop vẫn dùng v2** (`backend/model.pt`, `trash_ai_ui/garbage_resnet18.pt`), chọn loại cao nhất
+trong 8 loại, chưa có luật pin, nên kết quả có thể khác web. Riêng `trash_ai_ui/index.html`
 còn dùng model Teachable Machine cũ (37/49).
 
 ---
 
 ## Những chỗ cần biết trước khi dùng
 
-**Ngưỡng tin cậy 60%.** Dưới mức này giao diện báo "không chắc chắn" và không đưa gợi ý
+**Ngưỡng tin cậy 50%.** Dưới mức này giao diện báo "không chắc chắn" và không đưa gợi ý
 xử lý. Đây là thiết kế có chủ đích: khi model sai, nó thường sai ở vùng 25–50%, nên chặn lại
 tốt hơn là khuyên bừa.
 
@@ -373,7 +437,7 @@ tốt hơn là khuyên bừa.
 trên cùng ảnh đó trả 40,8% và bị chặn. Với ứng dụng khuyên người ta vứt rác, **sai mà tự tin
 nguy hiểm hơn sai mà biết ngập ngừng**.
 
-**Lớp yếu nhất là `plastic`** (86,7% ngay cả trên ảnh dataset). Chai nhựa trong và chai
+**Lớp yếu nhất của v2 là `plastic`** (86,7% ngay cả trên ảnh dataset; ở v5 là `cardboard` 85,9%, `plastic` 87,2%). Chai nhựa trong và chai
 thủy tinh trông rất giống nhau.
 
 **Bộ test 49 ảnh là thước đo yếu.** Sai số khoảng ±7 điểm, và không có lớp `clothes`
@@ -391,6 +455,10 @@ Dataset không đẩy lên git vì dung lượng. Các bộ đã dùng:
   trong `realworld_curated/manifest.json`
 - **Bower waste annotations** (MIT) — [huggingface.co/datasets/BowerApp/bower-waste-annotations](https://huggingface.co/datasets/BowerApp/bower-waste-annotations)
 - **BDWaste** (CC BY 4.0) — [data.mendeley.com/datasets/96g5pgfnfw](https://data.mendeley.com/datasets/96g5pgfnfw)
+- **Clothing Dataset for Second-Hand Fashion** (RISE, CC BY 4.0) — [zenodo.org/records/12518734](https://zenodo.org/records/12518734), bản front-only [huggingface.co/datasets/fnauman/fashion-second-hand-front-only-rgb](https://huggingface.co/datasets/fnauman/fashion-second-hand-front-only-rgb)
+- **Norway post-consumer garment data and images** (CC BY-SA 4.0) — [zenodo.org/records/20440761](https://zenodo.org/records/20440761)
+- **Bộ test quần áo** `realworld_clothes_test` — Wikimedia Commons, nguồn, giấy phép, tác giả
+  trong `realworld_clothes_test/manifest.json`
 - **Real-World Waste 5 class** (CC BY 4.0, chỉ để test) — [kaggle.com/datasets/tuhanasinan/real-world-waste-classification-dataset-5-class](https://www.kaggle.com/datasets/tuhanasinan/real-world-waste-classification-dataset-5-class)
 
 ## Ghi chú
