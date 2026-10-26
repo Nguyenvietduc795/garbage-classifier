@@ -1,5 +1,5 @@
 """
-API PHAN LOAI RAC - model ResNet-18 8 loai (PyTorch), gop thanh 4 nhom
+API PHAN LOAI RAC - model ResNet-18 10 loai v6 (PyTorch), gop thanh 4 nhom
 ----------------------------------------------------------------
 Dung chung model va tien xu ly voi giao dien PyQt (phan_loai_rac.py),
 nen API va desktop luon tra ve cung mot ket qua cho cung mot anh.

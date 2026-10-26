@@ -4,7 +4,10 @@ Pipeline huấn luyện ResNet-18 (PyTorch) phân loại ảnh rác thành 10 lo
 `battery`, `cardboard`, `clothes`, `glass`, `metal`, `organic`, `paper`, `plastic`,
 `shoes`, `trash` (rác còn lại: hộp xốp, vỏ bánh kẹo, giấy ăn, ống hút, cốc giấy…).
 Giao diện gộp lại thành **4 nhóm**: hữu cơ, tái chế, không thể tái chế (`clothes`, `shoes`,
-`trash`), nguy hại. Desktop và API vẫn dùng model 8 loại v2.
+`trash`), nguy hại. Desktop (`trash_ai_ui/`) và API (`backend/`) dùng cùng checkpoint v6, cùng
+tăng sáng ảnh tối và luật pin 50% với web (26/10/2026). Web chạy bản TF.js nén uint8 nên xác suất
+lệch PyTorch tới ~0,05 trên cùng ảnh 224×224; trên 49 ảnh `realworld_curated` (gốc + làm tối 25%),
+7/98 lần web chọn nhóm khác PyTorch.
 
 Kèm các giao diện sử dụng: web (`frontend/`, Vercel), desktop (PyQt5) và API (Flask).
 

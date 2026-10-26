@@ -1,8 +1,8 @@
 """
-PHAN LOAI RAC - model ResNet-18 8 loai (PyTorch), gop thanh 4 nhom.
+PHAN LOAI RAC - model ResNet-18 10 loai v6 (PyTorch), gop thanh 4 nhom.
 
-Model phan 8 loai vat lieu (battery, cardboard, clothes, glass, metal, organic,
-paper, plastic); giao dien chi hien 4 nhom: rac huu co, rac tai che, rac khong
+Model phan 10 loai vat lieu (battery, cardboard, clothes, glass, metal, organic,
+paper, plastic, shoes, trash); giao dien chi hien 4 nhom: rac huu co, rac tai che, rac khong
 the tai che, rac nguy hai. Cung model va cung cach gop nhom voi trang web
 (frontend/), nen desktop, API va web luon cho cung ket qua.
 
@@ -32,7 +32,8 @@ from torchvision.models import resnet18
 # CAU HINH
 # ======================================================================
 
-# Checkpoint ResNet-18 8 loai (garbage_classifier/artifacts/v2_r18/best_model.pt)
+# Checkpoint ResNet-18 10 loai v6 (garbage_classifier/artifacts/v6_gop_e50_full/best_model.pt),
+# cung model voi trang web (frontend/models/r18-10lop-v6).
 MODEL_PATH = "garbage_resnet18.pt"
 
 # Kich thuoc anh dau vao
@@ -41,6 +42,15 @@ IMAGE_SIZE = 224
 # Chuan hoa theo ImageNet - PHAI khop voi luc train.
 IMAGENET_MEAN = (0.485, 0.456, 0.406)
 IMAGENET_STD = (0.229, 0.224, 0.225)
+
+# Giong trang web (frontend/index.html): anh co do sang trung binh < NGUONG_TOI
+# thi nang gamma cho do sang ve ~DO_SANG_DICH; anh du sang giu nguyen.
+NGUONG_TOI = 0.30
+DO_SANG_DICH = 0.45
+
+# Giong trang web: xac suat pin >= NGUONG_PIN thi bao rac nguy hai; duoi nguong
+# thi chon loai cao nhat trong cac loai con lai.
+NGUONG_PIN = 0.50
 
 # Loai vat lieu (lop cua model) -> nhom rac hien cho nguoi dung
 LOAI_VAO_NHOM = {
@@ -62,7 +72,7 @@ NHOM_RAC = {
     },
     "nguy-hiem": {
         "ten": "Rác nguy hại", "ten_khong_dau": "Rac nguy hai", "muc": "nguy-hiem",
-        "vi_du": "Pin, ắc quy",
+        "vi_du": "Pin AA/AAA, pin cúc áo, pin điện thoại",
         "huong_dan": "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. "
                      "Mang tới điểm thu gom pin cũ, rác nguy hại.",
     },
@@ -75,7 +85,7 @@ NHOM_RAC = {
     "khong-tai-che": {
         "ten": "Rác không thể tái chế", "ten_khong_dau": "Rac khong the tai che",
         "muc": "khong-tai-che",
-        "vi_du": "Quần áo, dép, khẩu trang",
+        "vi_du": "Quần áo, giày dép, hộp xốp, vỏ bánh kẹo, giấy ăn, ống hút",
         "huong_dan": "Bỏ vào thùng rác còn lại. Quần áo còn mặc được thì nên quyên góp.",
     },
 }
@@ -94,7 +104,7 @@ def thong_tin_nhom(nhom):
 # NAP MODEL
 # ======================================================================
 class ModelGopNhom:
-    """Boc model 8 loai, dung chung cho desktop va API."""
+    """Boc model 10 loai, dung chung cho desktop va API."""
 
     def __init__(self, net, classes):
         self.net = net
@@ -103,8 +113,9 @@ class ModelGopNhom:
     def du_doan(self, tensor):
         """
         Tra ve (nhom_duoc_chon, mang xac suat 4 nhom theo DANH_SACH_NHOM).
-        Chon nhom theo LOAI co xac suat cao nhat, khong theo tong xac suat nhom:
-        nhom tai che gom 5 loai, cong 5 xac suat nho lai de lan at pin
+        Giong trang web: P(pin) >= NGUONG_PIN thi chon nguy hai, con lai chon
+        nhom cua LOAI co xac suat cao nhat (bo pin ra), khong theo tong xac suat
+        nhom: nhom tai che gom 5 loai, cong 5 xac suat nho lai de lan at pin
         (do tren 49 anh that: 44 dung so voi 42). Xac suat nhom = tong cac loai.
         """
         with torch.inference_mode():
@@ -112,12 +123,17 @@ class ModelGopNhom:
         theo_nhom = np.zeros(len(DANH_SACH_NHOM), dtype=np.float32)
         for loai, p in zip(self.classes, xac_suat):
             theo_nhom[DANH_SACH_NHOM.index(LOAI_VAO_NHOM[loai])] += p
-        return LOAI_VAO_NHOM[self.classes[int(xac_suat.argmax())]], theo_nhom
+        i_pin = self.classes.index("battery")
+        if xac_suat[i_pin] >= NGUONG_PIN:
+            return "nguy-hiem", theo_nhom
+        con_lai = xac_suat.copy()
+        con_lai[i_pin] = -1
+        return LOAI_VAO_NHOM[self.classes[int(con_lai.argmax())]], theo_nhom
 
 
 def load_model_and_labels(model_path=MODEL_PATH, labels_path=None):
     """
-    Nap model ResNet-18 8 loai.
+    Nap model ResNet-18 10 loai.
     Tra ve: (model, danh_sach_nhom) - danh sach 4 nhom, cung thu tu voi mang
     xac suat ma predict_trash tra ve. `labels_path` giu lai cho tuong thich
     nguoc, khong dung toi (danh sach lop nam san trong checkpoint).
@@ -136,21 +152,34 @@ def load_model_and_labels(model_path=MODEL_PATH, labels_path=None):
 # ======================================================================
 # TIEN XU LY ANH
 # ======================================================================
-_TRANSFORM = transforms.Compose([
+_CAT_ANH = transforms.Compose([
     transforms.Resize(int(IMAGE_SIZE / 0.875)),
     transforms.CenterCrop(IMAGE_SIZE),
     transforms.ToTensor(),
-    transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD),
 ])
+_CHUAN_HOA = transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)
+
+
+def can_bang_sang(x):
+    """
+    x: tensor anh [3, cao, rong] gia tri 0..1. Anh toi thi nang gamma, con lai
+    giu nguyen - giong ham canBangSang cua trang web.
+    """
+    sang = float((x * torch.tensor([0.299, 0.587, 0.114]).view(3, 1, 1)).sum(0).mean())
+    if sang >= NGUONG_TOI or sang <= 0.01:
+        return x
+    gamma = max(0.35, np.log(DO_SANG_DICH) / np.log(sang))
+    return x.clamp(min=1e-6).pow(gamma)
 
 
 def preprocess_pil(image):
     """
-    Chuyen 1 anh PIL thanh tensor cho model, giong luc train:
-    canh ngan ve 256 -> cat giua 224 -> chuan hoa ImageNet.
+    Chuyen 1 anh PIL thanh tensor cho model, giong trang web:
+    canh ngan ve 256 -> cat giua 224 -> tang sang neu anh toi -> chuan hoa ImageNet.
     Dung chung cho giao dien PyQt lan API Flask.
     """
-    return _TRANSFORM(image.convert("RGB")).unsqueeze(0)
+    x = can_bang_sang(_CAT_ANH(image.convert("RGB")))
+    return _CHUAN_HOA(x).unsqueeze(0)
 
 
 def preprocess_frame(frame):

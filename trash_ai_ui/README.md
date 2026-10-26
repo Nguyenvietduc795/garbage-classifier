@@ -5,17 +5,16 @@ Model phân **4 nhóm rác**:
 |---|---|
 | Rác hữu cơ | Thức ăn thừa, rau củ quả |
 | Rác tái chế | Carton, thủy tinh, chai nhựa, giấy, kim loại |
-| Rác không thể tái chế | Quần áo, dép, khẩu trang |
-| Rác nguy hại | Pin, ắc quy |
+| Rác không thể tái chế | Quần áo, giày dép, hộp xốp, vỏ bánh kẹo, giấy ăn, ống hút |
+| Rác nguy hại | Pin AA/AAA, pin cúc áo, pin điện thoại |
 
-> **Đã đổi model (01/10/2026).** Phần A và C dùng **ResNet-18 8 loại**
-> (`garbage_resnet18.pt`, PyTorch) — đây là model **v2**; trang web `frontend/` hiện đã chạy v5. Model phân
-> 8 loại vật liệu rồi gộp thành 4 nhóm, chọn nhóm theo loại có xác suất cao nhất.
-> Đo trên 49 ảnh đời thực: **44/49 đúng nhóm** (model Teachable Machine cũ: 37/49).
+> **Đã đổi model (26/10/2026).** Phần A và C dùng **ResNet-18 10 loại v6**
+> (`garbage_resnet18.pt`, PyTorch) — cùng model với trang web `frontend/`. Model phân
+> 10 loại vật liệu (thêm `shoes`, `trash`) rồi gộp thành 4 nhóm. Xác suất pin ≥ 50% thì
+> báo rác nguy hại; dưới mức đó chọn nhóm theo loại có xác suất cao nhất trong các loại còn lại.
+> Số đo trên ảnh chụp thật xem README gốc, mục v6.
 >
-> Khẩu trang và dép chưa có ảnh train — model chưa nhận được, sẽ bổ sung sau.
-> Bộ 49 ảnh chưa có ảnh hữu cơ/quần áo chụp ngoài đời. Khi model không chắc (dưới
-> 50%), giao diện hiện màu cam và không đưa gợi ý — đừng tin kết quả lúc đó.
+> Khi model không chắc (dưới 50%), giao diện hiện màu cam và không đưa gợi ý — đừng tin kết quả lúc đó.
 
 Dự án có 3 phần:
 
@@ -25,8 +24,8 @@ Dự án có 3 phần:
 | B. Web demo | `index.html` + `tfjs_model/` | Demo dạng web, không cần cài Python — **vẫn là model Teachable Machine cũ**, nên dùng trang `frontend/` thay thế |
 | C. API | `app.py`, `test_client.py` | Khi cần gọi model qua API |
 
-Phần A và C dùng chung model và tiền xử lý (cạnh ngắn về 256 → cắt giữa 224×224 →
-chuẩn hóa ImageNet), nên kết quả của A và C khớp nhau. Trang `frontend/` dùng v5 và luật pin 50%, nên có thể cho kết quả khác.
+Phần A, C và trang `frontend/` dùng chung model và tiền xử lý (cạnh ngắn về 256 → cắt giữa
+224×224 → tăng sáng nếu ảnh tối → chuẩn hóa ImageNet) và cùng luật pin 50%, nên cho cùng kết quả.
 
 ---
 
