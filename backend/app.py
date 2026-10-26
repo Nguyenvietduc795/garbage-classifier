@@ -42,7 +42,7 @@ LOAI_VAO_NHOM = {
     "battery": "nguy-hiem",
     "cardboard": "tai-che", "glass": "tai-che", "metal": "tai-che",
     "paper": "tai-che", "plastic": "tai-che",
-    "clothes": "khong-tai-che",
+    "clothes": "khong-tai-che", "shoes": "khong-tai-che", "trash": "khong-tai-che",
 }
 
 # Nhom -> (ten, vi du vat the, huong dan xu ly). Khoa nhom cung la "muc" de to mau.

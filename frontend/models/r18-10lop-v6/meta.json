@@ -1,0 +1,9 @@
+{
+  "arch": "resnet18",
+  "classes": ["battery", "cardboard", "clothes", "glass", "metal", "organic", "paper", "plastic", "shoes", "trash"],
+  "imageSize": 224,
+  "mean": [0.485, 0.456, 0.406],
+  "std": [0.229, 0.224, 0.225],
+  "nguon": "garbage_classifier/artifacts/v6_gop_e50_full/best_model.pt - dataset_8lop_v6 (22.511 anh, 10 lop, them shoes va trash), 50 epoch, best epoch 48; TF.js nen uint8",
+  "do_chinh_xac_anh_that": "voi NGUONG_PIN 0,5: dung nhom 2.218/2.654 (9 bo, rw5/bdw gan lai nhan 10 lop), bao nham pin 20, pin 100/141"
+}

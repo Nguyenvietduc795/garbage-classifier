@@ -147,7 +147,11 @@
   // Moi lan doi model: chep vao thu muc moi trong models/ roi doi THU_MUC_MODEL.
   // Vercel cache file trong models/ 1 nam (xem vercel.json), nen KHONG ghi de
   // vao thu muc cu - nguoi da mo trang se van dung model cu.
-  const THU_MUC_MODEL = "models/r18-8lop-v5";
+  // v6 (10 loai, them shoes + trash): dung nhom 2.218/2.654 anh that so voi 2.153
+  // cua v5, bao nham pin 47 -> 20, nhung bao nham "khong tai che" 50 -> 167 va
+  // nhan dung pin 107 -> 100/141 (xem README muc v6). v5 van o models/r18-8lop-v5.
+  // Cac nguong ben duoi chon tren v5, chua do lai cho v6.
+  const THU_MUC_MODEL = "models/r18-10lop-v6";
   // Do tren 49 anh that (realworld_curated, model v5, luat pin 0,5): nguong 0,5
   // -> 39 dung / 4 sai / 6 "chua chac"; nguong 0,6 -> 35 / 3 / 11 (model train
   // co label smoothing nen xac suat hiem khi vuot 90%).
@@ -162,7 +166,7 @@
   const NGUONG_TOI = 0.30;
   const DO_SANG_DICH = 0.45;
   // Pin: xac suat pin >= NGUONG_PIN thi bao rac nguy hai; duoi nguong thi chon
-  // loai cao nhat trong 7 loai con lai. Model v5 hoc them ~500 anh pin nen hay
+  // loai cao nhat trong cac loai con lai. Model v5 hoc them ~500 anh pin nen hay
   // goi lon/chai kim loai la pin; nguong nay chan bot. Chon tren nua A cac bo
   // test that, bao cao tren nua B: so voi v2 + luat pin 30% cu, pin 52 -> 64/80,
   // bao nham pin 22 -> 22. Nguong 0,3 voi v5 lam bao nham len 52.
@@ -171,7 +175,7 @@
   // nhieu so voi chay het 30 khung/giay.
   const CHU_KY_MS = 250;
 
-  // Model phan 8 loai vat lieu; giao dien chi hien 4 nhom. Chon nhom theo LOAI
+  // Model phan 10 loai; giao dien chi hien 4 nhom. Chon nhom theo LOAI
   // co xac suat cao nhat, khong theo tong xac suat nhom: nhom tai che gom 5 loai,
   // cong 5 xac suat nho lai de lan at pin (do tren 49 anh that voi model v2: 44 dung so voi 42).
   // Do chac chan hien thi = tong xac suat cua nhom duoc chon.
@@ -179,7 +183,7 @@
     organic: "huu-co",
     battery: "nguy-hiem",
     cardboard: "tai-che", glass: "tai-che", metal: "tai-che", paper: "tai-che", plastic: "tai-che",
-    clothes: "khong-tai-che",
+    clothes: "khong-tai-che", shoes: "khong-tai-che", trash: "khong-tai-che",
   };
   // muc (khoa) cung la ten class CSS de to mau the ket qua theo nhom.
   const NHOM_RAC = {
@@ -193,7 +197,7 @@
                        viDu: "Carton, thủy tinh, chai nhựa, giấy, kim loại",
                        viec: "Rửa sạch, để khô, gấp gọn rồi bỏ vào thùng tái chế. Lon, giấy, carton bán ve chai được." },
     "khong-tai-che": { ten: "Rác không thể tái chế",
-                       viDu: "Quần áo, giày dép",
+                       viDu: "Quần áo, giày dép, hộp xốp, vỏ bánh kẹo, giấy ăn, ống hút",
                        viec: "Bỏ vào thùng rác còn lại. Quần áo còn mặc được thì nên quyên góp." },
   };
 

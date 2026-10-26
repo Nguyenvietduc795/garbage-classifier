@@ -48,7 +48,7 @@ LOAI_VAO_NHOM = {
     "battery": "nguy-hiem",
     "cardboard": "tai-che", "glass": "tai-che", "metal": "tai-che",
     "paper": "tai-che", "plastic": "tai-che",
-    "clothes": "khong-tai-che",
+    "clothes": "khong-tai-che", "shoes": "khong-tai-che", "trash": "khong-tai-che",
 }
 
 # Thong tin tung nhom. Khoa nhom cung la "muc" dung de to mau.

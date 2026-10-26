@@ -1,0 +1,71 @@
+[
+  {
+    "class": "Clothes",
+    "file": "clothes_02.jpg",
+    "title": "File:Detail of rag tree at St Molaise's Well, Old Leighlin.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Detail_of_rag_tree_at_St_Molaise%27s_Well%2C_Old_Leighlin.jpg/960px-Detail_of_rag_tree_at_St_Molaise%27s_Well%2C_Old_Leighlin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "CC BY-SA 4.0",
+    "artist": "A.-K. D.",
+    "bo_khoi": "realworld_test",
+    "ly_do": "cay treo vai (rag tree), khong phai rac"
+  },
+  {
+    "class": "Clothes",
+    "file": "clothes_03.jpg",
+    "title": "File:First trcuk load of rags leaving from Commonwealth Salvage Commission Rag Store(GN13440).jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/First_trcuk_load_of_rags_leaving_from_Commonwealth_Salvage_Commission_Rag_Store%28GN13440%29.jpg/960px-First_trcuk_load_of_rags_leaving_from_Commonwealth_Salvage_Commission_Rag_Store%28GN13440%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "CC0",
+    "artist": "\nState Government Photographer",
+    "bo_khoi": "realworld_test",
+    "ly_do": "anh den trang xe tai cho kien vai"
+  },
+  {
+    "class": "Clothes",
+    "file": "clothes_04.jpg",
+    "title": "File:Rag tree at St Molaise's Well, Old Leighlin.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Rag_tree_at_St_Molaise%27s_Well%2C_Old_Leighlin.jpg/960px-Rag_tree_at_St_Molaise%27s_Well%2C_Old_Leighlin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "CC BY-SA 4.0",
+    "artist": "A.-K. D.",
+    "bo_khoi": "realworld_test",
+    "ly_do": "rung cay treo vai, vai rat nho"
+  },
+  {
+    "class": "Clothes",
+    "file": "clothes_05.jpg",
+    "title": "File:Ye olde oily rag firestop.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Ye_olde_oily_rag_firestop.jpg/960px-Ye_olde_oily_rag_firestop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "Public domain",
+    "artist": "Achim Hering",
+    "bo_khoi": "realworld_test",
+    "ly_do": "hop dien + dong chu, gie gan nhu khong thay"
+  },
+  {
+    "class": "Clothes",
+    "file": "clothes_06.jpg",
+    "title": "File:Clothing bin in Munich.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Clothing_bin_in_Munich.jpg/960px-Clothing_bin_in_Munich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "CC0",
+    "artist": "Kritzolina",
+    "bo_khoi": "realworld_test",
+    "ly_do": "thung thu gom quan ao, khong co quan ao"
+  },
+  {
+    "class": "Clothes",
+    "file": "clothes_07.jpg",
+    "title": "File:Clothing bin in Munich 02.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Clothing_bin_in_Munich_02.jpg/960px-Clothing_bin_in_Munich_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "CC0",
+    "artist": "Kritzolina",
+    "bo_khoi": "realworld_test",
+    "ly_do": "thung thu gom quan ao, khong co quan ao"
+  },
+  {
+    "class": "Clothes",
+    "file": "clothes_01.jpg",
+    "title": "File:Tessuti Riciclati.png",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Tessuti_Riciclati.png/960px-Tessuti_Riciclati.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "CC BY-SA 3.0",
+    "bo_khoi": "realworld_test2",
+    "ly_do": "logo chu, khong phai anh chup"
+  }
+]

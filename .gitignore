@@ -41,3 +41,17 @@ realworld_bower_test/
 realworld_bdw_test/
 dataset_8lop_v5/
 realworld_pin_test/
+dataset_8lop_v6a/
+dataset_8lop_v6b/
+realworld_clothes_test/*/
+!realworld_clothes_test/manifest.json
+realworld_loai_bo/*/
+!realworld_loai_bo/manifest.json
+dataset_8lop_v6/
+dataset_8lop_v6_goc/
+anh_tu_chup/
+261026/
+realworld_rw5_test_10lop/*/
+!realworld_rw5_test_10lop/manifest.json
+realworld_bdw_test_10lop/*/
+!realworld_bdw_test_10lop/manifest.json

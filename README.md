@@ -1,14 +1,73 @@
-# Phân loại rác — 8 loại, 4 nhóm
+# Phân loại rác — 10 loại, 4 nhóm
 
-Pipeline huấn luyện ResNet-18 (PyTorch) phân loại ảnh rác thành 8 loại vật liệu:
-`battery`, `cardboard`, `clothes`, `glass`, `metal`, `organic`, `paper`, `plastic`.
-Giao diện gộp lại thành **4 nhóm**: hữu cơ, tái chế, không thể tái chế, nguy hại.
+Pipeline huấn luyện ResNet-18 (PyTorch) phân loại ảnh rác thành 10 loại:
+`battery`, `cardboard`, `clothes`, `glass`, `metal`, `organic`, `paper`, `plastic`,
+`shoes`, `trash` (rác còn lại: hộp xốp, vỏ bánh kẹo, giấy ăn, ống hút, cốc giấy…).
+Giao diện gộp lại thành **4 nhóm**: hữu cơ, tái chế, không thể tái chế (`clothes`, `shoes`,
+`trash`), nguy hại. Desktop và API vẫn dùng model 8 loại v2.
 
 Kèm các giao diện sử dụng: web (`frontend/`, Vercel), desktop (PyQt5) và API (Flask).
 
 ---
 
-## Model đang chạy trên web: v5 (24/10/2026)
+## Model đang chạy trên web: v6, 10 loại (26/10/2026)
+
+`frontend/models/r18-10lop-v6` — ResNet-18 train trên `dataset_8lop_v6` (22.511 ảnh), 50 epoch
+không dừng sớm (`--patience 50`), lấy epoch tốt nhất trên val (48). Luật pin và ngưỡng
+"chưa chắc" giữ như v5 (50%). Lý do thêm 2 loại: trước đây nhóm "không thể tái chế" chỉ có
+`clothes`, nên dép, hộp xốp, vỏ snack không thuộc loại nào và web chỉ báo "Chưa chắc".
+
+**Dữ liệu** (dựng bằng `garbage_classifier/scripts/build_dataset_v6.py`, lọc trùng dHash
+Hamming ≤ 4 với v5 và mọi bộ `realworld_*`, báo cáo trong `dataset_8lop_v6_report.json`):
+
+- `shoes` (1.459): 1.449 ảnh giày của sumn2u vốn bị gộp vào `clothes` từ v2, tách ra lại;
+  thêm 6 crop TACO và 4 ảnh nhóm tự chụp.
+- `trash` (3.030): sumn2u trash (899, ảnh web), MTA s-litter + m-composite (554 crop, không
+  lấy phần test), RealWaste Miscellaneous Trash (494), VN Trash Foam_box (343 — chỉ giữ ảnh
+  chụp thật, bỏ 881 ảnh stock/quảng cáo có cả hộp nhựa gắn nhầm nhãn), TACO (xốp, giấy ăn, vỏ
+  snack, cốc giấy, ống hút, găng tay — 544 crop), BDWaste vỏ snack + cốc giấy (158, tách từ
+  v5), 38 crop MTA plastic-film xem tay là vỏ snack (`scripts/mta_film_vo_snack.txt`).
+- Không lấy TACO "Plastic film" và phần còn lại của MTA plastic-film: phần lớn là túi/màng
+  nilon, giữ ở `plastic`.
+- 14 ảnh nhóm tự chụp (`anh_tu_chup/`: 7 pin, 4 dép, 3 ly nhựa) — chia ngẫu nhiên nên chỉ 8
+  ảnh vào train.
+
+**Bộ test 10 loại**: `realworld_rw5_test_10lop` và `realworld_bdw_test_10lop` là bản gắn lại
+nhãn của rw5/BDWaste (bộ cũ giữ nguyên): vỏ snack, ống hút, giấy ăn, cốc giấy, găng tay chuyển
+sang `trash` — 245 ảnh rw5 xem tay từng ảnh, 43 ảnh BDWaste theo tên file. Ca không chắc (hoá
+đơn, đĩa giấy, hộp nước, giấy vò) giữ nhãn cũ. Danh sách trong `manifest.json` của từng bộ.
+
+Đo trên 9 bộ (2.654 ảnh: rw5 + BDWaste bản 10 loại, `test`, `test2`, `clothes_test`,
+`pin_test`, MTA, Bower, `curated`), luật pin 50%, đúng theo 4 nhóm:
+
+| | v5 (8 loại) | v6, 15 epoch | v6 + vỏ snack | **v6 gộp, 50 epoch ← web** |
+|---|---|---|---|---|
+| **Đúng nhóm** (/2.654) | 2.153 | 2.211 | 2.184 | **2.218** |
+| Báo nhầm thành pin | 47 | 47 | 51 | **20** |
+| Báo nhầm "không tái chế" | **50** | 140 | 175 | 167 |
+| Nhận đúng `trash` ở rw5 (/244) | 26 | 104 | 116 | 115 |
+| `realworld_pin_test` (/141) | 107 | 109 | 111 | 100 |
+| Test split (theo loại) | 91,3% (8 loại) | 88,8% | 89,1% | 90,1% |
+
+- **Tốt hơn v5:** +65 ảnh đúng nhóm, báo nhầm pin giảm hơn một nửa, nhận được rác còn lại.
+- **Kém hơn v5:** bỏ sót pin nhiều hơn (100 so với 107/141) và báo túi nilon/nhựa thành "không
+  tái chế" gấp ~3 lần — vỏ snack và túi nilon đều là màng nhựa, rất giống nhau trên ảnh.
+- Mỗi cột chỉ train 1 seed; đổi seed đã lệch ~33 ảnh (mục v6a/v6b), nên chênh giữa các bản v6
+  với nhau không đáng tin, chênh với v5 (+65) thì đáng tin hơn.
+- 15 epoch là dừng sớm (patience 5, best epoch 10); chạy đủ 50 epoch val còn tăng chậm tới
+  epoch 48 (89,1% → 90,8%).
+- Trên trình duyệt (TF.js uint8) đúng nhóm `curated` 41/49, `test2` 44/52, PyTorch 43 và 45.
+- Ảnh dép Crocs chụp tối, vật nhỏ trong khung: shoes 41% — vẫn dưới 50% nên web hiện "Chưa
+  chắc", nhưng đã nghiêng đúng nhóm (v5 đoán quần áo 47%, thuỷ tinh 25%).
+- Các ngưỡng trên web chọn trên v5, chưa chọn lại cho v6.
+
+Bỏ ngang: UGV-NBWASTE (dép nhựa chụp thật, CC BY 4.0) chưa dùng vì Mendeley chặn tải tự động —
+tải tay "Download All", giải nén vào `downloads/ugv_yolo` rồi chạy lại script là có.
+
+v5 vẫn giữ ở `frontend/models/r18-8lop-v5`; muốn quay lại thì đổi `THU_MUC_MODEL` và bỏ
+`shoes`/`trash` khỏi danh sách ví dụ của nhóm "không thể tái chế".
+
+## Model v5 (24/10/2026) — chạy trên web tới 26/10/2026
 
 `frontend/models/r18-8lop-v5` — ResNet-18 train trên `dataset_8lop_v5` (19.657 ảnh, thêm ảnh
 pin thật). Luật pin: xác suất pin ≥ 50% thì báo nguy hại, dưới 50% thì chọn loại cao nhất
@@ -20,15 +79,17 @@ trong 7 loại còn lại (bỏ luật "có thể là pin" ở 30% của bản v
 | Báo nhầm thành pin | 47 lần | 45 lần |
 | Đúng nhóm, 1.642 ảnh rác chụp thật | 86,9% | 91,2% |
 | Hữu cơ (/300) | 250 | 250 |
-| Quần áo chụp thật | — | 31/43 (bộ test mới, xem mục **v6**) |
+| Quần áo chụp thật | — | 31/43 (bộ test mới, xem mục **v6a/v6b**) |
 
 Dòng "quần áo sai hết" trước đây là do bộ test: phần lớn ảnh "quần áo" trong đó không có
-quần áo (thùng thu gom, logo chữ…). Đã lọc lại — xem mục **v6**.
+quần áo (thùng thu gom, logo chữ…). Đã lọc lại — xem mục **v6a/v6b**.
 
 Bản v2 vẫn giữ ở `frontend/models/r18-8lop-v1`; muốn quay lại thì đổi `THU_MUC_MODEL` và
 khôi phục luật pin cũ (commit `d364ddf`).
 
-## v6: bộ test quần áo mới + thêm quần áo cũ thật (24/10/2026) — chưa đưa lên web
+## v6a/v6b: bộ test quần áo mới + thêm quần áo cũ thật (24/10/2026) — bỏ, không đưa lên web
+
+Hai dataset `dataset_8lop_v6a`/`v6b` đã xoá (26/10/2026); tên v6 giờ dùng cho bản 10 loại ở trên.
 
 **Bộ test quần áo cũ đo sai.** 7/10 ảnh "quần áo" không có quần áo làm vật chính (cây treo
 vải, thùng thu gom quần áo, xe tải chở kiện vải, hộp điện, logo chữ). Đã chuyển sang
@@ -117,7 +178,8 @@ Cần một môi trường riêng Python 3.11 + `tensorflow-cpu==2.15.1`, `onnx=
 `protobuf==4.25.3`, `onnx2tf==1.19.16` và `tensorflowjs==4.17.0` (hai gói cuối cài
 `--no-deps`; `tensorflowjs` cần thêm `tensorflow_hub==0.15.0` và `setuptools<70`, còn
 `tensorflow_decision_forests` / `jax` không có bản Windows — tạo module rỗng cùng tên là đủ,
-bộ chuyển CNN không dùng tới). Bản TF 2.16+ dùng Keras 3, các công cụ trên không chạy.
+bộ chuyển CNN không dùng tới; `jax` cần thêm `jax/experimental/__init__.py` chứa
+`jax2tf = None`). Bản TF 2.16+ dùng Keras 3, các công cụ trên không chạy.
 
 ```bash
 uv run --extra export garbage-export-onnx --checkpoint artifacts/v2_r18/best_model.pt --output r18.onnx
@@ -459,6 +521,11 @@ Dataset không đẩy lên git vì dung lượng. Các bộ đã dùng:
 - **Norway post-consumer garment data and images** (CC BY-SA 4.0) — [zenodo.org/records/20440761](https://zenodo.org/records/20440761)
 - **Bộ test quần áo** `realworld_clothes_test` — Wikimedia Commons, nguồn, giấy phép, tác giả
   trong `realworld_clothes_test/manifest.json`
+- **Garbage Classification v2** (sumn2u, MIT) — lớp `trash` lấy từ bản mirror [huggingface.co/datasets/omasteam/waste-garbage-management-dataset](https://huggingface.co/datasets/omasteam/waste-garbage-management-dataset); gốc [kaggle.com/datasets/sumn2u/garbage-classification-v2](https://www.kaggle.com/datasets/sumn2u/garbage-classification-v2)
+- **TACO** (CC BY 4.0, ảnh Flickr) — [github.com/pedropro/TACO](https://github.com/pedropro/TACO)
+- **VN Trash classification** (MIT, chỉ lớp Foam_box, ảnh chụp thật) — [kaggle.com/datasets/mrgetshjtdone/vn-trash-classification](https://www.kaggle.com/datasets/mrgetshjtdone/vn-trash-classification)
+- **RealWaste** (CC BY 4.0) — [archive.ics.uci.edu/dataset/908/realwaste](https://archive.ics.uci.edu/dataset/908/realwaste)
+- **Malaysian Trash Annotation** (CC BY 4.0) — [huggingface.co/datasets/larmkaixian/malaysia-trash-annotation](https://huggingface.co/datasets/larmkaixian/malaysia-trash-annotation)
 - **Real-World Waste 5 class** (CC BY 4.0, chỉ để test) — [kaggle.com/datasets/tuhanasinan/real-world-waste-classification-dataset-5-class](https://www.kaggle.com/datasets/tuhanasinan/real-world-waste-classification-dataset-5-class)
 
 ## Ghi chú

@@ -1,0 +1,60 @@
+{
+  "base": "dataset_8lop_v5",
+  "nguong_hamming": 4,
+  "min_side": 64,
+  "tach_tu_v5": {
+    "clothes -> shoes": 1449,
+    "paper -> trash": 64,
+    "plastic -> trash": 132
+  },
+  "them_moi": {
+    "battery <- Nhom tu chup": 7,
+    "plastic <- Nhom tu chup": 3,
+    "shoes <- Nhom tu chup": 4,
+    "shoes <- TACO Shoe": 6,
+    "trash <- MTA m-composite": 288,
+    "trash <- MTA s-litter": 266,
+    "trash <- RealWaste Misc Trash": 494,
+    "trash <- TACO Crisp packet": 38,
+    "trash <- TACO Foam cup": 12,
+    "trash <- TACO Foam food container": 13,
+    "trash <- TACO Other plastic wrapper": 215,
+    "trash <- TACO Paper cup": 62,
+    "trash <- TACO Plastic glooves": 4,
+    "trash <- TACO Plastic straw": 78,
+    "trash <- TACO Styrofoam piece": 86,
+    "trash <- TACO Tissues": 36,
+    "trash <- VN Trash Foam_box": 343,
+    "trash <- sumn2u trash": 899
+  },
+  "bo_vi_trung": {
+    "RealWaste Misc Trash": 1,
+    "MTA s-litter": 1,
+    "sumn2u trash": 48,
+    "TACO Other plastic wrapper": 1
+  },
+  "ly_do_bo": {
+    "v5:metal": 2,
+    "test:realworld_rw5_test": 1,
+    "new:trash": 25,
+    "v5:battery": 6,
+    "v5:cardboard": 4,
+    "v5:shoes": 4,
+    "v5:glass": 6,
+    "v5:plastic": 2,
+    "test:realworld_bower_test": 1
+  },
+  "so_anh_moi_lop": {
+    "battery": 1322,
+    "cardboard": 1936,
+    "clothes": 2207,
+    "glass": 2292,
+    "metal": 1669,
+    "organic": 2402,
+    "paper": 2381,
+    "plastic": 3813,
+    "shoes": 1459,
+    "trash": 3030
+  },
+  "tong": 22511
+}
