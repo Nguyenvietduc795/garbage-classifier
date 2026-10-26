@@ -61,7 +61,7 @@ NHOM_RAC = {
     "nguy-hiem": ("Rác nguy hại", "Pin AA/AAA, pin cúc áo, pin điện thoại",
                   "Tuyệt đối không bỏ vào rác thường — pin rò rỉ gây ô nhiễm đất và nước. "
                   "Mang tới điểm thu gom pin cũ, rác nguy hại."),
-    "tai-che": ("Rác tái chế", "Carton, thủy tinh, chai nhựa, giấy, kim loại",
+    "tai-che": ("Rác tái chế", "Carton, thủy tinh, nhựa, giấy, kim loại",
                 "Rửa sạch, để khô, gấp gọn rồi bỏ vào thùng tái chế. Lon, giấy, carton bán ve chai được."),
     "khong-tai-che": ("Rác không thể tái chế", "Quần áo, giày dép, hộp xốp, vỏ bánh kẹo, giấy ăn, ống hút",
                       "Bỏ vào thùng rác còn lại. Quần áo còn mặc được thì nên quyên góp."),

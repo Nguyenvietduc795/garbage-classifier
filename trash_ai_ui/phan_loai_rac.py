@@ -78,7 +78,7 @@ NHOM_RAC = {
     },
     "tai-che": {
         "ten": "Rác tái chế", "ten_khong_dau": "Rac tai che", "muc": "tai-che",
-        "vi_du": "Carton, thủy tinh, chai nhựa, giấy, kim loại",
+        "vi_du": "Carton, thủy tinh, nhựa, giấy, kim loại",
         "huong_dan": "Rửa sạch, để khô, gấp gọn rồi bỏ vào thùng tái chế. "
                      "Lon, giấy, carton bán ve chai được.",
     },

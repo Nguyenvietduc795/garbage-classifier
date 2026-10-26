@@ -4,7 +4,7 @@ Model phân **4 nhóm rác**:
 | Nhóm | Gồm |
 |---|---|
 | Rác hữu cơ | Thức ăn thừa, rau củ quả |
-| Rác tái chế | Carton, thủy tinh, chai nhựa, giấy, kim loại |
+| Rác tái chế | Carton, thủy tinh, nhựa, giấy, kim loại |
 | Rác không thể tái chế | Quần áo, giày dép, hộp xốp, vỏ bánh kẹo, giấy ăn, ống hút |
 | Rác nguy hại | Pin AA/AAA, pin cúc áo, pin điện thoại |
 
